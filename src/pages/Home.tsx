@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Phone, MessageCircle, Sparkles, Award, ShieldCheck, 
+  Camera, Phone, MessageCircle, Sparkles, Award, ShieldCheck, 
   Briefcase, Heart, Zap, CheckCircle2, ChevronDown, Quote, Star 
 } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter';
@@ -232,11 +232,38 @@ export const Home: React.FC = () => {
       {/* 2. ABOUT US PREVIEW */}
       <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'center' }} className="about-grid">
-            <div style={{ position: 'relative' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '5rem', alignItems: 'center' }} className="about-grid">
+            
+            {/* Visual Overlapping Portfolio Frames with Glow */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+              style={{ position: 'relative', height: '480px', display: 'flex', alignItems: 'center', zIndex: 10 }}
+            >
+              {/* Radial backdrop glow */}
               <div 
                 style={{ 
-                  borderRadius: '20px', 
+                  position: 'absolute', 
+                  width: '300px', 
+                  height: '300px', 
+                  borderRadius: '50%', 
+                  background: 'var(--glow-orange)', 
+                  filter: 'blur(80px)',
+                  top: '20%', 
+                  left: '10%',
+                  zIndex: -1 
+                }} 
+              />
+
+              {/* Main Image Frame */}
+              <motion.div
+                whileHover={{ scale: 1.02, rotate: -1 }}
+                style={{ 
+                  width: '70%', 
+                  height: '380px', 
+                  borderRadius: '24px', 
                   overflow: 'hidden', 
                   boxShadow: 'var(--shadow-premium)', 
                   border: '1px solid var(--border-light)',
@@ -244,49 +271,158 @@ export const Home: React.FC = () => {
                 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Photography art" 
-                  style={{ width: '100%', height: '450px', objectFit: 'cover', display: 'block' }}
+                  src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" 
+                  alt="Wedding Couple Shoot" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent)' }} />
-              </div>
-              <div 
-                className="glass-card" 
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.4), transparent)' }} />
+              </motion.div>
+
+              {/* Overlapping Focus Image Frame */}
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5, rotate: 1 }}
                 style={{ 
-                  position: 'absolute', 
-                  bottom: '-30px', 
-                  right: '20px', 
-                  padding: '1.5rem', 
-                  maxWidth: '250px',
-                  borderLeft: '4px solid var(--primary-orange)'
+                  position: 'absolute',
+                  width: '52%', 
+                  height: '240px', 
+                  right: '0', 
+                  bottom: '30px', 
+                  borderRadius: '20px', 
+                  overflow: 'hidden', 
+                  boxShadow: '0 20px 40px rgba(15, 23, 42, 0.15)', 
+                  border: '4px solid var(--bg-dark-2)',
+                  zIndex: 2
                 }}
               >
-                <h4 style={{ color: 'var(--primary-orange)', fontSize: '2rem', fontWeight: 800 }}>10+ Years</h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-primary)' }}>Of capturing memories in royal styles</p>
-              </div>
-            </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=600&auto=format&fit=crop" 
+                  alt="Photographer Shooting Behind The Scenes" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </motion.div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {/* Experience Badge */}
+              <motion.div 
+                className="glass-card" 
+                whileHover={{ scale: 1.08 }}
+                style={{ 
+                  position: 'absolute', 
+                  bottom: '10px', 
+                  left: '20px', 
+                  padding: '1.25rem', 
+                  maxWidth: '220px',
+                  borderLeft: '4px solid var(--primary-orange)',
+                  zIndex: 3,
+                  boxShadow: '0 15px 35px rgba(15, 23, 42, 0.12)'
+                }}
+              >
+                <h4 style={{ color: 'var(--primary-orange)', fontSize: '1.8rem', fontWeight: 800, lineHeight: '1' }}>10+ Years</h4>
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-primary)', fontWeight: 600, marginTop: '0.25rem' }}>Of capturing memories in royal styles</p>
+              </motion.div>
+            </motion.div>
+
+            {/* Text Content & Features list */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
+            >
               <span className="section-subtitle" style={{ margin: 0 }}>Who We Are</span>
               <h2>Preserving Precious Moments Through Modern Lenses</h2>
               <p>
                 Located in Udaipur, Rajasthan, <strong>Kamal Digi Studio</strong> is a highly trusted studio offering premium photography solutions. We capture the essence of weddings, family gatherings, commercial events, and portrait headshots with absolute artistic excellence.
               </p>
+              
+              {/* Premium Mini feature cards grid */}
+              <div 
+                style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                  gap: '1rem', 
+                  marginTop: '0.5rem', 
+                  marginBottom: '0.5rem' 
+                }}
+              >
+                <div 
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '0.75rem', 
+                    padding: '0.85rem 1rem', 
+                    borderRadius: '12px', 
+                    backgroundColor: 'rgba(255, 107, 53, 0.04)', 
+                    border: '1px solid rgba(255, 107, 53, 0.08)' 
+                  }}
+                >
+                  <Camera size={20} style={{ color: 'var(--primary-orange)', flexShrink: 0 }} />
+                  <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>Sony G-Master Gear</span>
+                </div>
+                
+                <div 
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '0.75rem', 
+                    padding: '0.85rem 1rem', 
+                    borderRadius: '12px', 
+                    backgroundColor: 'rgba(58, 134, 255, 0.04)', 
+                    border: '1px solid rgba(58, 134, 255, 0.08)' 
+                  }}
+                >
+                  <Award size={20} style={{ color: 'var(--secondary-blue)', flexShrink: 0 }} />
+                  <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>Cinematic retouches</span>
+                </div>
+
+                <div 
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '0.75rem', 
+                    padding: '0.85rem 1rem', 
+                    borderRadius: '12px', 
+                    backgroundColor: 'rgba(131, 56, 236, 0.04)', 
+                    border: '1px solid rgba(131, 56, 236, 0.08)' 
+                  }}
+                >
+                  <Sparkles size={20} style={{ color: 'var(--secondary-purple)', flexShrink: 0 }} />
+                  <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>Artistic storytelling</span>
+                </div>
+
+                <div 
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '0.75rem', 
+                    padding: '0.85rem 1rem', 
+                    borderRadius: '12px', 
+                    backgroundColor: 'rgba(255, 107, 53, 0.04)', 
+                    border: '1px solid rgba(255, 107, 53, 0.08)' 
+                  }}
+                >
+                  <Heart size={20} style={{ color: 'var(--primary-orange)', flexShrink: 0 }} />
+                  <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>Client focused sessions</span>
+                </div>
+              </div>
+
               <p>
                 Our core vision is driven by passion, creativity, and the application of state-of-the-art camera systems. We curate visual stories that keep your emotions alive for generations.
               </p>
-              <div style={{ marginTop: '1rem' }}>
+
+              <div style={{ marginTop: '0.5rem' }}>
                 <Link to="/about" className="btn btn-outline-orange">
                   <span>Read Our Full Story</span>
                   <ArrowRightIcon />
                 </Link>
               </div>
-            </div>
+            </motion.div>
+
           </div>
         </div>
         <style>{`
           @media (min-width: 992px) {
-            .about-grid { grid-template-columns: 1fr 1.1fr !important; }
+            .about-grid { grid-template-columns: 1fr 1fr !important; }
           }
         `}</style>
       </section>
