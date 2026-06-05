@@ -239,7 +239,7 @@ export const Services: React.FC = () => {
           <div 
             style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
               gap: '2.5rem',
               position: 'relative',
               zIndex: 10
@@ -288,7 +288,7 @@ export const Services: React.FC = () => {
                 </div>
 
                 {/* Card Content */}
-                <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', flexGrow: 1 }}>
+                <div style={{ padding: 'clamp(1.25rem, 4vw, 2rem)', display: 'flex', flexDirection: 'column', gap: '1.25rem', flexGrow: 1 }}>
                   <h3 style={{ fontSize: '1.4rem', fontWeight: 700 }}>{service.title}</h3>
                   <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', flexGrow: 1, lineHeight: '1.6' }}>
                     {service.desc}
@@ -333,7 +333,7 @@ export const Services: React.FC = () => {
       <section style={{ padding: '6rem 0' }}>
         <div className="container">
           <div 
-            className="glass-card" 
+            className="glass-card cta-banner-card" 
             style={{ 
               display: 'flex', 
               flexDirection: 'column', 
@@ -341,9 +341,7 @@ export const Services: React.FC = () => {
               textAlign: 'center', 
               gap: '1.5rem',
               background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(131, 56, 236, 0.08) 100%)',
-              borderColor: 'rgba(255, 107, 53, 0.2)',
-              padding: '4rem 2.5rem',
-              borderRadius: '24px'
+              borderColor: 'rgba(255, 107, 53, 0.2)'
             }}
           >
             <span style={{ color: 'var(--primary-orange)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Consultation Booking</span>

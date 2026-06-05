@@ -120,8 +120,7 @@ export const Contact: React.FC = () => {
             {/* Phone Card */}
             <a 
               href="tel:+919828142098"
-              className="glass-card" 
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', padding: '2rem 1.5rem', textAlign: 'center' }}
+              className="glass-card contact-info-card" 
             >
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'rgba(255, 107, 53, 0.1)', color: 'var(--primary-orange)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Phone size={22} />
@@ -133,14 +132,13 @@ export const Contact: React.FC = () => {
 
             {/* Location Card */}
             <div 
-              className="glass-card" 
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', padding: '2rem 1.5rem', textAlign: 'center' }}
+              className="glass-card contact-info-card" 
             >
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'rgba(58, 134, 255, 0.1)', color: 'var(--secondary-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <MapPin size={22} />
               </div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Our Studio</h3>
-              <span style={{ fontSize: '0.9rem', color: '#fff', lineHeight: '1.5' }}>
+              <span style={{ fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: '1.5' }}>
                 Prem Nagar, Rata Para, Titrdi, Sector 9, Udaipur, Rajasthan 313003
               </span>
               <p style={{ fontSize: '0.85rem' }}>Visit us for a face-to-face consultation.</p>
@@ -151,8 +149,7 @@ export const Contact: React.FC = () => {
               href="https://www.instagram.com/kamaldigi_studio/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="glass-card" 
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', padding: '2rem 1.5rem', textAlign: 'center' }}
+              className="glass-card contact-info-card" 
             >
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'rgba(131, 56, 236, 0.1)', color: 'var(--secondary-purple)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <InstagramIcon size={22} />
@@ -344,7 +341,7 @@ export const Contact: React.FC = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               
               {/* Hours Card */}
-              <div className="glass-card" style={{ padding: '2.5rem 2rem' }}>
+              <div className="glass-card business-hours-card">
                 <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Calendar style={{ color: 'var(--primary-orange)' }} />
                   <span>Business Hours</span>
@@ -369,7 +366,7 @@ export const Contact: React.FC = () => {
               </div>
 
               {/* Booking tip card */}
-              <div className="glass-card" style={{ padding: '2rem', borderLeft: '4px solid var(--primary-orange)' }}>
+              <div className="glass-card" style={{ padding: 'clamp(1.25rem, 4vw, 2rem)', borderLeft: '4px solid var(--primary-orange)' }}>
                 <h4 style={{ color: 'var(--primary-orange)', marginBottom: '0.5rem' }}>Need Immediate Booking?</h4>
                 <p style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                   Call our live helpline directly on <strong>+91 98281 42098</strong>. We can dispatch crew members for urgent corporate coverages and coordinate immediate passport portraits in Udaipur.

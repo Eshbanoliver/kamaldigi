@@ -102,7 +102,7 @@ export const About: React.FC = () => {
             />
 
             {/* Milestone 1 */}
-            <div style={{ display: 'flex', gap: '2rem', position: 'relative', zIndex: 2 }} className="timeline-item">
+            <div className="timeline-item">
               <div 
                 style={{ 
                   width: '42px', 
@@ -118,7 +118,7 @@ export const About: React.FC = () => {
               >
                 <Calendar size={16} style={{ color: 'var(--primary-orange)' }} />
               </div>
-              <div className="glass-card" style={{ flexGrow: 1, padding: '1.75rem' }}>
+              <div className="glass-card timeline-card">
                 <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--primary-orange)', display: 'block', marginBottom: '0.5rem' }}>2016 - Studio Foundations</span>
                 <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>The Birth of Kamal Digi Studio</h4>
                 <p style={{ fontSize: '0.95rem' }}>Opened our doors in Udaipur with basic DSLR portrait configurations and a small room, focusing purely on local events and passport portraits.</p>
@@ -126,7 +126,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Milestone 2 */}
-            <div style={{ display: 'flex', gap: '2rem', position: 'relative', zIndex: 2 }} className="timeline-item">
+            <div className="timeline-item">
               <div 
                 style={{ 
                   width: '42px', 
@@ -142,7 +142,7 @@ export const About: React.FC = () => {
               >
                 <Camera size={16} style={{ color: 'var(--primary-yellow)' }} />
               </div>
-              <div className="glass-card" style={{ flexGrow: 1, padding: '1.75rem' }}>
+              <div className="glass-card timeline-card">
                 <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--primary-yellow)', display: 'block', marginBottom: '0.5rem' }}>2019 - Technology Upgrade</span>
                 <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Transition to Full Frame & Mirrorless Systems</h4>
                 <p style={{ fontSize: '0.95rem' }}>Upgraded to professional Sony full-frame mirrorless architectures. Began covering large-scale destination weddings and outdoor pre-wedding projects across Rajasthan.</p>
@@ -150,7 +150,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Milestone 3 */}
-            <div style={{ display: 'flex', gap: '2rem', position: 'relative', zIndex: 2 }} className="timeline-item">
+            <div className="timeline-item">
               <div 
                 style={{ 
                   width: '42px', 
@@ -166,7 +166,7 @@ export const About: React.FC = () => {
               >
                 <Award size={16} style={{ color: 'var(--secondary-blue)' }} />
               </div>
-              <div className="glass-card" style={{ flexGrow: 1, padding: '1.75rem' }}>
+              <div className="glass-card timeline-card">
                 <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--secondary-blue)', display: 'block', marginBottom: '0.5rem' }}>2022 - Expansion & Digital Editing Labs</span>
                 <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Setting up Retouching and Album Printing</h4>
                 <p style={{ fontSize: '0.95rem' }}>Launched our in-house premium digital color grading lab and physical album layout design systems, achieving the milestone of 500+ happy clients.</p>
@@ -174,7 +174,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Milestone 4 */}
-            <div style={{ display: 'flex', gap: '2rem', position: 'relative', zIndex: 2 }} className="timeline-item">
+            <div className="timeline-item">
               <div 
                 style={{ 
                   width: '42px', 
@@ -190,7 +190,7 @@ export const About: React.FC = () => {
               >
                 <Heart size={16} style={{ color: 'var(--secondary-purple)' }} />
               </div>
-              <div className="glass-card" style={{ flexGrow: 1, padding: '1.75rem' }}>
+              <div className="glass-card timeline-card">
                 <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--secondary-purple)', display: 'block', marginBottom: '0.5rem' }}>2026 - Present & Beyond</span>
                 <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Udaipur's Trusted Visionary House</h4>
                 <p style={{ fontSize: '0.95rem' }}>Over 10+ years of collective team experience, offering aerial drone shoots, cinematic wedding trailers, and high-conversion commercial catalogs.</p>
@@ -213,13 +213,13 @@ export const About: React.FC = () => {
       <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="mission-grid">
-            <div className="glass-card" style={{ padding: '3rem 2rem', borderTop: '4px solid var(--primary-orange)' }}>
+            <div className="glass-card mission-vision-card" style={{ borderTop: '4px solid var(--primary-orange)' }}>
               <h3 style={{ marginBottom: '1rem' }}>Our Mission</h3>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-primary)' }}>
                 To preserve precious memories through exceptional photography and creative storytelling. We commit to bringing aesthetic consistency, state-of-the-art camera dynamics, and timely delivery.
               </p>
             </div>
-            <div className="glass-card" style={{ padding: '3rem 2rem', borderTop: '4px solid var(--secondary-blue)' }}>
+            <div className="glass-card mission-vision-card" style={{ borderTop: '4px solid var(--secondary-blue)' }}>
               <h3 style={{ marginBottom: '1rem' }}>Our Vision</h3>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-primary)' }}>
                 To become the most trusted photography studio in Rajasthan, known for artistic excellence, customer satisfaction, and capturing destination royal weddings with cinematic elegance.
@@ -282,7 +282,7 @@ export const About: React.FC = () => {
       <section style={{ backgroundColor: 'var(--bg-dark-1)', padding: '5rem 0' }}>
         <div className="container">
           <div 
-            className="glass-card" 
+            className="glass-card cta-banner-card" 
             style={{ 
               display: 'flex', 
               flexDirection: 'column', 
@@ -290,9 +290,7 @@ export const About: React.FC = () => {
               textAlign: 'center', 
               gap: '1.5rem',
               background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(58, 134, 255, 0.08) 100%)',
-              borderColor: 'rgba(255, 107, 53, 0.2)',
-              padding: '4rem 2.5rem',
-              borderRadius: '24px'
+              borderColor: 'rgba(255, 107, 53, 0.2)'
             }}
           >
             <h2 style={{ fontSize: '2.2rem', fontWeight: 800 }}>Ready To Co-Create Your Visual Album?</h2>

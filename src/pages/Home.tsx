@@ -113,8 +113,8 @@ export const Home: React.FC = () => {
           backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          paddingTop: '8rem',
-          paddingBottom: '4rem',
+          paddingTop: 'clamp(6rem, 10vw, 8rem)',
+          paddingBottom: 'clamp(3rem, 6vw, 4rem)',
         }}
       >
         <div className="container">
@@ -283,7 +283,7 @@ export const Home: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
-              style={{ position: 'relative', height: '480px', display: 'flex', alignItems: 'center', zIndex: 10 }}
+              className="staggered-image-container"
             >
               {/* Radial backdrop glow */}
               <div 
@@ -303,15 +303,7 @@ export const Home: React.FC = () => {
               {/* Main Image Frame */}
               <motion.div
                 whileHover={{ scale: 1.02, rotate: -1 }}
-                style={{ 
-                  width: '70%', 
-                  height: '380px', 
-                  borderRadius: '24px', 
-                  overflow: 'hidden', 
-                  boxShadow: 'var(--shadow-premium)', 
-                  border: '1px solid var(--border-light)',
-                  position: 'relative'
-                }}
+                className="staggered-main-frame"
               >
                 <img 
                   src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" 
@@ -324,18 +316,7 @@ export const Home: React.FC = () => {
               {/* Overlapping Focus Image Frame */}
               <motion.div
                 whileHover={{ scale: 1.05, y: -5, rotate: 1 }}
-                style={{ 
-                  position: 'absolute',
-                  width: '52%', 
-                  height: '240px', 
-                  right: '0', 
-                  bottom: '30px', 
-                  borderRadius: '20px', 
-                  overflow: 'hidden', 
-                  boxShadow: '0 20px 40px rgba(15, 23, 42, 0.15)', 
-                  border: '4px solid var(--bg-dark-2)',
-                  zIndex: 2
-                }}
+                className="staggered-overlap-frame"
               >
                 <img 
                   src="https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=600&auto=format&fit=crop" 
@@ -346,18 +327,8 @@ export const Home: React.FC = () => {
 
               {/* Experience Badge */}
               <motion.div 
-                className="glass-card" 
+                className="glass-card experience-badge-card" 
                 whileHover={{ scale: 1.08 }}
-                style={{ 
-                  position: 'absolute', 
-                  bottom: '10px', 
-                  left: '20px', 
-                  padding: '1.25rem', 
-                  maxWidth: '220px',
-                  borderLeft: '4px solid var(--primary-orange)',
-                  zIndex: 3,
-                  boxShadow: '0 15px 35px rgba(15, 23, 42, 0.12)'
-                }}
               >
                 <h4 style={{ color: 'var(--primary-orange)', fontSize: '1.8rem', fontWeight: 800, lineHeight: '1' }}>10+ Years</h4>
                 <p style={{ fontSize: '0.8rem', color: 'var(--text-primary)', fontWeight: 600, marginTop: '0.25rem' }}>Of capturing memories in royal styles</p>
@@ -506,7 +477,7 @@ export const Home: React.FC = () => {
             <p>We provide a comprehensive range of professional photography and editing services tailored to make every shoot exceptional.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
             {previewServices.map((service, idx) => (
               <div 
                 key={idx} 
@@ -558,7 +529,7 @@ export const Home: React.FC = () => {
       <section style={{ background: 'linear-gradient(to bottom, var(--bg-dark-1), var(--bg-dark-2))' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="mission-grid">
-            <div className="glass-card" style={{ padding: '3.5rem 2.5rem', borderLeft: '4px solid var(--primary-orange)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div className="glass-card mission-vision-card" style={{ borderLeft: '4px solid var(--primary-orange)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <span style={{ color: 'var(--primary-orange)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Preserving Memories</span>
               <h3>Our Mission</h3>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: 'var(--text-primary)' }}>
@@ -566,7 +537,7 @@ export const Home: React.FC = () => {
               </p>
             </div>
             
-            <div className="glass-card" style={{ padding: '3.5rem 2.5rem', borderLeft: '4px solid var(--secondary-blue)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div className="glass-card mission-vision-card" style={{ borderLeft: '4px solid var(--secondary-blue)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <span style={{ color: 'var(--secondary-blue)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Expanding Artistry</span>
               <h3>Our Vision</h3>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: 'var(--text-primary)' }}>
@@ -591,7 +562,7 @@ export const Home: React.FC = () => {
             <p>These values define our culture, our commitment to quality, and how we handle your milestone memories.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
             {coreValues.map((val, idx) => (
               <div 
                 key={idx} 
@@ -662,13 +633,10 @@ export const Home: React.FC = () => {
       <section style={{ padding: '6rem 0' }}>
         <div className="container">
           <div 
-            className="glass-card" 
+            className="glass-card cta-banner-card" 
             style={{ 
               background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(131, 56, 236, 0.1) 100%)',
               borderColor: 'rgba(255, 107, 53, 0.3)',
-              borderRadius: '24px',
-              padding: '4rem 2.5rem',
-              textAlign: 'center',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -705,16 +673,15 @@ export const Home: React.FC = () => {
             <p>Read review responses from couples, families, and businesses who trusted Kamal Digi Studio.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
             {testimonials.map((t, idx) => (
               <div 
                 key={idx} 
-                className="glass-card" 
+                className="glass-card testimonial-review-card" 
                 style={{ 
                   display: 'flex', 
                   flexDirection: 'column', 
-                  gap: '1.25rem',
-                  padding: '2.5rem' 
+                  gap: '1.25rem' 
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -760,9 +727,8 @@ export const Home: React.FC = () => {
               return (
                 <div 
                   key={idx} 
-                  className="glass-card" 
+                  className="glass-card faq-header" 
                   style={{ 
-                    padding: '1.25rem 2rem', 
                     borderRadius: '12px',
                     cursor: 'pointer',
                     borderColor: isOpen ? 'var(--primary-orange)' : 'var(--border-light)',

@@ -47,17 +47,18 @@ export const Header: React.FC = () => {
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo / Brand Name */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 110 }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', zIndex: 110 }}>
           <span
             style={{
               fontFamily: 'var(--font-heading)',
               fontWeight: 800,
-              fontSize: '1.5rem',
+              fontSize: 'clamp(1.1rem, 4.5vw, 1.5rem)',
               letterSpacing: '-0.02em',
               background: 'linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
+              whiteSpace: 'nowrap'
             }}
           >
             KAMAL DIGI
@@ -66,9 +67,10 @@ export const Header: React.FC = () => {
             style={{
               fontFamily: 'var(--font-sans)',
               fontWeight: 300,
-              fontSize: '1.25rem',
+              fontSize: 'clamp(0.9rem, 3.5vw, 1.25rem)',
               color: 'var(--text-primary)',
-              letterSpacing: '0.1em',
+              letterSpacing: '0.05em',
+              whiteSpace: 'nowrap'
             }}
           >
             STUDIO

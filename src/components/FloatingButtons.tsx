@@ -27,17 +27,7 @@ export const FloatingButtons: React.FC = () => {
   return (
     <>
       {/* Left Side Quick Contacts */}
-      <div
-        style={{
-          position: 'fixed',
-          bottom: '24px',
-          left: '24px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '12px',
-          zIndex: 90,
-        }}
-      >
+      <div className="floating-contact-container">
         {/* WhatsApp Button */}
         <motion.a
           href="https://wa.me/919828142098"
@@ -49,18 +39,14 @@ export const FloatingButtons: React.FC = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
+          className="floating-action-btn"
           style={{
-            width: '50px',
-            height: '50px',
-            borderRadius: '50%',
             backgroundColor: '#25D366',
             boxShadow: '0 4px 15px rgba(37, 211, 102, 0.4)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             color: 'white',
-            cursor: 'pointer',
-            border: 'none',
             position: 'relative',
           }}
         >
@@ -77,7 +63,7 @@ export const FloatingButtons: React.FC = () => {
               animation: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
             }}
           />
-          <MessageCircle size={24} fill="white" />
+          <MessageCircle fill="white" />
         </motion.a>
 
         {/* Direct Call Button */}
@@ -89,33 +75,22 @@ export const FloatingButtons: React.FC = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
+          className="floating-action-btn"
           style={{
-            width: '50px',
-            height: '50px',
-            borderRadius: '50%',
             backgroundColor: 'var(--primary-orange)',
             boxShadow: '0 4px 15px rgba(255, 107, 53, 0.4)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             color: 'white',
-            cursor: 'pointer',
-            border: 'none',
           }}
         >
-          <Phone size={22} fill="white" />
+          <Phone fill="white" />
         </motion.a>
       </div>
 
       {/* Right Side Scroll to Top */}
-      <div
-        style={{
-          position: 'fixed',
-          bottom: '24px',
-          right: '24px',
-          zIndex: 90,
-        }}
-      >
+      <div className="floating-scroll-container">
         <AnimatePresence>
           {showScroll && (
             <motion.button
@@ -126,10 +101,8 @@ export const FloatingButtons: React.FC = () => {
               whileHover={{ scale: 1.1, translateY: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Scroll to Top"
+              className="floating-action-btn"
               style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '50%',
                 backgroundColor: 'rgba(15, 23, 42, 0.85)',
                 backdropFilter: 'blur(8px)',
                 WebkitBackdropFilter: 'blur(8px)',
@@ -139,7 +112,6 @@ export const FloatingButtons: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'var(--text-primary)',
-                cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--primary-orange)';
@@ -150,7 +122,7 @@ export const FloatingButtons: React.FC = () => {
                 e.currentTarget.style.color = 'var(--text-primary)';
               }}
             >
-              <ArrowUp size={22} />
+              <ArrowUp />
             </motion.button>
           )}
         </AnimatePresence>

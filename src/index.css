@@ -341,3 +341,265 @@ section {
     padding: 2rem 1.25rem !important;
   }
 }
+
+/* Staggered Overlapping Images Layout */
+.staggered-image-container {
+  position: relative;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .staggered-image-container {
+    height: 380px;
+  }
+}
+@media (max-width: 480px) {
+  .staggered-image-container {
+    height: 300px;
+  }
+}
+
+.staggered-main-frame {
+  width: 70%;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+  border: 1px solid var(--border-light);
+  position: relative;
+}
+@media (max-width: 768px) {
+  .staggered-main-frame {
+    height: 300px;
+    border-radius: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .staggered-main-frame {
+    height: 240px;
+    border-radius: 14px;
+  }
+}
+
+.staggered-overlap-frame {
+  position: absolute;
+  width: 52%;
+  height: 240px;
+  right: 0;
+  bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+  border: 4px solid var(--bg-dark-2);
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .staggered-overlap-frame {
+    height: 180px;
+    bottom: 20px;
+    border-radius: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .staggered-overlap-frame {
+    height: 140px;
+    bottom: 15px;
+    border-radius: 10px;
+    border-width: 2px;
+  }
+}
+
+.experience-badge-card {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  padding: 1.25rem;
+  max-width: 220px;
+  border-left: 4px solid var(--primary-orange);
+  z-index: 3;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+}
+@media (max-width: 768px) {
+  .experience-badge-card {
+    padding: 1rem;
+    max-width: 180px;
+    left: 10px;
+    bottom: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .experience-badge-card {
+    padding: 0.75rem;
+    max-width: 145px;
+    left: 5px;
+    bottom: 5px;
+  }
+}
+
+/* CTA Banner Container Card */
+.cta-banner-card {
+  padding: 4rem 2.5rem;
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .cta-banner-card {
+    padding: 3rem 1.75rem;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .cta-banner-card {
+    padding: 2.25rem 1.25rem;
+    border-radius: 16px;
+  }
+}
+
+/* Timeline Components */
+.timeline-card {
+  flex-grow: 1;
+  padding: 1.75rem;
+}
+@media (max-width: 576px) {
+  .timeline-card {
+    padding: 1.25rem 1rem;
+  }
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 576px) {
+  .timeline-item {
+    gap: 1rem;
+  }
+}
+
+/* Contact Specific Cards */
+.contact-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .contact-info-card {
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
+  }
+}
+
+.business-hours-card {
+  padding: 2.5rem 2rem;
+}
+@media (max-width: 576px) {
+  .business-hours-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* Testimonial Page Card */
+.testimonial-review-card {
+  padding: 2.5rem;
+}
+@media (max-width: 768px) {
+  .testimonial-review-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .testimonial-review-card {
+    padding: 1.5rem 1.15rem;
+  }
+}
+
+/* FAQ Accordion Headers */
+.faq-header {
+  padding: 1.25rem 2rem;
+}
+@media (max-width: 576px) {
+  .faq-header {
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* Floating Contact & Navigation Buttons */
+.floating-contact-container {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 90;
+}
+@media (max-width: 768px) {
+  .floating-contact-container {
+    bottom: 16px;
+    left: 16px;
+    gap: 8px;
+  }
+}
+
+.floating-scroll-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+}
+@media (max-width: 768px) {
+  .floating-scroll-container {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+.floating-action-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+.floating-action-btn svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+@media (max-width: 768px) {
+  .floating-action-btn {
+    width: 42px;
+    height: 42px;
+  }
+  .floating-action-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* Mission Vision Cards */
+.mission-vision-card {
+  padding: 3.5rem 2.5rem;
+}
+@media (max-width: 768px) {
+  .mission-vision-card {
+    padding: 2.25rem 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .mission-vision-card {
+    padding: 1.75rem 1.25rem;
+  }
+}

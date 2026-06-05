@@ -135,16 +135,15 @@ export const Testimonials: React.FC = () => {
             <p>Our commitment to quality translates into smiles and long-term relationships.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2.5rem' }}>
             {reviews.map((rev, idx) => (
               <div 
                 key={idx} 
-                className="glass-card" 
+                className="glass-card testimonial-review-card" 
                 style={{ 
                   display: 'flex', 
                   flexDirection: 'column', 
                   gap: '1.5rem',
-                  padding: '2.5rem',
                   position: 'relative' 
                 }}
               >
@@ -270,7 +269,7 @@ export const Testimonials: React.FC = () => {
       <section style={{ padding: '6rem 0' }}>
         <div className="container">
           <div 
-            className="glass-card" 
+            className="glass-card cta-banner-card" 
             style={{ 
               display: 'flex', 
               flexDirection: 'column', 
@@ -278,9 +277,7 @@ export const Testimonials: React.FC = () => {
               textAlign: 'center', 
               gap: '1.5rem',
               background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(131, 56, 236, 0.08) 100%)',
-              borderColor: 'rgba(255, 107, 53, 0.2)',
-              padding: '4rem 2.5rem',
-              borderRadius: '24px'
+              borderColor: 'rgba(255, 107, 53, 0.2)'
             }}
           >
             <h2 style={{ fontSize: '2.2rem', fontWeight: 800 }}>Be Our Next Success Story</h2>
