@@ -25,7 +25,7 @@ export const App: React.FC = () => {
     <Router>
       <ScrollToTop />
       <Header />
-      <main style={{ flexGrow: 1, minHeight: '80vh', position: 'relative', zIndex: 1 }}>
+      <main style={{ flexGrow: 1, minHeight: '80vh', position: 'relative', zIndex: 1, overflow: 'hidden' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

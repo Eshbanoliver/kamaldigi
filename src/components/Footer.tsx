@@ -47,6 +47,7 @@ export const Footer: React.FC = () => {
         padding: '5rem 0 2.5rem 0',
         position: 'relative',
         zIndex: 5,
+        overflow: 'hidden',
       }}
     >
       {/* Background soft glow */}
