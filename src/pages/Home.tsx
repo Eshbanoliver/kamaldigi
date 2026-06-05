@@ -230,7 +230,50 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 2. ABOUT US PREVIEW */}
-      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}>
+      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)', position: 'relative', overflow: 'hidden' }}>
+        {/* Soft colored blobs */}
+        <div 
+          className="glow-shape" 
+          style={{ 
+            width: '350px', 
+            height: '350px', 
+            backgroundColor: 'rgba(255, 107, 53, 0.12)', 
+            top: '-50px', 
+            left: '-100px',
+            filter: 'blur(120px)',
+            opacity: 0.8,
+            position: 'absolute',
+            borderRadius: '50%'
+          }} 
+        />
+        <div 
+          className="glow-shape" 
+          style={{ 
+            width: '400px', 
+            height: '400px', 
+            backgroundColor: 'rgba(58, 134, 255, 0.1)', 
+            bottom: '-100px', 
+            right: '-100px',
+            filter: 'blur(120px)',
+            opacity: 0.7,
+            position: 'absolute',
+            borderRadius: '50%'
+          }} 
+        />
+        <div 
+          className="glow-shape" 
+          style={{ 
+            width: '300px', 
+            height: '300px', 
+            backgroundColor: 'rgba(131, 56, 236, 0.08)', 
+            top: '30%', 
+            right: '25%',
+            filter: 'blur(100px)',
+            opacity: 0.6,
+            position: 'absolute',
+            borderRadius: '50%'
+          }} 
+        />
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '5rem', alignItems: 'center' }} className="about-grid">
             
