@@ -110,7 +110,7 @@ export const Home: React.FC = () => {
           minHeight: '100vh', 
           display: 'flex', 
           alignItems: 'center', 
-          backgroundImage: 'linear-gradient(rgba(9, 13, 26, 0.75), rgba(9, 13, 26, 0.95)), url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           paddingTop: '8rem',
@@ -182,7 +182,7 @@ export const Home: React.FC = () => {
                   borderRadius: '24px', 
                   width: '100%', 
                   maxWidth: '500px',
-                  background: 'rgba(255, 255, 255, 0.03)',
+                  background: 'rgba(255, 255, 255, 0.6)',
                   borderColor: 'var(--border-light)'
                 }}
               >
@@ -200,7 +200,7 @@ export const Home: React.FC = () => {
                       right: '20px', 
                       padding: '1.25rem',
                       borderRadius: '12px',
-                      background: 'rgba(15, 23, 42, 0.75)',
+                      background: 'rgba(255, 255, 255, 0.85)',
                       backdropFilter: 'blur(10px)',
                       border: '1px solid var(--border-light)',
                       display: 'flex',
@@ -209,7 +209,7 @@ export const Home: React.FC = () => {
                     }}
                   >
                     <div>
-                      <div style={{ fontWeight: 700, fontSize: '1rem', color: '#fff' }}>Kamal Digi Studio</div>
+                      <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)' }}>Kamal Digi Studio</div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Udaipur, Rajasthan</div>
                     </div>
                     <div style={{ display: 'flex', gap: '3px' }}>
@@ -248,7 +248,7 @@ export const Home: React.FC = () => {
                   alt="Photography art" 
                   style={{ width: '100%', height: '450px', objectFit: 'cover', display: 'block' }}
                 />
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(9, 13, 26, 0.8), transparent)' }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent)' }} />
               </div>
               <div 
                 className="glass-card" 
@@ -262,7 +262,7 @@ export const Home: React.FC = () => {
                 }}
               >
                 <h4 style={{ color: 'var(--primary-orange)', fontSize: '2rem', fontWeight: 800 }}>10+ Years</h4>
-                <p style={{ fontSize: '0.85rem', color: '#fff' }}>Of capturing memories in royal styles</p>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-primary)' }}>Of capturing memories in royal styles</p>
               </div>
             </div>
 
@@ -347,7 +347,7 @@ export const Home: React.FC = () => {
                     style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
                     className="service-preview-img"
                   />
-                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(9, 13, 26, 0.7), transparent)' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent)' }} />
                 </div>
                 <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', flexGrow: 1 }}>
                   <h3 style={{ fontSize: '1.35rem', fontWeight: 700 }}>{service.title}</h3>

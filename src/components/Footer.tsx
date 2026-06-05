@@ -18,6 +18,7 @@ const InstagramIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
   </svg>
 );
+
 export const Footer: React.FC = () => {
   const currentYear = 2026;
 
@@ -42,7 +43,7 @@ export const Footer: React.FC = () => {
     <footer
       style={{
         backgroundColor: '#090D1A',
-        borderTop: '1px solid var(--border-light)',
+        borderTop: '1px solid var(--border-footer-light)',
         padding: '5rem 0 2.5rem 0',
         position: 'relative',
         zIndex: 5,
@@ -57,6 +58,7 @@ export const Footer: React.FC = () => {
           background: 'var(--glow-purple)',
           bottom: '10%',
           right: '5%',
+          opacity: 0.15,
         }}
       />
       <div
@@ -67,6 +69,7 @@ export const Footer: React.FC = () => {
           background: 'var(--glow-orange)',
           top: '10%',
           left: '5%',
+          opacity: 0.15,
         }}
       />
 
@@ -97,7 +100,7 @@ export const Footer: React.FC = () => {
                 KAMAL DIGI
               </span>
             </div>
-            <p style={{ fontSize: '0.95rem', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+            <p style={{ fontSize: '0.95rem', lineHeight: '1.6', color: 'var(--text-footer-secondary)' }}>
               Capture every moment beautifully with Udaipur's premier photography studio. Specializing in luxury wedding shoots, events, and portrait photography.
             </p>
             <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
@@ -111,11 +114,11 @@ export const Footer: React.FC = () => {
                   height: '40px',
                   borderRadius: '50%',
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid var(--border-light)',
+                  border: '1px solid var(--border-footer-light)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: 'var(--text-primary)',
+                  color: 'var(--text-footer-primary)',
                   transition: 'var(--transition-fast)',
                 }}
                 onMouseEnter={(e) => {
@@ -125,7 +128,7 @@ export const Footer: React.FC = () => {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-                  e.currentTarget.style.borderColor = 'var(--border-light)';
+                  e.currentTarget.style.borderColor = 'var(--border-footer-light)';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -143,6 +146,7 @@ export const Footer: React.FC = () => {
                 width: 'fit-content',
                 paddingBottom: '0.5rem',
                 marginBottom: '0.5rem',
+                color: 'var(--text-footer-primary)',
               }}
             >
               Quick Links
@@ -153,7 +157,7 @@ export const Footer: React.FC = () => {
                   <Link
                     to={link.path}
                     style={{
-                      color: 'var(--text-secondary)',
+                      color: 'var(--text-footer-secondary)',
                       fontSize: '0.95rem',
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -164,7 +168,7 @@ export const Footer: React.FC = () => {
                       e.currentTarget.style.transform = 'translateX(5px)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--text-secondary)';
+                      e.currentTarget.style.color = 'var(--text-footer-secondary)';
                       e.currentTarget.style.transform = 'translateX(0)';
                     }}
                   >
@@ -185,6 +189,7 @@ export const Footer: React.FC = () => {
                 width: 'fit-content',
                 paddingBottom: '0.5rem',
                 marginBottom: '0.5rem',
+                color: 'var(--text-footer-primary)',
               }}
             >
               Our Services
@@ -195,7 +200,7 @@ export const Footer: React.FC = () => {
                   <Link
                     to={link.path}
                     style={{
-                      color: 'var(--text-secondary)',
+                      color: 'var(--text-footer-secondary)',
                       fontSize: '0.95rem',
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -206,7 +211,7 @@ export const Footer: React.FC = () => {
                       e.currentTarget.style.transform = 'translateX(5px)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--text-secondary)';
+                      e.currentTarget.style.color = 'var(--text-footer-secondary)';
                       e.currentTarget.style.transform = 'translateX(0)';
                     }}
                   >
@@ -227,6 +232,7 @@ export const Footer: React.FC = () => {
                 width: 'fit-content',
                 paddingBottom: '0.5rem',
                 marginBottom: '0.5rem',
+                color: 'var(--text-footer-primary)',
               }}
             >
               Contact Us
@@ -234,15 +240,15 @@ export const Footer: React.FC = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <MapPin size={20} style={{ color: 'var(--primary-orange)', flexShrink: 0, marginTop: '0.15rem' }} />
-                <span style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
+                <span style={{ fontSize: '0.95rem', color: 'var(--text-footer-secondary)', lineHeight: '1.5' }}>
                   Prem Nagar, Rata Para, Titrdi, Sector 9, Udaipur, Rajasthan 313003
                 </span>
               </div>
               <a
                 href="tel:+919828142098"
-                style={{ display: 'inline-flex', gap: '0.75rem', alignItems: 'center' }}
+                style={{ display: 'inline-flex', gap: '0.75rem', alignItems: 'center', color: 'var(--text-footer-primary)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-orange)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-footer-primary)')}
               >
                 <Phone size={20} style={{ color: 'var(--primary-orange)' }} />
                 <span style={{ fontSize: '0.95rem', fontWeight: 600 }}>+91 98281 42098</span>
@@ -255,7 +261,7 @@ export const Footer: React.FC = () => {
         <div
           style={{
             height: '1px',
-            background: 'linear-gradient(90deg, transparent, var(--border-light), transparent)',
+            background: 'linear-gradient(90deg, transparent, var(--border-footer-light), transparent)',
             marginBottom: '2rem',
           }}
         />
@@ -271,7 +277,7 @@ export const Footer: React.FC = () => {
             textAlign: 'center',
           }}
         >
-          <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+          <p style={{ fontSize: '0.875rem', color: 'var(--text-footer-muted)' }}>
             ©️ Copyright {currentYear} | Kamal Digi Studio | All Rights Reserved | Powered by{' '}
             <a
               href="https://www.futurexdigitalmarketing.com/"

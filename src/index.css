@@ -1,4 +1,4 @@
-/* Kamal Digi Studio - Core Design System & Styling */
+/* Kamal Digi Studio - Light Design System & Styling */
 
 :root {
   --primary-orange: #FF6B35;
@@ -6,20 +6,26 @@
   --secondary-blue: #3A86FF;
   --secondary-purple: #8338EC;
   
-  --bg-dark-1: #0F172A;
-  --bg-dark-2: #090D1A;
-  --bg-dark-card: rgba(15, 23, 42, 0.4);
+  --bg-dark-1: #F8FAFC; /* Slate 50 for section alternates */
+  --bg-dark-2: #FFFFFF; /* White for primary backgrounds */
+  --bg-dark-card: rgba(255, 255, 255, 0.7); /* Light translucent card */
   
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  --text-primary: #0F172A; /* Slate 900 */
+  --text-secondary: #334155; /* Slate 700 */
+  --text-muted: #64748B; /* Slate 500 */
   
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(255, 107, 53, 0.2);
+  --border-light: rgba(15, 23, 42, 0.08);
+  --border-glow: rgba(255, 107, 53, 0.15);
   
-  --glow-orange: rgba(255, 107, 53, 0.15);
-  --glow-blue: rgba(58, 134, 255, 0.15);
-  --glow-purple: rgba(131, 56, 236, 0.15);
+  --glow-orange: rgba(255, 107, 53, 0.06);
+  --glow-blue: rgba(58, 134, 255, 0.06);
+  --glow-purple: rgba(131, 56, 236, 0.06);
+  
+  /* Footer-specific colors to preserve the required premium dark footer styling */
+  --text-footer-primary: #F8FAFC;
+  --text-footer-secondary: #94A3B8;
+  --text-footer-muted: #64748B;
+  --border-footer-light: rgba(255, 255, 255, 0.08);
   
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -28,8 +34,8 @@
   --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 20px rgba(255, 107, 53, 0.1);
+  --shadow-premium: 0 10px 30px -10px rgba(15, 23, 42, 0.1), 0 2px 8px -2px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 0 20px rgba(255, 107, 53, 0.05);
   
   scroll-behavior: smooth;
 }
@@ -91,11 +97,11 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark-2);
+  background: var(--bg-dark-1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.15);
   border-radius: 4px;
 }
 
@@ -111,14 +117,14 @@ a {
 
 /* Liquid Glass (Glassmorphic Elements) */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid var(--border-light);
 }
 
 .glass-card {
-  background: rgba(15, 23, 42, 0.45);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid var(--border-light);
@@ -137,15 +143,15 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(130deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+  background: linear-gradient(130deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
   z-index: 1;
   pointer-events: none;
 }
 
 .glass-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(255, 107, 53, 0.3);
-  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 107, 53, 0.15);
+  border-color: rgba(255, 107, 53, 0.25);
+  box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.15), 0 0 25px rgba(255, 107, 53, 0.1);
 }
 
 /* Reusable Utilities */
@@ -183,7 +189,7 @@ a {
   filter: blur(100px);
   z-index: 0;
   pointer-events: none;
-  opacity: 0.45;
+  opacity: 0.35;
   animation: pulse-glow 10s infinite alternate;
 }
 
@@ -209,24 +215,24 @@ a {
 .btn-primary {
   background: linear-gradient(135deg, var(--primary-orange) 0%, #E65A28 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
   background: linear-gradient(135deg, #FF7B4B 0%, #D84F1E 100%);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.04);
   border: 1px solid var(--border-light);
   color: var(--text-primary);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(15, 23, 42, 0.08);
+  border-color: rgba(15, 23, 42, 0.15);
   transform: translateY(-2px);
 }
 
@@ -239,7 +245,7 @@ a {
 .btn-outline-orange:hover {
   background: var(--primary-orange);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.25);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
   transform: translateY(-2px);
 }
 
@@ -283,11 +289,11 @@ section {
 @keyframes pulse-glow {
   0% {
     transform: scale(1) translate(0, 0);
-    opacity: 0.4;
+    opacity: 0.3;
   }
   100% {
-    transform: scale(1.2) translate(10px, 15px);
-    opacity: 0.6;
+    transform: scale(1.15) translate(10px, 15px);
+    opacity: 0.5;
   }
 }
 

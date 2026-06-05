@@ -18,7 +18,7 @@ export const About: React.FC = () => {
       {/* 1. HERO BANNER */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(9, 13, 26, 0.8), rgba(9, 13, 26, 0.95)), url("https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=1920&auto=format&fit=crop")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',

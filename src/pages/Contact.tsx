@@ -96,7 +96,7 @@ export const Contact: React.FC = () => {
       {/* 1. CONTACT BANNER */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(9, 13, 26, 0.85), rgba(9, 13, 26, 0.95)), url("https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=1920&auto=format&fit=crop")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',
@@ -217,9 +217,9 @@ export const Contact: React.FC = () => {
                       style={{ 
                         padding: '0.85rem 1rem', 
                         borderRadius: '8px', 
-                        backgroundColor: 'rgba(255,255,255,0.03)', 
+                        backgroundColor: 'rgba(15, 23, 42, 0.03)', 
                         border: '1px solid var(--border-light)', 
-                        color: 'white',
+                        color: 'var(--text-primary)',
                         fontFamily: 'inherit',
                         fontSize: '0.95rem'
                       }} 
@@ -241,9 +241,9 @@ export const Contact: React.FC = () => {
                         style={{ 
                           padding: '0.85rem 1rem', 
                           borderRadius: '8px', 
-                          backgroundColor: 'rgba(255,255,255,0.03)', 
+                          backgroundColor: 'rgba(15, 23, 42, 0.03)', 
                           border: '1px solid var(--border-light)', 
-                          color: 'white',
+                          color: 'var(--text-primary)',
                           fontFamily: 'inherit',
                           fontSize: '0.95rem'
                         }} 
@@ -262,9 +262,9 @@ export const Contact: React.FC = () => {
                         style={{ 
                           padding: '0.85rem 1rem', 
                           borderRadius: '8px', 
-                          backgroundColor: 'rgba(255,255,255,0.03)', 
+                          backgroundColor: 'rgba(15, 23, 42, 0.03)', 
                           border: '1px solid var(--border-light)', 
-                          color: 'white',
+                          color: 'var(--text-primary)',
                           fontFamily: 'inherit',
                           fontSize: '0.95rem'
                         }} 
@@ -283,16 +283,16 @@ export const Contact: React.FC = () => {
                       style={{ 
                         padding: '0.85rem 1rem', 
                         borderRadius: '8px', 
-                        backgroundColor: 'rgba(9, 13, 26, 0.95)', 
+                        backgroundColor: 'var(--bg-dark-1)', 
                         border: '1px solid var(--border-light)', 
-                        color: 'white',
+                        color: 'var(--text-primary)',
                         fontFamily: 'inherit',
                         fontSize: '0.95rem',
                         cursor: 'pointer'
                       }}
                     >
                       {servicesList.map((srv, index) => (
-                        <option key={index} value={srv} style={{ backgroundColor: 'var(--bg-dark-1)', color: 'white' }}>{srv}</option>
+                        <option key={index} value={srv} style={{ backgroundColor: 'var(--bg-dark-2)', color: 'var(--text-primary)' }}>{srv}</option>
                       ))}
                     </select>
                   </div>
@@ -310,9 +310,9 @@ export const Contact: React.FC = () => {
                       style={{ 
                         padding: '0.85rem 1rem', 
                         borderRadius: '8px', 
-                        backgroundColor: 'rgba(255,255,255,0.03)', 
+                        backgroundColor: 'rgba(15, 23, 42, 0.03)', 
                         border: '1px solid var(--border-light)', 
-                        color: 'white',
+                        color: 'var(--text-primary)',
                         fontFamily: 'inherit',
                         fontSize: '0.95rem',
                         resize: 'vertical'

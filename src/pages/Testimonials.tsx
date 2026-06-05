@@ -78,7 +78,7 @@ export const Testimonials: React.FC = () => {
       {/* 1. HERO SECTION */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(9, 13, 26, 0.85), rgba(9, 13, 26, 0.95)), url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',

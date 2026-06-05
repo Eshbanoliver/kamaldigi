@@ -168,7 +168,7 @@ export const Services: React.FC = () => {
       {/* 1. HERO BANNER */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(9, 13, 26, 0.8), rgba(9, 13, 26, 0.95)), url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1920&auto=format&fit=crop")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',
@@ -266,13 +266,13 @@ export const Services: React.FC = () => {
                     style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
                     className="service-card-img"
                   />
-                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(9, 13, 26, 0.75), transparent)' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent)' }} />
                   <span 
                     style={{ 
                       position: 'absolute', 
                       top: '15px', 
                       right: '15px', 
-                      backgroundColor: 'rgba(15, 23, 42, 0.75)', 
+                      backgroundColor: 'rgba(255, 255, 255, 0.85)', 
                       border: '1px solid var(--border-light)', 
                       padding: '0.35rem 0.85rem', 
                       borderRadius: '15px', 

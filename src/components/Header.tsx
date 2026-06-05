@@ -39,7 +39,7 @@ export const Header: React.FC = () => {
         zIndex: 100,
         transition: 'var(--transition-normal)',
         padding: isScrolled ? '0.75rem 0' : '1.25rem 0',
-        backgroundColor: isScrolled ? 'rgba(9, 13, 26, 0.8)' : 'rgba(9, 13, 26, 0.1)',
+        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.85)' : 'rgba(255, 255, 255, 0.05)',
         backdropFilter: isScrolled ? 'blur(16px) saturate(180%)' : 'blur(0px)',
         WebkitBackdropFilter: isScrolled ? 'blur(16px) saturate(180%)' : 'blur(0px)',
         borderBottom: isScrolled ? '1px solid var(--border-light)' : '1px solid transparent',
@@ -182,7 +182,7 @@ export const Header: React.FC = () => {
               bottom: 0,
               width: '100%',
               maxWidth: '320px',
-              backgroundColor: 'rgba(9, 13, 26, 0.95)',
+              backgroundColor: 'rgba(255, 255, 255, 0.98)',
               backdropFilter: 'blur(20px) saturate(180%)',
               WebkitBackdropFilter: 'blur(20px) saturate(180%)',
               borderLeft: '1px solid var(--border-light)',
@@ -191,7 +191,7 @@ export const Header: React.FC = () => {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.5)',
+              boxShadow: '-10px 0 30px rgba(15, 23, 42, 0.08)',
             }}
           >
             <nav>
