@@ -172,7 +172,7 @@ export const Contact: React.FC = () => {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem' }} className="contact-grid">
             
             {/* Form Column */}
-            <div className="glass-card" style={{ padding: '3rem 2rem' }}>
+            <div className="glass-card contact-form-card">
               <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Mail style={{ color: 'var(--primary-orange)' }} />
                 <span>Send A Message</span>

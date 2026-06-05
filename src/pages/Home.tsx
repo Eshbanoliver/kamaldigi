@@ -705,7 +705,7 @@ export const Home: React.FC = () => {
             <p>Read review responses from couples, families, and businesses who trusted Kamal Digi Studio.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
             {testimonials.map((t, idx) => (
               <div 
                 key={idx} 

@@ -135,7 +135,7 @@ export const Testimonials: React.FC = () => {
             <p>Our commitment to quality translates into smiles and long-term relationships.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
             {reviews.map((rev, idx) => (
               <div 
                 key={idx} 
