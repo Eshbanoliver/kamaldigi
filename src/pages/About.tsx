@@ -18,7 +18,7 @@ export const About: React.FC = () => {
       {/* 1. HERO BANNER */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/photographer-studio.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',
@@ -62,7 +62,7 @@ export const About: React.FC = () => {
                 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1000&auto=format&fit=crop" 
+                  src="/images/wedding-engagement.png" 
                   alt="Photography team at work" 
                   style={{ width: '100%', height: '400px', objectFit: 'cover', display: 'block' }}
                 />

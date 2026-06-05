@@ -59,13 +59,13 @@ export const Testimonials: React.FC = () => {
       title: 'The Royal Heritage Wedding at Jagmandir',
       client: 'Sunita & Abhishek',
       story: 'Covering a massive 4-day destination wedding with over 800 guests. The project involved multi-camera traditional coverage, candid cinematographers, and aerial drone synchronization. The end result was a 5-minute premium cinematic trailer, a 45-minute documentary film, and 3 custom designed physical albums. The client praised our seamless coordination and professional behavior.',
-      img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop'
+      img: '/images/wedding-couple.png'
     },
     {
       title: 'E-commerce Brand Catalog for Mewar Crafts',
       client: 'Mewar Crafts Enterprises',
       story: 'A complete product catalog shoot of hand-painted wooden artifacts and stone sculptures. The task required macro-level lighting to bring out texture, grain, and accurate colors for international listings. We shot, edited, and formatted over 150 items with clean backgrounds. Post-launch, Mewar Crafts reported a 40% rise in conversion due to high-definition visuals.',
-      img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop'
+      img: '/images/product.png'
     }
   ];
 
@@ -78,7 +78,7 @@ export const Testimonials: React.FC = () => {
       {/* 1. HERO SECTION */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/hero-bg.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',

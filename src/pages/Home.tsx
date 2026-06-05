@@ -24,22 +24,22 @@ export const Home: React.FC = () => {
   const previewServices = [
     {
       title: 'Wedding & Engagement',
-      img: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?q=80&w=600&auto=format&fit=crop',
+      img: '/images/wedding-engagement.png',
       desc: 'Eternalizing your vows and expressions in highly premium cinematic albums.',
     },
     {
       title: 'Pre Wedding Photoshoot',
-      img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop',
+      img: '/images/prewedding.png',
       desc: 'Creative locations and stunning styles that speak your beautiful love story.',
     },
     {
       title: 'Headshots & Portraits',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
+      img: '/images/portrait.png',
       desc: 'Professional studio lightning profiles and character portfolios.',
     },
     {
       title: 'Maternity & Newborn',
-      img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop',
+      img: '/images/maternity.png',
       desc: 'Gentle, gorgeous shoots capturing the start of life\'s most precious chapters.',
     },
   ];
@@ -110,7 +110,7 @@ export const Home: React.FC = () => {
           minHeight: '100vh', 
           display: 'flex', 
           alignItems: 'center', 
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url("/images/hero-bg.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           paddingTop: 'clamp(6rem, 10vw, 8rem)',
@@ -188,7 +188,7 @@ export const Home: React.FC = () => {
               >
                 <div style={{ overflow: 'hidden', borderRadius: '18px', position: 'relative' }}>
                   <img 
-                    src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop" 
+                    src="/images/camera-gear.png" 
                     alt="Kamal Digi Studio Gear" 
                     style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.5s' }} 
                   />
@@ -306,7 +306,7 @@ export const Home: React.FC = () => {
                 className="staggered-main-frame"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" 
+                  src="/images/wedding-couple.png" 
                   alt="Wedding Couple Shoot" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
@@ -319,7 +319,7 @@ export const Home: React.FC = () => {
                 className="staggered-overlap-frame"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1452587925148-ce544e77e60d?q=80&w=600&auto=format&fit=crop" 
+                  src="/images/photographer-bts.png" 
                   alt="Photographer Shooting Behind The Scenes" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />

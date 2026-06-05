@@ -20,7 +20,7 @@ export const Services: React.FC = () => {
       id: 1,
       title: 'Photographer',
       category: 'Studio & Creative',
-      img: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop',
+      img: '/images/photographer-studio.png',
       desc: 'Expert general photography for custom projects, editorial layouts, and bespoke outdoor portrait compositions.',
       features: ['Full-Frame Sony systems', 'Multiple focal prime lenses', 'Natural & flash setups', 'Digital retouching included']
     },
@@ -28,7 +28,7 @@ export const Services: React.FC = () => {
       id: 2,
       title: 'Photography Shop',
       category: 'Specialty',
-      img: 'https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?q=80&w=600&auto=format&fit=crop',
+      img: '/images/photo-shop.png',
       desc: 'Get high-end physical prints, glass framings, digital canvas designs, and customizable album layouts.',
       features: ['Anti-glare museum glass', 'Matte and premium glossy paper', 'Canvas wall mounts', 'Collage layout design']
     },
@@ -36,7 +36,7 @@ export const Services: React.FC = () => {
       id: 3,
       title: 'Wedding Portrait Studio',
       category: 'Weddings & Portraits',
-      img: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?q=80&w=600&auto=format&fit=crop',
+      img: '/images/wedding-couple.png',
       desc: 'Dedicated indoor studio shoots focused on couples, capturing traditional outfits and regal poses under controlled lighting.',
       features: ['Luxury backdrops', 'Professional hair/makeup sync', 'Controlled flash modeling', 'Multiple wardrobe changes']
     },
@@ -44,7 +44,7 @@ export const Services: React.FC = () => {
       id: 4,
       title: 'Event Photographer',
       category: 'Events & Corporate',
-      img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop',
+      img: '/images/event.png',
       desc: 'Punctual coverage of exhibitions, local inaugurations, festivals, and community programs with candid focuses.',
       features: ['Low-light camera configurations', 'Fast turnaround delivery', 'Candid event documentation', 'High dynamic range edits']
     },
@@ -52,7 +52,7 @@ export const Services: React.FC = () => {
       id: 5,
       title: 'Pre Wedding Photoshoot',
       category: 'Weddings & Portraits',
-      img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop',
+      img: '/images/prewedding.png',
       desc: 'Stunning outdoor pre-wedding photography showcasing your love story in Udaipur\'s royal lakes and palaces.',
       features: ['Scenic location planning', 'Posing direction guide', 'Cinematic trailer synchronization', 'Wardrobe color consultation']
     },
@@ -60,7 +60,7 @@ export const Services: React.FC = () => {
       id: 6,
       title: 'Wedding & Engagement Photography',
       category: 'Weddings & Portraits',
-      img: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=600&auto=format&fit=crop',
+      img: '/images/wedding-engagement.png',
       desc: 'End-to-end luxury coverage of wedding ceremonies, rituals, ring exchanges, and post-wedding celebrations.',
       features: ['Dual camera operations', 'Traditional & candid mix', 'Teaser cinematic video reels', 'Premium leather-bound album']
     },
@@ -68,7 +68,7 @@ export const Services: React.FC = () => {
       id: 7,
       title: 'Corporate Photography',
       category: 'Events & Corporate',
-      img: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=600&auto=format&fit=crop',
+      img: '/images/corporate.png',
       desc: 'High-end branding photography, board of directors portfolios, factory locations, and company culture documentation.',
       features: ['Corporate branding style', 'High-res LinkedIn portraits', 'Press-release ready images', 'Group staff compositions']
     },
@@ -76,7 +76,7 @@ export const Services: React.FC = () => {
       id: 8,
       title: 'Events & Parties Photography',
       category: 'Events & Corporate',
-      img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop',
+      img: '/images/event.png',
       desc: 'Lively, energetic captures of birthday bashes, anniversaries, dance nights, and private family get-togethers.',
       features: ['Action action-freeze lighting', 'Guest portrait zones', 'Group pictures management', 'Rapid next-day sneak peeks']
     },
@@ -84,7 +84,7 @@ export const Services: React.FC = () => {
       id: 9,
       title: 'Family & Group Photography',
       category: 'Weddings & Portraits',
-      img: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop',
+      img: '/images/family.png',
       desc: 'Warm and memorable group portraits featuring multi-generation families at home or in scenic outdoor layouts.',
       features: ['Comfortable posing guidance', 'Perfect coordinate styling', 'Large group arrangements', 'High-res canvas outputs']
     },
@@ -92,7 +92,7 @@ export const Services: React.FC = () => {
       id: 10,
       title: 'Headshots & Portraits',
       category: 'Studio & Creative',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
+      img: '/images/portrait.png',
       desc: 'Premium headshots for actors, models, corporate executives, and personal bio graphics.',
       features: ['Studio backdrop variations', 'Precision face retouching', 'High/low-key lighting options', 'Expression coach assistance']
     },
@@ -100,7 +100,7 @@ export const Services: React.FC = () => {
       id: 11,
       title: 'Honeymoon Photography',
       category: 'Specialty',
-      img: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=600&auto=format&fit=crop',
+      img: '/images/honeymoon.png',
       desc: 'Discreet and stunning travel couple photography capturing your romantic getaway around Udaipur\'s lakes.',
       features: ['Lake scenery scheduling', 'Candid vacation storytelling', 'Light gear mobility', 'Quick mobile-share edits']
     },
@@ -108,7 +108,7 @@ export const Services: React.FC = () => {
       id: 12,
       title: 'Individual Photography',
       category: 'Studio & Creative',
-      img: 'https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=600&auto=format&fit=crop',
+      img: '/images/portrait.png',
       desc: 'Bespoke creative portraiture focusing on highlighting individual character, lifestyle, and aesthetic tastes.',
       features: ['Concept mood boards', 'Creative style settings', 'Flexible session durations', 'Personalized retouched files']
     },
@@ -116,7 +116,7 @@ export const Services: React.FC = () => {
       id: 13,
       title: 'Maternity & Newborn Photography',
       category: 'Weddings & Portraits',
-      img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop',
+      img: '/images/maternity.png',
       desc: 'Capturing the beautiful glow of pregnancy and the gentle initial days of your newborn with extreme care.',
       features: ['Warm and safe indoor studio', 'Special baby props available', 'Flexible baby-feed breaks', 'Soft artistic glow lighting']
     },
@@ -124,7 +124,7 @@ export const Services: React.FC = () => {
       id: 14,
       title: 'Photo Editing',
       category: 'Specialty',
-      img: 'https://images.unsplash.com/photo-1572044162444-ad60f128bde7?q=80&w=600&auto=format&fit=crop',
+      img: '/images/photo-editing.png',
       desc: 'Professional grade color correction, raw development, background manipulations, and historical restoration.',
       features: ['Color grading palettes', 'Dust and blemish cleaning', 'Photoshop compositing work', 'Speedy digital dispatch']
     },
@@ -132,7 +132,7 @@ export const Services: React.FC = () => {
       id: 15,
       title: 'Product Photography',
       category: 'Events & Corporate',
-      img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop',
+      img: '/images/product.png',
       desc: 'E-commerce white background photography, lifestyle setups, catalog imagery for jewelry, clothing, and crafts.',
       features: ['Studio tabletop lighting', 'Macro detail captures', 'Accurate product colors', 'E-commerce platform sizing']
     },
@@ -140,7 +140,7 @@ export const Services: React.FC = () => {
       id: 16,
       title: 'Property Photography',
       category: 'Events & Corporate',
-      img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=600&auto=format&fit=crop',
+      img: '/images/property.png',
       desc: 'High dynamic range shots of hotels, heritage resorts, real estate listings, and luxury architectural properties.',
       features: ['Wide-angle architectural lenses', 'Twilight lighting sessions', 'Interior/Exterior layouts', 'High dynamic HDR bracketings']
     },
@@ -148,7 +148,7 @@ export const Services: React.FC = () => {
       id: 17,
       title: 'School Portraits',
       category: 'Specialty',
-      img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop',
+      img: '/images/school-portraits.png',
       desc: 'Organized and high-efficiency student portraits, group classroom pictures, and graduation day coverages.',
       features: ['Fast queue management', 'Uniform backdrop layouts', 'Name tagging metadata', 'Discounted bulk prints Packages']
     }
@@ -168,7 +168,7 @@ export const Services: React.FC = () => {
       {/* 1. HERO BANNER */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/camera-gear.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',
