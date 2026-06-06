@@ -103,27 +103,19 @@ export const FloatingButtons: React.FC = () => {
               aria-label="Scroll to Top"
               className="floating-action-btn"
               style={{
-                backgroundColor: 'rgba(15, 23, 42, 0.85)',
-                backdropFilter: 'blur(8px)',
-                WebkitBackdropFilter: 'blur(8px)',
-                border: '1px solid var(--border-light)',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+                backgroundColor: 'var(--primary-red)',
+                border: '1px solid var(--primary-red)',
+                boxShadow: '0 4px 15px rgba(210, 4, 45, 0.4)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--primary-red)',
+                color: '#ffffff',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--primary-red)';
-                e.currentTarget.style.borderColor = 'var(--primary-red)';
-                e.currentTarget.style.color = '#ffffff';
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(210, 4, 45, 0.5)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(210, 4, 45, 0.6)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(15, 23, 42, 0.85)';
-                e.currentTarget.style.borderColor = 'var(--border-light)';
-                e.currentTarget.style.color = 'var(--primary-red)';
-                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(210, 4, 45, 0.4)';
               }}
             >
               <ArrowUp />
