@@ -109,6 +109,16 @@ export const Home: React.FC = () => {
     { icon: <Briefcase size={28} />, title: 'Professionalism', desc: 'Punctual arrivals, streamlined schedules, and respectful crew interactions.' },
     { icon: <Heart size={28} />, title: 'Customer Satisfaction', desc: 'Personalized requirements focusing on creating your dream visuals.' },
     { icon: <Zap size={28} />, title: 'Innovation', desc: 'Adapting modern drones, advanced editing rigs, and premium layouts.' },
+    { icon: <Camera size={28} />, title: 'Precision', desc: 'Pixel-perfect attention to detail ensuring zero compromises in editing.' },
+    { icon: <MessageCircle size={28} />, title: 'Communication', desc: 'Transparent discussions and collaborative vision mapping with clients.' },
+    { icon: <Users size={28} />, title: 'Teamwork', desc: 'A cohesive unit of photographers and directors moving in sync.' },
+    { icon: <Star size={28} />, title: 'Excellence', desc: 'Pushing boundaries to surpass standard aesthetic expectations.' },
+    { icon: <CheckCircle2 size={28} />, title: 'Reliability', desc: 'On-time delivery of albums and strict adherence to schedules.' },
+    { icon: <Phone size={28} />, title: 'Support', desc: 'Round the clock availability for any last-minute event changes.' },
+    { icon: <Quote size={28} />, title: 'Storytelling', desc: 'Building narratives out of seemingly ordinary candid moments.' },
+    { icon: <Zap size={28} />, title: 'Agility', desc: 'Quick on our feet to capture fleeting emotions before they fade.' },
+    { icon: <ShieldCheck size={28} />, title: 'Integrity', desc: 'Ethical business practices and straightforward pricing models.' },
+    { icon: <Heart size={28} />, title: 'Passion', desc: 'An underlying love for the art form that fuels our entire studio.' },
   ];
 
   const whyChooseUs = [
@@ -955,44 +965,91 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 6. CORE VALUES */}
-      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}>
-        <div className="container">
-          <div className="section-header">
-            <span className="section-subtitle">What Guides Us</span>
-            <h2 className="section-title">Our Core Values</h2>
-            <p>These values define our culture, our commitment to quality, and how we handle your milestone memories.</p>
+      <section style={{ 
+        backgroundColor: 'var(--bg-dark-2)', 
+        position: 'relative',
+        overflow: 'hidden',
+        padding: '7rem 0',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+      }}>
+        {/* Abstract Pattern Overlay */}
+        <div style={{ 
+          position: 'absolute', 
+          inset: 0, 
+          backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.03) 2px, transparent 2px)',
+          backgroundSize: '30px 30px',
+          opacity: 1,
+          zIndex: 1,
+          pointerEvents: 'none'
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="section-header" style={{ marginBottom: '4.5rem' }}>
+            <span className="section-subtitle" style={{ display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(210, 4, 45, 0.1)', border: '1px solid rgba(210, 4, 45, 0.2)', borderRadius: '30px', color: 'var(--primary-red)', fontWeight: 700, marginBottom: '1rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '0.8rem' }}>What Guides Us</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Our <span className="gradient-text-red">Core Values</span></h2>
+            <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)' }}>These values define our culture, our commitment to quality, and how we handle your milestone memories.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-            {coreValues.map((val, idx) => (
-              <div 
-                key={idx} 
-                className="glass-card" 
-                style={{ 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  gap: '1rem',
-                  transition: 'all 0.3s'
-                }}
-              >
-                <div 
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
+            {coreValues.map((val, idx) => {
+              const colorPalette = [
+                { gradient: 'linear-gradient(135deg, #D2042D 0%, #FF4D6D 100%)', text: '#FF4D6D', bg: 'rgba(210, 4, 45, 0.08)', border: 'rgba(210, 4, 45, 0.2)' },
+                { gradient: 'linear-gradient(135deg, #118AB2 0%, #06D6A0 100%)', text: '#06D6A0', bg: 'rgba(17, 138, 178, 0.08)', border: 'rgba(17, 138, 178, 0.2)' },
+                { gradient: 'linear-gradient(135deg, #8338EC 0%, #FF007F 100%)', text: '#FF007F', bg: 'rgba(131, 56, 236, 0.08)', border: 'rgba(131, 56, 236, 0.2)' },
+                { gradient: 'linear-gradient(135deg, #FB8500 0%, #FFB703 100%)', text: '#FFB703', bg: 'rgba(251, 133, 0, 0.08)', border: 'rgba(251, 133, 0, 0.2)' },
+              ];
+              const theme = colorPalette[idx % colorPalette.length];
+
+              return (
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
+                  whileHover={{ y: -8, boxShadow: `0 20px 40px ${theme.bg}` }}
+                  className="glass-card core-value-card" 
                   style={{ 
-                    width: '56px', 
-                    height: '56px', 
-                    borderRadius: '12px', 
-                    backgroundColor: 'rgba(210, 4, 45, 0.1)', 
-                    color: 'var(--primary-red)', 
                     display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center' 
+                    flexDirection: 'column', 
+                    gap: '1.25rem',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    border: `1px solid ${theme.border}`,
+                    background: 'rgba(255, 255, 255, 0.02)',
+                    backdropFilter: 'blur(16px)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    padding: '2rem 1.5rem',
+                    borderRadius: '20px'
                   }}
                 >
-                  {val.icon}
-                </div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 600 }}>{val.title}</h3>
-                <p style={{ fontSize: '0.95rem' }}>{val.desc}</p>
-              </div>
-            ))}
+                  {/* Internal pattern / accent */}
+                  <div style={{ position: 'absolute', top: '-30px', right: '-30px', width: '120px', height: '120px', background: theme.gradient, opacity: 0.08, borderRadius: '50%', filter: 'blur(25px)', pointerEvents: 'none' }} />
+                  
+                  <div 
+                    style={{ 
+                      width: '64px', 
+                      height: '64px', 
+                      borderRadius: '16px', 
+                      background: theme.gradient, 
+                      color: 'white', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      boxShadow: `0 10px 25px ${theme.bg}`,
+                      position: 'relative',
+                      zIndex: 2
+                    }}
+                  >
+                    {val.icon}
+                  </div>
+                  <div style={{ position: 'relative', zIndex: 2 }}>
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: 700, margin: '0 0 0.5rem 0', color: 'var(--text-primary)' }}>{val.title}</h3>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0 }}>{val.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
