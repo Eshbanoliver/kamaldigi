@@ -2049,54 +2049,169 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 10. FAQ SECTION */}
-      <section>
-        <div className="container" style={{ maxWidth: '800px' }}>
+      <section style={{ padding: '6rem 0', position: 'relative', overflow: 'hidden' }}>
+        {/* Transparent Watermark */}
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          fontSize: 'clamp(5rem, 20vw, 15rem)',
+          fontWeight: 900,
+          fontFamily: 'var(--font-heading)',
+          color: 'rgba(15, 23, 42, 0.015)',
+          letterSpacing: '0.1em',
+          pointerEvents: 'none',
+          userSelect: 'none',
+          zIndex: 0,
+          textAlign: 'center',
+          width: '100%'
+        }}>
+          HELP
+        </div>
+
+        {/* Ambient background glows */}
+        <div style={{
+          position: 'absolute',
+          width: '400px',
+          height: '400px',
+          background: 'radial-gradient(circle, rgba(210, 4, 45, 0.03) 0%, transparent 70%)',
+          filter: 'blur(100px)',
+          top: '20%',
+          right: '-100px',
+          zIndex: 1,
+          pointerEvents: 'none'
+        }} />
+        <div style={{
+          position: 'absolute',
+          width: '400px',
+          height: '400px',
+          background: 'radial-gradient(circle, rgba(131, 56, 236, 0.03) 0%, transparent 70%)',
+          filter: 'blur(100px)',
+          bottom: '20%',
+          left: '-100px',
+          zIndex: 1,
+          pointerEvents: 'none'
+        }} />
+
+        <div className="container" style={{ maxWidth: '850px', position: 'relative', zIndex: 2 }}>
           <div className="section-header">
-            <span className="section-subtitle">Common Inquiries</span>
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p>Find answers to common questions about our wedding coverage, editing times, and studio policies.</p>
+            <span className="section-subtitle" style={{ color: 'var(--primary-red)', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 700, fontSize: '0.8rem', display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(210, 4, 45, 0.1)', border: '1px solid rgba(210, 4, 45, 0.2)', borderRadius: '30px', marginBottom: '1rem' }}>Common Inquiries</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Frequently Asked Questions</h2>
+            <p style={{ color: 'var(--text-secondary)' }}>Find answers to common questions about our wedding coverage, editing times, and studio policies.</p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {faqs.map((faq, idx) => {
               const isOpen = activeFaq === idx;
+              const number = idx + 1 < 10 ? `0${idx + 1}` : `${idx + 1}`;
+
               return (
-                <div 
+                <motion.div 
                   key={idx} 
-                  className="glass-card faq-header" 
+                  whileHover={{ y: -2, scale: 1.005 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  className="glass-card" 
                   style={{ 
-                    borderRadius: '12px',
+                    borderRadius: '16px',
                     cursor: 'pointer',
-                    borderColor: isOpen ? 'var(--primary-red)' : 'var(--border-light)',
-                    boxShadow: isOpen ? '0 10px 20px rgba(0,0,0,0.3)' : 'var(--shadow-premium)'
+                    padding: '1.5rem 2rem',
+                    background: isOpen ? 'rgba(255, 255, 255, 0.85)' : 'rgba(255, 255, 255, 0.65)',
+                    borderTop: '1px solid rgba(15, 23, 42, 0.04)',
+                    borderRight: '1px solid rgba(15, 23, 42, 0.04)',
+                    borderBottom: '1px solid rgba(15, 23, 42, 0.04)',
+                    borderLeft: isOpen ? `4px solid var(--primary-red)` : '4px solid rgba(15, 23, 42, 0.1)',
+                    boxShadow: isOpen 
+                      ? '0 20px 40px -15px rgba(210, 4, 45, 0.08), 0 2px 8px -2px rgba(210, 4, 45, 0.03)' 
+                      : 'var(--shadow-premium)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}
                   onClick={() => toggleFaq(idx)}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: isOpen ? 'var(--primary-red)' : 'var(--text-primary)' }}>
-                      {faq.q}
-                    </h4>
-                    <motion.div
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      style={{ color: isOpen ? 'var(--primary-red)' : 'var(--text-secondary)', display: 'flex' }}
-                    >
-                      <ChevronDown size={20} />
-                    </motion.div>
+                  {/* Subtle active background flare */}
+                  {isOpen && (
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '180px',
+                      height: '100%',
+                      background: 'linear-gradient(90deg, rgba(210, 4, 45, 0.02) 0%, transparent 100%)',
+                      pointerEvents: 'none'
+                    }} />
+                  )}
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flex: 1 }}>
+                      {/* Stylized FAQ Index Number */}
+                      <span style={{
+                        fontFamily: 'monospace',
+                        fontSize: '1.1rem',
+                        fontWeight: 700,
+                        color: isOpen ? 'var(--primary-red)' : 'rgba(15, 23, 42, 0.3)',
+                        transition: 'color 0.3s ease'
+                      }}>
+                        {number}
+                      </span>
+                      
+                      <h4 style={{ 
+                        fontSize: '1.15rem', 
+                        fontWeight: 700, 
+                        color: isOpen ? 'var(--text-primary)' : 'var(--text-secondary)',
+                        margin: 0,
+                        transition: 'color 0.3s ease',
+                        lineHeight: '1.4'
+                      }}>
+                        {faq.q}
+                      </h4>
+                    </div>
+
+                    {/* Circular Chevron Icon Badge */}
+                    <div style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '50%',
+                      backgroundColor: isOpen ? 'var(--primary-red)' : 'rgba(15, 23, 42, 0.04)',
+                      color: isOpen ? 'white' : 'var(--text-secondary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: isOpen ? '0 4px 15px rgba(210, 4, 45, 0.25)' : 'none',
+                      transition: 'all 0.3s ease',
+                      flexShrink: 0
+                    }}>
+                      <motion.div
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        style={{ display: 'flex' }}
+                      >
+                        <ChevronDown size={18} />
+                      </motion.div>
+                    </div>
                   </div>
                   
                   {/* Expandable answer */}
                   <motion.div
                     initial={false}
                     animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                     style={{ overflow: 'hidden' }}
                   >
-                    <p style={{ marginTop: '1rem', fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-                      {faq.a}
-                    </p>
+                    <div style={{ paddingLeft: '2.5rem' }}>
+                      <p style={{ 
+                        marginTop: '1.25rem', 
+                        fontSize: '0.98rem', 
+                        color: 'var(--text-secondary)', 
+                        lineHeight: '1.65',
+                        margin: 0
+                      }}>
+                        {faq.a}
+                      </p>
+                    </div>
                   </motion.div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
       style={{
         backgroundColor: '#090D1A',
         borderTop: '1px solid var(--border-footer-light)',
-        padding: '5rem 0 2.5rem 0',
+        padding: '3rem 0 1.5rem 0',
         position: 'relative',
         zIndex: 5,
         overflow: 'hidden',
@@ -79,12 +79,12 @@ export const Footer: React.FC = () => {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '3rem',
-            marginBottom: '4rem',
+            gap: '2rem',
+            marginBottom: '2.5rem',
           }}
         >
           {/* Studio Brand Column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Camera style={{ color: 'var(--primary-red)' }} size={24} />
               <span
@@ -139,7 +139,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links Column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <h4
               style={{
                 fontSize: '1.15rem',
@@ -152,7 +152,7 @@ export const Footer: React.FC = () => {
             >
               Quick Links
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -182,7 +182,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Services Column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <h4
               style={{
                 fontSize: '1.15rem',
@@ -195,7 +195,7 @@ export const Footer: React.FC = () => {
             >
               Our Services
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {servicesLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -225,7 +225,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Studio Contact Column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <h4
               style={{
                 fontSize: '1.15rem',
@@ -263,7 +263,7 @@ export const Footer: React.FC = () => {
           style={{
             height: '1px',
             background: 'linear-gradient(90deg, transparent, var(--border-footer-light), transparent)',
-            marginBottom: '2rem',
+            marginBottom: '1.5rem',
           }}
         />
 
