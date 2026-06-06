@@ -1015,7 +1015,7 @@ export const Home: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
-                  whileHover={{ y: -8, boxShadow: `0 20px 40px ${theme.bg}` }}
+                  whileHover={{ y: -8, boxShadow: `0 25px 50px ${theme.border}` }}
                   className="glass-card core-value-card" 
                   style={{ 
                     display: 'flex', 
@@ -1028,7 +1028,8 @@ export const Home: React.FC = () => {
                     position: 'relative',
                     overflow: 'hidden',
                     padding: '2rem 1.5rem',
-                    borderRadius: '20px'
+                    borderRadius: '20px',
+                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'
                   }}
                 >
                   {/* Internal pattern / accent */}
@@ -1044,7 +1045,7 @@ export const Home: React.FC = () => {
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center',
-                      boxShadow: `0 10px 25px ${theme.bg}`,
+                      boxShadow: `0 12px 35px ${theme.border}`,
                       position: 'relative',
                       zIndex: 2
                     }}
