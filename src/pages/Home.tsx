@@ -4,12 +4,13 @@ import { motion } from 'framer-motion';
 import { 
   Camera, Phone, MessageCircle, Sparkles, Award, ShieldCheck, 
   Briefcase, Heart, Zap, CheckCircle2, ChevronDown, Quote, Star,
-  Users
+  Users, Clock, MapPin
 } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter';
 
 export const Home: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [activeFeature, setActiveFeature] = useState<number>(0);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -114,15 +115,29 @@ export const Home: React.FC = () => {
   ];
 
   const whyChooseUs = [
-    { title: 'Experienced Team', desc: 'Professional photographers trained in lighting, posing, and timing.' },
-    { title: 'Latest Equipment', desc: 'Sony Alpha cameras, drone cams, and high-end prime lenses.' },
-    { title: 'Creative Editing', desc: 'Custom color grading that creates cinematic atmospheric vibes.' },
-    { title: 'Affordable Packages', desc: 'Luxury outcomes tailored perfectly to fit your budget.' },
-    { title: 'Personalized Service', desc: 'Tailored sessions matching your specific aesthetic goal.' },
-    { title: 'Timely Delivery', desc: 'Rapid edits delivered on secure high-speed storage clouds.' },
-    { title: 'Professional Quality', desc: 'Rigorous selection and detail-perfect final exports.' },
-    { title: 'Local Expertise', desc: 'Deep knowledge of Udaipur\'s most beautiful photography spots.' },
+    { title: 'Experienced Team', desc: 'Professional photographers trained in lighting, posing, and timing.', icon: 'users' },
+    { title: 'Latest Equipment', desc: 'Sony Alpha cameras, drone cams, and high-end prime lenses.', icon: 'camera' },
+    { title: 'Creative Editing', desc: 'Custom color grading that creates cinematic atmospheric vibes.', icon: 'sparkles' },
+    { title: 'Affordable Packages', desc: 'Luxury outcomes tailored perfectly to fit your budget.', icon: 'award' },
+    { title: 'Personalized Service', desc: 'Tailored sessions matching your specific aesthetic goal.', icon: 'heart' },
+    { title: 'Timely Delivery', desc: 'Rapid edits delivered on secure high-speed storage clouds.', icon: 'clock' },
+    { title: 'Professional Quality', desc: 'Rigorous selection and detail-perfect final exports.', icon: 'shield-check' },
+    { title: 'Local Expertise', desc: 'Deep knowledge of Udaipur\'s most beautiful photography spots.', icon: 'map-pin' },
   ];
+
+  const getFeatureIcon = (iconName: string, color: string, size = 24) => {
+    switch (iconName) {
+      case 'users': return <Users color={color} size={size} />;
+      case 'camera': return <Camera color={color} size={size} />;
+      case 'sparkles': return <Sparkles color={color} size={size} />;
+      case 'award': return <Award color={color} size={size} />;
+      case 'heart': return <Heart color={color} size={size} />;
+      case 'clock': return <Clock color={color} size={size} />;
+      case 'shield-check': return <ShieldCheck color={color} size={size} />;
+      case 'map-pin': return <MapPin color={color} size={size} />;
+      default: return <CheckCircle2 color={color} size={size} />;
+    }
+  };
 
   const testimonials = [
     {
@@ -1072,103 +1087,710 @@ export const Home: React.FC = () => {
             <p style={{ color: 'var(--text-secondary)' }}>We combine modern photographic style, luxury standards, and localized expertise in Udaipur to deliver unmatched output.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
-            {whyChooseUs.map((item, idx) => {
-              const vibrantColors = [
-                '#D2042D', // Crimson
-                '#3A86FF', // Blue
-                '#8338EC', // Purple
-                '#FF006E', // Pink
-                '#06D6A0', // Mint
-                '#FFBE0B', // Yellow
-                '#FB5607', // Orange
-                '#00F5FF'  // Cyan
-              ];
-              const color = vibrantColors[idx % vibrantColors.length];
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center' }} className="why-choose-grid">
+            {/* Visual Centerpiece (Camera Viewfinder & Lens) */}
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '1rem 0', zIndex: 10 }} className="why-choose-visual">
+              {/* Viewfinder Outer Card */}
+              <div style={{
+                position: 'relative',
+                width: '100%',
+                maxWidth: '370px',
+                aspectRatio: '1/1',
+                padding: '20px',
+                borderRadius: '24px',
+                backgroundColor: 'rgba(255, 255, 255, 0.4)',
+                border: '1px solid rgba(15, 23, 42, 0.04)',
+                boxShadow: '0 30px 60px -25px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255,255,255,0.6)',
+                backdropFilter: 'blur(10px)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                {/* Viewfinder focus brackets */}
+                {/* Top Left Bracket */}
+                <div style={{ position: 'absolute', top: '15px', left: '15px', width: '12px', height: '12px', borderTop: '2px solid rgba(15, 23, 42, 0.25)', borderLeft: '2px solid rgba(15, 23, 42, 0.25)' }} />
+                {/* Top Right Bracket */}
+                <div style={{ position: 'absolute', top: '15px', right: '15px', width: '12px', height: '12px', borderTop: '2px solid rgba(15, 23, 42, 0.25)', borderRight: '2px solid rgba(15, 23, 42, 0.25)' }} />
+                {/* Bottom Left Bracket */}
+                <div style={{ position: 'absolute', bottom: '15px', left: '15px', width: '12px', height: '12px', borderBottom: '2px solid rgba(15, 23, 42, 0.25)', borderLeft: '2px solid rgba(15, 23, 42, 0.25)' }} />
+                {/* Bottom Right Bracket */}
+                <div style={{ position: 'absolute', bottom: '15px', right: '15px', width: '12px', height: '12px', borderBottom: '2px solid rgba(15, 23, 42, 0.25)', borderRight: '2px solid rgba(15, 23, 42, 0.25)' }} />
 
-              return (
-                <motion.div 
-                  key={idx} 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  whileHover={{ 
-                    y: -5, 
-                    boxShadow: `0 15px 30px -5px ${color}33`,
-                    borderColor: `${color}80`
-                  }}
-                  className="glass-card" 
-                  style={{ 
-                    display: 'flex', 
-                    gap: '1.25rem',
-                    alignItems: 'flex-start',
-                    padding: '2rem 1.5rem',
-                    borderTop: `4px solid ${color}`,
-                    borderRight: '1px solid rgba(255,255,255,0.05)',
-                    borderBottom: '1px solid rgba(255,255,255,0.05)',
-                    borderLeft: '1px solid rgba(255,255,255,0.05)',
-                    background: `linear-gradient(to bottom, ${color}0A, rgba(255,255,255,0.02))`,
-                    borderRadius: '16px',
-                    transition: 'all 0.3s ease'
-                  }}
-                >
-                  <div style={{ 
-                    width: '40px', 
-                    height: '40px', 
-                    borderRadius: '50%', 
-                    background: `${color}1A`, 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    flexShrink: 0,
-                    boxShadow: `inset 0 0 10px ${color}33`
+                {/* Viewfinder HUD overlays */}
+                {/* Top Left HUD */}
+                <div style={{ position: 'absolute', top: '20px', left: '20px', display: 'flex', flexDirection: 'column', gap: '2px', fontFamily: 'monospace', fontSize: '0.65rem', color: 'rgba(15, 23, 42, 0.65)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <motion.span 
+                      animate={{ opacity: [1, 0, 1] }} 
+                      transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }} 
+                      style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#D2042D' }} 
+                    />
+                    <span style={{ fontWeight: 700, letterSpacing: '0.05em' }}>REC</span>
+                  </div>
+                  <span style={{ color: 'rgba(15, 23, 42, 0.35)' }}>00:04:12:08</span>
+                </div>
+
+                {/* Top Right HUD */}
+                <div style={{ position: 'absolute', top: '20px', right: '20px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2px', fontFamily: 'monospace', fontSize: '0.65rem', color: 'rgba(15, 23, 42, 0.65)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <span>4K 60</span>
+                    <div style={{ width: '16px', height: '9px', border: '1px solid rgba(15, 23, 42, 0.5)', padding: '1px', display: 'flex', borderRadius: '2px', position: 'relative' }}>
+                      <div style={{ width: '100%', height: '100%', backgroundColor: 'rgba(15, 23, 42, 0.6)' }} />
+                      <div style={{ position: 'absolute', right: '-2px', top: '1.5px', width: '1px', height: '4px', backgroundColor: 'rgba(15, 23, 42, 0.5)' }} />
+                    </div>
+                  </div>
+                  <span style={{ color: 'rgba(15, 23, 42, 0.35)' }}>RAW 10-bit</span>
+                </div>
+
+                {/* Bottom Left HUD */}
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', display: 'flex', flexDirection: 'column', gap: '2px', fontFamily: 'monospace', fontSize: '0.65rem', color: 'rgba(15, 23, 42, 0.65)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span style={{ fontWeight: 700, color: [
+                      '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                      '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                    ][activeFeature % 8] }}>{['F/1.2', 'F/1.4', 'F/2.0', 'F/2.8', 'F/4.0', 'F/5.6', 'F/8.0', 'F/11'][activeFeature % 8]}</span>
+                    <span style={{ color: 'rgba(15, 23, 42, 0.25)' }}>|</span>
+                    <span>{['1/8000', '1/4000', '1/2000', '1/1000', '1/500', '1/250', '1/125', '1/60'][activeFeature % 8]}</span>
+                  </div>
+                  <span style={{ color: 'rgba(15, 23, 42, 0.35)' }}>AF-C [MULTI]</span>
+                </div>
+
+                {/* Bottom Right HUD */}
+                <div style={{ position: 'absolute', bottom: '20px', right: '20px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2px', fontFamily: 'monospace', fontSize: '0.65rem', color: 'rgba(15, 23, 42, 0.65)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span>ISO {['100', '200', '400', '800', '1600', '3200', '6400', '12800'][activeFeature % 8]}</span>
+                    <span style={{ color: 'rgba(15, 23, 42, 0.25)' }}>|</span>
+                    <span>AWB</span>
+                  </div>
+                  <span style={{ color: 'rgba(15, 23, 42, 0.35)' }}>SD A: 2.1TB</span>
+                </div>
+
+                {/* Bottom Center Exposure Indicator */}
+                <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', fontFamily: 'monospace', fontSize: '0.6rem', color: 'rgba(15, 23, 42, 0.4)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <span>-2</span>
+                    <span>-1</span>
+                    <span style={{ color: activeFeature === 3 || activeFeature === 4 ? '#D2042D' : 'inherit', fontWeight: activeFeature === 3 || activeFeature === 4 ? 700 : 400 }}>0</span>
+                    <span>+1</span>
+                    <span>+2</span>
+                  </div>
+                  <div style={{ width: '60px', height: '1.5px', backgroundColor: 'rgba(15, 23, 42, 0.06)', position: 'relative', marginTop: '1px' }}>
+                    <motion.div 
+                      animate={{ left: `${(activeFeature / 7) * 100}%` }}
+                      transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+                      style={{ position: 'absolute', top: '-1.75px', width: '5px', height: '5px', borderRadius: '50%', backgroundColor: [
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8], transform: 'translateX(-50%)', boxShadow: `0 0 4px ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}` }} 
+                    />
+                  </div>
+                </div>
+
+                {/* Internal Lens Centerpiece Container */}
+                <div style={{
+                  position: 'relative',
+                  width: '80%',
+                  height: '80%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  {/* Outer Orbit (Dashed) */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+                    style={{
+                      position: 'absolute',
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '50%',
+                      border: '1px dashed rgba(15, 23, 42, 0.08)',
+                    }}
+                  />
+
+                  {/* Radial Halo Glow */}
+                  <motion.div
+                    key={`glow-${activeFeature}`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 0.15, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    style={{
+                      position: 'absolute',
+                      width: '110%',
+                      height: '110%',
+                      borderRadius: '50%',
+                      background: `radial-gradient(circle, ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]} 0%, transparent 70%)`,
+                      filter: 'blur(35px)',
+                      pointerEvents: 'none',
+                      zIndex: 1
+                    }}
+                  />
+
+                  {/* Middle Ring (Aperture Scale Ticks) */}
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
+                    style={{
+                      position: 'absolute',
+                      width: '86%',
+                      height: '86%',
+                      borderRadius: '50%',
+                      border: `1px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}25`,
+                      borderLeftColor: [
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8],
+                      borderRightColor: [
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8],
+                    }}
+                  />
+
+                  {/* Inner Lens Core */}
+                  <div style={{
+                    position: 'relative',
+                    width: '72%',
+                    height: '72%',
+                    borderRadius: '50%',
+                    background: 'rgba(255, 255, 255, 0.85)',
+                    border: '1px solid rgba(15, 23, 42, 0.06)',
+                    backdropFilter: 'blur(15px)',
+                    boxShadow: `0 15px 35px -10px rgba(15, 23, 42, 0.08), inset 0 0 15px rgba(255,255,255,0.7), inset 0 0 35px ${[
+                      '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                      '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                    ][activeFeature % 8]}12`,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 2,
+                    overflow: 'hidden'
                   }}>
-                    <CheckCircle2 color={color} size={22} />
+                    {/* Aperture blades visual effect */}
+                    <div style={{
+                      position: 'absolute',
+                      inset: 0,
+                      opacity: 0.06,
+                      background: 'repeating-conic-gradient(from 0deg, transparent 0deg 30deg, rgba(15, 23, 42, 0.8) 30deg 31deg)',
+                      pointerEvents: 'none'
+                    }} />
+
+                    {/* Camera autofocus box overlay */}
+                    <div style={{
+                      position: 'absolute',
+                      width: '68px',
+                      height: '68px',
+                      border: '1.5px solid rgba(15, 23, 42, 0.04)',
+                      borderRadius: '8px',
+                      pointerEvents: 'none',
+                      zIndex: 2,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <div style={{ position: 'absolute', top: '-1px', left: '-1px', width: '5px', height: '5px', borderTop: `1.5px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}`, borderLeft: `1.5px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}` }} />
+                      <div style={{ position: 'absolute', top: '-1px', right: '-1px', width: '5px', height: '5px', borderTop: `1.5px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}`, borderRight: `1.5px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}` }} />
+                      <div style={{ position: 'absolute', bottom: '-1px', left: '-1px', width: '5px', height: '5px', borderBottom: `1.5px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}`, borderLeft: `1.5px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}` }} />
+                      <div style={{ position: 'absolute', bottom: '-1px', right: '-1px', width: '5px', height: '5px', borderBottom: `1.5px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}`, borderRight: `1.5px solid ${[
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8]}` }} />
+                    </div>
+
+                    {/* Dynamic Icon */}
+                    <motion.div
+                      key={`icon-${activeFeature}`}
+                      initial={{ scale: 0.5, opacity: 0, rotate: -45 }}
+                      animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                      transition={{ type: 'spring', stiffness: 100, damping: 10 }}
+                      style={{ marginBottom: '0.4rem', zIndex: 3 }}
+                    >
+                      {getFeatureIcon(
+                        whyChooseUs[activeFeature].icon, 
+                        [
+                          '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                          '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                        ][activeFeature % 8], 
+                        38
+                      )}
+                    </motion.div>
+
+                    {/* Center metadata */}
+                    <span style={{ 
+                      fontFamily: 'monospace', 
+                      fontSize: '0.75rem', 
+                      color: [
+                        '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                        '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                      ][activeFeature % 8], 
+                      letterSpacing: '0.15em', 
+                      fontWeight: 700,
+                      zIndex: 3
+                    }}>
+                      {`0${activeFeature + 1} / 08`}
+                    </span>
+
+                    {/* Lens specs */}
+                    <div style={{
+                      position: 'absolute',
+                      bottom: '10%',
+                      fontFamily: 'monospace',
+                      fontSize: '0.55rem',
+                      color: 'var(--text-muted)',
+                      letterSpacing: '0.05em',
+                      zIndex: 3,
+                      textAlign: 'center'
+                    }}>
+                      <div>SYS: OPTIMAL</div>
+                      <div style={{ 
+                        color: [
+                          '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                          '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                        ][activeFeature % 8],
+                        fontWeight: 700 
+                      }}>FOCAL: 50mm</div>
+                    </div>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>{item.title}</h4>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0 }}>{item.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
+                </div>
+              </div>
+            </div>
+
+            {/* List Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', position: 'relative' }}>
+              {/* Timeline vertical guide line */}
+              <div style={{
+                position: 'absolute',
+                left: '20px',
+                top: '1.5rem',
+                bottom: '1.5rem',
+                width: '2px',
+                background: 'linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.05) 100%)',
+                zIndex: 1
+              }} />
+
+              {whyChooseUs.map((item, idx) => {
+                const color = [
+                  '#D2042D', '#3A86FF', '#8338EC', '#FF006E', 
+                  '#06D6A0', '#FFBE0B', '#FB5607', '#00F5FF'
+                ][idx % 8];
+                const isActive = activeFeature === idx;
+
+                return (
+                  <motion.div
+                    key={idx}
+                    onMouseEnter={() => setActiveFeature(idx)}
+                    onClick={() => setActiveFeature(idx)}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '1.5rem',
+                      cursor: 'pointer',
+                      padding: '0.75rem 1rem',
+                      borderRadius: '12px',
+                      position: 'relative',
+                      zIndex: 2,
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    {/* Glow Hover background (subtle highlight, not a card) */}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeFeatureBg"
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          borderRadius: '12px',
+                          background: `linear-gradient(90deg, ${color}0A 0%, transparent 100%)`,
+                          borderLeft: `3px solid ${color}`,
+                          zIndex: -1,
+                        }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                      />
+                    )}
+
+                    {/* Timeline Node Bullet */}
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      position: 'relative',
+                    }}>
+                      {/* Active outline ring */}
+                      {isActive ? (
+                        <motion.div
+                          layoutId="activeTimelineNode"
+                          style={{
+                            position: 'absolute',
+                            width: '24px',
+                            height: '24px',
+                            borderRadius: '50%',
+                            border: `2px solid ${color}`,
+                            boxShadow: `0 0 10px ${color}44`,
+                            background: 'var(--bg-dark-1)'
+                          }}
+                          transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+                        >
+                          <div style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            background: color,
+                            margin: '6px auto'
+                          }} />
+                        </motion.div>
+                      ) : (
+                        <div style={{
+                          width: '10px',
+                          height: '10px',
+                          borderRadius: '50%',
+                          background: 'rgba(15, 23, 42, 0.15)',
+                          transition: 'all 0.3s ease',
+                          border: '2px solid transparent'
+                        }} />
+                      )}
+                    </div>
+
+                    {/* Text Details */}
+                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <span style={{
+                          fontFamily: 'monospace',
+                          fontSize: '0.9rem',
+                          color: isActive ? color : 'rgba(15, 23, 42, 0.3)',
+                          fontWeight: 700,
+                          transition: 'color 0.3s ease'
+                        }}>
+                          {`0${idx + 1}`}
+                        </span>
+                        <h4 style={{
+                          fontSize: '1.2rem',
+                          fontWeight: 700,
+                          color: isActive ? 'var(--text-primary)' : 'rgba(15, 23, 42, 0.65)',
+                          margin: 0,
+                          transition: 'all 0.3s ease',
+                        }}>
+                          {item.title}
+                        </h4>
+                      </div>
+                      
+                      {/* Transition description visibility & opacity */}
+                      <p style={{
+                        fontSize: '0.95rem',
+                        color: isActive ? 'var(--text-secondary)' : 'rgba(15, 23, 42, 0.45)',
+                        lineHeight: '1.5',
+                        margin: 0,
+                        transition: 'all 0.3s ease'
+                      }}>
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
+        <style>{`
+          .why-choose-visual { display: flex; }
+          @media (min-width: 1024px) {
+            .why-choose-grid { grid-template-columns: 1.2fr 1.8fr !important; }
+            .why-choose-visual { position: sticky !important; top: 120px; }
+          }
+        `}</style>
       </section>
 
       {/* 8. CTA BANNER */}
-      <section style={{ padding: '6rem 0' }}>
-        <div className="container">
-          <div 
+      <section style={{ padding: '6rem 0', overflow: 'hidden', position: 'relative' }}>
+        {/* Ambient background glows outside the card */}
+        <div style={{
+          position: 'absolute',
+          width: '400px',
+          height: '400px',
+          background: 'radial-gradient(circle, rgba(210, 4, 45, 0.08) 0%, transparent 70%)',
+          filter: 'blur(100px)',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 1,
+          pointerEvents: 'none'
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <motion.div 
+            whileHover={{ y: -8, scale: 1.01 }}
+            transition={{ type: 'spring', stiffness: 150, damping: 20 }}
             className="glass-card cta-banner-card" 
             style={{ 
-              background: 'linear-gradient(135deg, rgba(210, 4, 45, 0.1) 0%, rgba(131, 56, 236, 0.1) 100%)',
-              borderColor: 'rgba(210, 4, 45, 0.3)',
+              background: 'linear-gradient(135deg, #090D1A 0%, #15081C 50%, #051821 100%)',
+              borderColor: 'rgba(210, 4, 45, 0.25)',
+              borderWidth: '1px',
+              borderStyle: 'solid',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '1.5rem',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(210, 4, 45, 0.1)'
+              gap: '2rem',
+              padding: '5rem 2.5rem',
+              borderRadius: '32px',
+              boxShadow: '0 30px 70px -15px rgba(9, 13, 26, 0.5), 0 0 40px rgba(210, 4, 45, 0.15)',
+              position: 'relative',
+              overflow: 'hidden',
+              textAlign: 'center'
             }}
           >
-            <h2 style={{ maxWidth: '700px', margin: '0 auto', fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}>
-              Let's Capture Your Special Moments Together
-            </h2>
-            <p style={{ maxWidth: '600px', margin: '0 auto', fontSize: '1.1rem' }}>
-              Book a personalized photography consultation with our team and let us craft visual memories you will treasure forever.
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
-              <a href="tel:+919828142098" className="btn btn-primary">
-                <Phone size={18} />
-                <span>Call Now</span>
-              </a>
-              <a href="https://wa.me/919828142098" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                <MessageCircle size={18} />
-                <span>Book Consultation</span>
-              </a>
+            {/* Viewfinder Rule of Thirds Lines Overlay */}
+            <div style={{ position: 'absolute', inset: 0, border: '1px solid rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', top: 0, bottom: 0, left: '33.33%', width: '1px', backgroundColor: 'rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', top: 0, bottom: 0, left: '66.66%', width: '1px', backgroundColor: 'rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', left: 0, right: 0, top: '33.33%', height: '1px', backgroundColor: 'rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', left: 0, right: 0, top: '66.66%', height: '1px', backgroundColor: 'rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+
+            {/* Viewfinder Frame Corner Brackets */}
+            <div style={{ position: 'absolute', top: '20px', left: '20px', width: '16px', height: '16px', borderTop: '2.5px solid rgba(255, 255, 255, 0.2)', borderLeft: '2.5px solid rgba(255, 255, 255, 0.2)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', top: '20px', right: '20px', width: '16px', height: '16px', borderTop: '2.5px solid rgba(255, 255, 255, 0.2)', borderRight: '2.5px solid rgba(255, 255, 255, 0.2)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', bottom: '20px', left: '20px', width: '16px', height: '16px', borderBottom: '2.5px solid rgba(255, 255, 255, 0.2)', borderLeft: '2.5px solid rgba(255, 255, 255, 0.2)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', bottom: '20px', right: '20px', width: '16px', height: '16px', borderBottom: '2.5px solid rgba(255, 255, 255, 0.2)', borderRight: '2.5px solid rgba(255, 255, 255, 0.2)', pointerEvents: 'none', zIndex: 1 }} />
+
+            {/* Glowing Lens Flare / Bokeh Blobs inside Card */}
+            <motion.div 
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.15, 0.25, 0.15],
+                x: [0, 20, 0],
+                y: [0, -20, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 10, ease: 'easeInOut' }}
+              style={{
+                position: 'absolute',
+                width: '300px',
+                height: '300px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, #D2042D 0%, transparent 70%)',
+                filter: 'blur(70px)',
+                top: '-100px',
+                left: '-100px',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }}
+            />
+            <motion.div 
+              animate={{
+                scale: [1.1, 0.9, 1.1],
+                opacity: [0.12, 0.2, 0.12],
+                x: [0, -30, 0],
+                y: [0, 30, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 12, ease: 'easeInOut' }}
+              style={{
+                position: 'absolute',
+                width: '320px',
+                height: '320px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, #3A86FF 0%, transparent 70%)',
+                filter: 'blur(80px)',
+                bottom: '-120px',
+                right: '-120px',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }}
+            />
+
+            {/* Decorative Shutter / Aperture Concentric Ring overlay */}
+            <div style={{
+              position: 'absolute',
+              width: '600px',
+              height: '600px',
+              borderRadius: '50%',
+              border: '1px solid rgba(255, 255, 255, 0.02)',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              pointerEvents: 'none',
+              zIndex: 0
+            }}>
+              <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1px dashed rgba(255, 255, 255, 0.015)', transform: 'scale(0.8)' }} />
+              <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1.5px solid rgba(255, 255, 255, 0.01)', transform: 'scale(0.65)', position: 'absolute', top: 0, left: 0 }} />
             </div>
-          </div>
+
+            {/* Viewfinder REC Indicator inside card */}
+            <div style={{ 
+              position: 'absolute', 
+              top: '35px', 
+              left: '35px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '6px', 
+              fontFamily: 'monospace', 
+              fontSize: '0.7rem', 
+              color: 'rgba(255, 255, 255, 0.5)',
+              zIndex: 1
+            }}>
+              <motion.span 
+                animate={{ opacity: [1, 0, 1] }} 
+                transition={{ repeat: Infinity, duration: 1.5 }} 
+                style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#D2042D', boxShadow: '0 0 8px #D2042D' }} 
+              />
+              <span style={{ letterSpacing: '0.1em' }}>REC ACTIVE</span>
+            </div>
+
+            {/* Viewfinder battery / storage specs inside card */}
+            <div style={{ 
+              position: 'absolute', 
+              top: '35px', 
+              right: '35px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '8px', 
+              fontFamily: 'monospace', 
+              fontSize: '0.7rem', 
+              color: 'rgba(255, 255, 255, 0.5)',
+              zIndex: 1
+            }}>
+              <span>STANDBY</span>
+              <div style={{ width: '16px', height: '9px', border: '1px solid rgba(255, 255, 255, 0.4)', padding: '1px', display: 'flex', borderRadius: '2px', position: 'relative' }}>
+                <div style={{ width: '100%', height: '100%', backgroundColor: '#10B981' }} />
+              </div>
+            </div>
+
+            {/* Content Core */}
+            <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: 'var(--primary-pink)',
+                  background: 'rgba(255, 77, 109, 0.1)',
+                  padding: '0.4rem 1rem',
+                  borderRadius: '30px',
+                  border: '1px solid rgba(255, 77, 109, 0.2)',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em'
+                }}
+              >
+                <Sparkles size={14} />
+                <span>Ready to Begin?</span>
+              </motion.div>
+
+              <h2 style={{ 
+                maxWidth: '750px', 
+                margin: '0 auto', 
+                fontSize: 'clamp(2rem, 4.5vw, 3.25rem)', 
+                lineHeight: '1.25',
+                color: 'white',
+                fontWeight: 800
+              }}>
+                Let's Capture Your <span className="gradient-text-red" style={{ background: 'linear-gradient(135deg, #FF4D6D 0%, #D2042D 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Special Moments</span> Together
+              </h2>
+              
+              <p style={{ 
+                maxWidth: '650px', 
+                margin: '0 auto', 
+                fontSize: '1.15rem', 
+                lineHeight: '1.6', 
+                color: 'rgba(255, 255, 255, 0.7)' 
+              }}>
+                Book a personalized photography consultation with Udaipur's premier studio. Let us craft luxurious visual memories you will treasure forever.
+              </p>
+              
+              {/* Dynamic Buttons */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', justifyContent: 'center', marginTop: '1.5rem' }}>
+                <motion.a 
+                  whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(210, 4, 45, 0.5)' }}
+                  whileTap={{ scale: 0.98 }}
+                  href="tel:+919828142098" 
+                  className="btn btn-primary"
+                  style={{
+                    backgroundColor: 'var(--primary-red)',
+                    borderColor: 'var(--primary-red)',
+                    padding: '1rem 2rem',
+                    borderRadius: '50px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    boxShadow: '0 8px 20px rgba(210, 4, 45, 0.3)',
+                    transition: 'all 0.2s ease',
+                    color: 'white'
+                  }}
+                >
+                  <Phone size={18} />
+                  <span>Call Now</span>
+                </motion.a>
+                
+                <motion.a 
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)', borderColor: 'white' }}
+                  whileTap={{ scale: 0.98 }}
+                  href="https://wa.me/919828142098" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn btn-secondary"
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    color: 'white',
+                    padding: '1rem 2rem',
+                    borderRadius: '50px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    backdropFilter: 'blur(10px)',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <MessageCircle size={18} />
+                  <span>Book Consultation</span>
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
