@@ -111,15 +111,19 @@ export const FloatingButtons: React.FC = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--text-primary)',
+                color: 'var(--primary-red)',
               }}
               onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--primary-red)';
                 e.currentTarget.style.borderColor = 'var(--primary-red)';
-                e.currentTarget.style.color = 'var(--primary-red)';
+                e.currentTarget.style.color = '#ffffff';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(210, 4, 45, 0.5)';
               }}
               onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(15, 23, 42, 0.85)';
                 e.currentTarget.style.borderColor = 'var(--border-light)';
-                e.currentTarget.style.color = 'var(--text-primary)';
+                e.currentTarget.style.color = 'var(--primary-red)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
               }}
             >
               <ArrowUp />
