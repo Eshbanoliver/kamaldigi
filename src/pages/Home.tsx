@@ -668,58 +668,154 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 4. SERVICES PREVIEW */}
-      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}>
-        <div className="container">
-          <div className="section-header">
-            <span className="section-subtitle">What We Do</span>
-            <h2 className="section-title">Our Premium Services</h2>
-            <p>We provide a comprehensive range of professional photography and editing services tailored to make every shoot exceptional.</p>
+      <section style={{ backgroundColor: 'var(--bg-dark-2)', position: 'relative', overflow: 'hidden', padding: '7rem 0' }}>
+        {/* Vibrant glowing background blobs */}
+        <div 
+          className="glow-shape" 
+          style={{ 
+            width: '600px', 
+            height: '600px', 
+            backgroundColor: 'rgba(255, 107, 53, 0.06)', 
+            top: '-100px', 
+            right: '-150px',
+            filter: 'blur(150px)',
+            zIndex: 0
+          }} 
+        />
+        <div 
+          className="glow-shape" 
+          style={{ 
+            width: '500px', 
+            height: '500px', 
+            backgroundColor: 'rgba(58, 134, 255, 0.05)', 
+            bottom: '-100px', 
+            left: '-150px',
+            filter: 'blur(150px)',
+            zIndex: 0
+          }} 
+        />
+        
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="section-header" style={{ marginBottom: '5rem' }}>
+            <span className="section-subtitle" style={{ display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(255, 107, 53, 0.1)', border: '1px solid rgba(255, 107, 53, 0.2)', borderRadius: '30px', color: 'var(--primary-orange)', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '0.8rem' }}>What We Do</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', marginBottom: '1.5rem' }}>
+              Our <span className="gradient-text-orange">Premium Services</span>
+            </h2>
+            <p style={{ fontSize: '1.15rem', maxWidth: '650px', margin: '0 auto', color: 'var(--text-secondary)' }}>
+              We provide a comprehensive range of professional photography and editing services tailored to make every shoot exceptional.
+            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
-            {previewServices.map((service, idx) => (
-              <div 
-                key={idx} 
-                className="glass-card" 
-                style={{ 
-                  padding: 0, 
-                  borderRadius: '16px', 
-                  overflow: 'hidden', 
-                  display: 'flex', 
-                  flexDirection: 'column' 
-                }}
-              >
-                <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }} className="image-zoom-container">
-                  <img 
-                    src={service.img} 
-                    alt={service.title} 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
-                    className="service-preview-img"
-                  />
-                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent)' }} />
-                </div>
-                <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', flexGrow: 1 }}>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700 }}>{service.title}</h3>
-                  <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', flexGrow: 1 }}>{service.desc}</p>
-                  <a href="https://wa.me/919828142098" target="_blank" rel="noopener noreferrer" className="btn btn-outline-orange" style={{ width: '100%', padding: '0.6rem' }}>
-                    <span>Book Session</span>
-                  </a>
-                </div>
-              </div>
-            ))}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', marginBottom: '4.5rem' }}>
+            {previewServices.map((service, idx) => {
+              const cardThemes = [
+                { gradient: 'linear-gradient(135deg, #FF6B35 0%, #FFB703 100%)', shadow: 'rgba(255, 107, 53, 0.25)', text: '#FF6B35' },
+                { gradient: 'linear-gradient(135deg, #3A86FF 0%, #00F5FF 100%)', shadow: 'rgba(58, 134, 255, 0.25)', text: '#3A86FF' },
+                { gradient: 'linear-gradient(135deg, #8338EC 0%, #FF007F 100%)', shadow: 'rgba(131, 56, 236, 0.25)', text: '#8338EC' },
+                { gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', shadow: 'rgba(16, 185, 129, 0.25)', text: '#10B981' },
+              ];
+              const theme = cardThemes[idx % cardThemes.length];
+
+              return (
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  whileHover={{ y: -10, boxShadow: `0 20px 40px ${theme.shadow}` }}
+                  className="glass-card service-vibrant-card" 
+                  style={{ 
+                    padding: 0, 
+                    borderRadius: '24px', 
+                    overflow: 'hidden', 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    background: 'rgba(255, 255, 255, 0.9)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(15, 23, 42, 0.05)',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
+                    position: 'relative'
+                  }}
+                >
+                  <div style={{ height: '260px', overflow: 'hidden', position: 'relative' }} className="image-zoom-container">
+                    <img 
+                      src={service.img} 
+                      alt={service.title} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+                      className="service-preview-img"
+                    />
+                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255,255,255,0.2) 60%, transparent 100%)' }} />
+                    
+                    {/* Vibrant Category Tag */}
+                    <div style={{ position: 'absolute', top: '24px', right: '24px', background: theme.gradient, color: 'white', padding: '0.5rem 1.25rem', borderRadius: '30px', fontSize: '0.8rem', fontWeight: 700, boxShadow: `0 4px 15px ${theme.shadow}`, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                      Premium
+                    </div>
+                  </div>
+                  <div style={{ padding: '0 2rem 2.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1rem', flexGrow: 1, position: 'relative', zIndex: 2, marginTop: '-30px' }}>
+                    <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: '1.3' }}>{service.title}</h3>
+                    <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', flexGrow: 1, lineHeight: '1.6' }}>{service.desc}</p>
+                    
+                    <a 
+                      href="https://wa.me/919828142098" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="service-book-btn"
+                      style={{ 
+                        '--theme-grad': theme.gradient,
+                        '--theme-shadow': theme.shadow,
+                        '--theme-text': theme.text,
+                        width: '100%', 
+                        padding: '0.85rem', 
+                        borderRadius: '16px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.5rem',
+                        fontWeight: 700,
+                        background: 'transparent',
+                        border: `2px solid ${theme.text}`,
+                        color: theme.text,
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        cursor: 'pointer',
+                        textDecoration: 'none',
+                        marginTop: '1rem',
+                        fontSize: '1rem'
+                      } as React.CSSProperties}
+                    >
+                      <span>Book Session</span>
+                      <ArrowRightIcon />
+                    </a>
+                  </div>
+                  
+                  {/* Glowing hover border effect */}
+                  <div className="card-glow-border" style={{ position: 'absolute', inset: 0, borderRadius: '24px', border: '2px solid transparent', background: `${theme.gradient} border-box`, WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude', opacity: 0, transition: 'opacity 0.4s ease', pointerEvents: 'none', zIndex: 10 }} />
+                </motion.div>
+              );
+            })}
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <Link to="/services" className="btn btn-primary">
+            <Link to="/services" className="btn btn-primary" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: '30px', boxShadow: '0 10px 25px rgba(255, 107, 53, 0.3)' }}>
+              <Sparkles size={18} />
               <span>View All 17 Services</span>
-              <ArrowRightIcon />
             </Link>
           </div>
         </div>
         
         <style>{`
           .image-zoom-container:hover .service-preview-img {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(1.5deg);
+          }
+          .service-vibrant-card:hover .card-glow-border {
+            opacity: 1 !important;
+          }
+          .service-vibrant-card:hover .service-book-btn {
+            background: var(--theme-grad) !important;
+            color: white !important;
+            border-color: transparent !important;
+            box-shadow: 0 10px 25px var(--theme-shadow) !important;
+            transform: translateY(-2px);
           }
         `}</style>
       </section>
