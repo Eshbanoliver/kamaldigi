@@ -846,28 +846,109 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 5. MISSION & VISION */}
-      <section style={{ background: 'linear-gradient(to bottom, var(--bg-dark-1), var(--bg-dark-2))' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="mission-grid">
-            <div className="glass-card mission-vision-card" style={{ borderLeft: '4px solid var(--primary-red)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <span style={{ color: 'var(--primary-red)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Preserving Memories</span>
-              <h3>Our Mission</h3>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: 'var(--text-primary)' }}>
-                "To preserve precious memories through exceptional photography and creative storytelling, delivering absolute artistic layouts and professional reliability."
-              </p>
-            </div>
+      <section style={{ backgroundColor: 'var(--bg-dark-1)', position: 'relative', overflow: 'hidden', padding: '6rem 0' }}>
+        
+        {/* Decorative background typography and glows */}
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontSize: '20vw', fontWeight: 900, color: 'rgba(15, 23, 42, 0.02)', whiteSpace: 'nowrap', pointerEvents: 'none', zIndex: 0 }}>
+          KAMAL DIGI
+        </div>
+        <div className="glow-shape" style={{ width: '400px', height: '400px', backgroundColor: 'rgba(210, 4, 45, 0.05)', top: '10%', left: '-10%', zIndex: 0 }} />
+        <div className="glow-shape" style={{ width: '400px', height: '400px', backgroundColor: 'rgba(17, 138, 178, 0.05)', bottom: '10%', right: '-10%', zIndex: 0 }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="section-header" style={{ marginBottom: '4rem' }}>
+            <span className="section-subtitle" style={{ display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(210, 4, 45, 0.1)', border: '1px solid rgba(210, 4, 45, 0.2)', borderRadius: '30px', color: 'var(--primary-red)', fontWeight: 700, marginBottom: '1rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '0.8rem' }}>Purpose & Future</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', marginBottom: '0' }}>
+              Our <span className="gradient-text-red">Philosophy</span>
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }} className="mission-grid">
+            {/* MISSION CARD */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+              whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(210, 4, 45, 0.15)' }}
+              className="glass-card mission-vision-vibrant" 
+              style={{ 
+                position: 'relative', 
+                overflow: 'hidden', 
+                padding: '4rem 3rem',
+                display: 'flex', 
+                flexDirection: 'column', 
+                gap: '1.5rem',
+                border: '1px solid rgba(210, 4, 45, 0.2)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%)',
+                borderRadius: '24px'
+              }}
+            >
+              {/* Background Accent */}
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '6px', height: '100%', background: 'linear-gradient(to bottom, #D2042D, #FF4D6D)' }} />
+              
+              {/* Large Watermark Icon */}
+              <div style={{ position: 'absolute', right: '-10%', bottom: '-20%', opacity: 0.04, transform: 'rotate(-15deg)', pointerEvents: 'none' }}>
+                <Heart size={300} color="#D2042D" />
+              </div>
+
+              <div style={{ width: '70px', height: '70px', borderRadius: '20px', background: 'linear-gradient(135deg, #D2042D 0%, #FF4D6D 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 25px rgba(210, 4, 45, 0.3)' }}>
+                <Heart size={32} color="white" />
+              </div>
+              
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <span style={{ color: 'var(--primary-red)', fontWeight: 800, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.2em' }}>Preserving Memories</span>
+                <h3 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0.5rem 0 1.5rem 0', color: 'var(--text-primary)' }}>Our Mission</h3>
+                <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
+                  "To preserve precious memories through exceptional photography and creative storytelling, delivering absolute artistic layouts and professional reliability."
+                </p>
+              </div>
+            </motion.div>
             
-            <div className="glass-card mission-vision-card" style={{ borderLeft: '4px solid var(--secondary-blue)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <span style={{ color: 'var(--secondary-blue)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Expanding Artistry</span>
-              <h3>Our Vision</h3>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: 'var(--text-primary)' }}>
-                "To become the most trusted and artistic photography studio in Rajasthan, renowned for our professional excellence, cutting-edge equipment, and client satisfaction."
-              </p>
-            </div>
+            {/* VISION CARD */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(17, 138, 178, 0.15)' }}
+              className="glass-card mission-vision-vibrant" 
+              style={{ 
+                position: 'relative', 
+                overflow: 'hidden', 
+                padding: '4rem 3rem',
+                display: 'flex', 
+                flexDirection: 'column', 
+                gap: '1.5rem',
+                border: '1px solid rgba(17, 138, 178, 0.2)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%)',
+                borderRadius: '24px'
+              }}
+            >
+              {/* Background Accent */}
+              <div style={{ position: 'absolute', top: 0, right: 0, width: '6px', height: '100%', background: 'linear-gradient(to bottom, #118AB2, #073B4C)' }} />
+              
+              {/* Large Watermark Icon */}
+              <div style={{ position: 'absolute', left: '-10%', bottom: '-20%', opacity: 0.04, transform: 'rotate(15deg)', pointerEvents: 'none' }}>
+                <Sparkles size={300} color="#118AB2" />
+              </div>
+
+              <div style={{ width: '70px', height: '70px', borderRadius: '20px', background: 'linear-gradient(135deg, #118AB2 0%, #073B4C 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 25px rgba(17, 138, 178, 0.3)' }}>
+                <Sparkles size={32} color="white" />
+              </div>
+              
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <span style={{ color: 'var(--secondary-blue)', fontWeight: 800, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.2em' }}>Expanding Artistry</span>
+                <h3 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0.5rem 0 1.5rem 0', color: 'var(--text-primary)' }}>Our Vision</h3>
+                <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
+                  "To become the most trusted and artistic photography studio in Rajasthan, renowned for our professional excellence, cutting-edge equipment, and client satisfaction."
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
         <style>{`
-          @media (min-width: 768px) {
+          @media (min-width: 992px) {
             .mission-grid { grid-template-columns: 1fr 1fr !important; }
           }
         `}</style>
