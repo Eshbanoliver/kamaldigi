@@ -158,6 +158,30 @@ export const Home: React.FC = () => {
       role: 'Event Manager',
       content: 'We contracted them for a 3-day high profile corporate launch. Prompt deliveries, professional ethics, and stunning low-light captures. Highly recommended.',
     },
+    {
+      name: 'Anjali Kothari',
+      rating: 5,
+      role: 'Bride',
+      content: 'The pre-wedding shoot in Udaipur palaces was like a fairytale. The drone shots and sunset lighting they captured were spectacular. Very professional!',
+    },
+    {
+      name: 'Vikram Rathore',
+      rating: 5,
+      role: 'Hotel Manager',
+      content: 'We hired Kamal Digi for architectural and hospitality photography. Their understanding of spatial lighting and interior detail is phenomenal.',
+    },
+    {
+      name: 'Sneha Patel',
+      rating: 5,
+      role: 'Maternity Client',
+      content: 'Capturing my motherhood journey was so comfortable. The studio environment was warm, and the photographs are soft, artistic, and beautiful.',
+    },
+    {
+      name: 'Rohan & Divya',
+      rating: 5,
+      role: 'Couple',
+      content: 'Every frame feels like a movie poster. The editing team did an outstanding job with color-grading. Unmatched quality in Udaipur!',
+    }
   ];
 
   const faqs = [
@@ -1795,51 +1819,233 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 9. TESTIMONIALS PREVIEW */}
-      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}>
-        <div className="container">
+      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)', padding: '6rem 0', position: 'relative', overflow: 'hidden' }}>
+        {/* Transparent Watermark */}
+        <div style={{
+          position: 'absolute',
+          top: '45%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          fontSize: 'clamp(5rem, 15vw, 12rem)',
+          fontWeight: 900,
+          fontFamily: 'var(--font-heading)',
+          color: 'rgba(15, 23, 42, 0.02)',
+          letterSpacing: '0.1em',
+          pointerEvents: 'none',
+          userSelect: 'none',
+          zIndex: 0,
+          textAlign: 'center',
+          width: '100%'
+        }}>
+          TRUSTED
+        </div>
+
+        {/* Ambient Bokeh Glows */}
+        <div style={{
+          position: 'absolute',
+          width: '350px',
+          height: '350px',
+          background: 'radial-gradient(circle, rgba(210, 4, 45, 0.05) 0%, transparent 70%)',
+          filter: 'blur(80px)',
+          top: '10%',
+          left: '-50px',
+          zIndex: 1,
+          pointerEvents: 'none'
+        }} />
+        <div style={{
+          position: 'absolute',
+          width: '350px',
+          height: '350px',
+          background: 'radial-gradient(circle, rgba(58, 134, 255, 0.05) 0%, transparent 70%)',
+          filter: 'blur(80px)',
+          bottom: '10%',
+          right: '-50px',
+          zIndex: 1,
+          pointerEvents: 'none'
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="section-header">
-            <span className="section-subtitle">Client Feedback</span>
-            <h2 className="section-title">What Our Clients Say</h2>
-            <p>Read review responses from couples, families, and businesses who trusted Kamal Digi Studio.</p>
+            <span className="section-subtitle" style={{ color: 'var(--primary-red)', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 700, fontSize: '0.8rem', display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(210, 4, 45, 0.1)', border: '1px solid rgba(210, 4, 45, 0.2)', borderRadius: '30px', marginBottom: '1rem' }}>Client Feedback</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>What Our Clients Say</h2>
+            <p style={{ color: 'var(--text-secondary)' }}>Read review responses from couples, families, and businesses who trusted Kamal Digi Studio.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
-            {testimonials.map((t, idx) => (
-              <div 
-                key={idx} 
-                className="glass-card testimonial-review-card" 
-                style={{ 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  gap: '1.25rem' 
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <Quote size={32} style={{ color: 'var(--primary-red)', opacity: 0.3 }} />
-                  <div style={{ display: 'flex', gap: '2px' }}>
-                    {Array.from({ length: t.rating }).map((_, i) => (
-                      <Star key={i} size={16} fill="var(--primary-pink)" color="var(--primary-pink)" />
-                    ))}
-                  </div>
-                </div>
-                <p style={{ fontStyle: 'italic', fontSize: '1rem', flexGrow: 1, color: 'var(--text-primary)' }}>
-                  "{t.content}"
-                </p>
-                <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '1rem', display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ fontWeight: 700, fontSize: '1rem' }}>{t.name}</span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{t.role}</span>
-                </div>
+          {/* Infinite Marquee Scroll Container */}
+          <div style={{ overflow: 'hidden', width: '100%', margin: '4rem 0 3.5rem 0', position: 'relative', padding: '1rem 0' }} className="marquee-wrapper">
+            {/* Left & Right gradient masks for a smooth fade out on edges */}
+            <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '120px', background: 'linear-gradient(90deg, var(--bg-dark-1) 0%, transparent 100%)', zIndex: 10, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '120px', background: 'linear-gradient(270deg, var(--bg-dark-1) 0%, transparent 100%)', zIndex: 10, pointerEvents: 'none' }} />
+
+            <div className="marquee-track">
+              {/* First loop of testimonials */}
+              <div className="marquee-content">
+                {testimonials.map((t, idx) => {
+                  const initials = t.name.split(' ').map(n => n[0]).join('');
+                  const avatarColors = [
+                    ['#D2042D', '#FF4D6D'],
+                    ['#3A86FF', '#00F5FF'],
+                    ['#8338EC', '#FF007F'],
+                    ['#06D6A0', '#059669'],
+                    ['#FB5607', '#FFBE0B']
+                  ];
+                  const colorPair = avatarColors[idx % avatarColors.length];
+
+                  return (
+                    <motion.div 
+                      key={`t1-${idx}`} 
+                      whileHover={{ y: -8, scale: 1.02 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                      className="glass-card testimonial-review-card" 
+                      style={{ 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        gap: '1.25rem',
+                        width: '350px',
+                        flexShrink: 0,
+                        background: 'rgba(255, 255, 255, 0.75)',
+                        border: '1px solid rgba(15, 23, 42, 0.05)',
+                        boxShadow: '0 15px 35px -10px rgba(15, 23, 42, 0.06)',
+                        borderRadius: '24px',
+                        padding: '2.5rem 2rem',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Quote size={28} style={{ color: colorPair[0], opacity: 0.3 }} />
+                        <div style={{ display: 'flex', gap: '2px' }}>
+                          {Array.from({ length: t.rating }).map((_, i) => (
+                            <Star key={i} size={14} fill={colorPair[0]} color={colorPair[0]} />
+                          ))}
+                        </div>
+                      </div>
+                      <p style={{ fontStyle: 'italic', fontSize: '1rem', flexGrow: 1, color: 'var(--text-primary)', lineHeight: '1.6' }}>
+                        "{t.content}"
+                      </p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderTop: '1px solid var(--border-light)', paddingTop: '1.25rem' }}>
+                        <div style={{
+                          width: '44px',
+                          height: '44px',
+                          borderRadius: '50%',
+                          background: `linear-gradient(135deg, ${colorPair[0]} 0%, ${colorPair[1]} 100%)`,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'white',
+                          fontWeight: 700,
+                          fontSize: '0.95rem',
+                          boxShadow: `0 4px 12px ${colorPair[0]}33`
+                        }}>
+                          {initials}
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <span style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--text-primary)' }}>{t.name}</span>
+                          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>{t.role}</span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
-            ))}
+
+              {/* Second loop of testimonials (identical for seamless scroll) */}
+              <div className="marquee-content">
+                {testimonials.map((t, idx) => {
+                  const initials = t.name.split(' ').map(n => n[0]).join('');
+                  const avatarColors = [
+                    ['#D2042D', '#FF4D6D'],
+                    ['#3A86FF', '#00F5FF'],
+                    ['#8338EC', '#FF007F'],
+                    ['#06D6A0', '#059669'],
+                    ['#FB5607', '#FFBE0B']
+                  ];
+                  const colorPair = avatarColors[idx % avatarColors.length];
+
+                  return (
+                    <motion.div 
+                      key={`t2-${idx}`} 
+                      whileHover={{ y: -8, scale: 1.02 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                      className="glass-card testimonial-review-card" 
+                      style={{ 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        gap: '1.25rem',
+                        width: '350px',
+                        flexShrink: 0,
+                        background: 'rgba(255, 255, 255, 0.75)',
+                        border: '1px solid rgba(15, 23, 42, 0.05)',
+                        boxShadow: '0 15px 35px -10px rgba(15, 23, 42, 0.06)',
+                        borderRadius: '24px',
+                        padding: '2.5rem 2rem',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Quote size={28} style={{ color: colorPair[0], opacity: 0.3 }} />
+                        <div style={{ display: 'flex', gap: '2px' }}>
+                          {Array.from({ length: t.rating }).map((_, i) => (
+                            <Star key={i} size={14} fill={colorPair[0]} color={colorPair[0]} />
+                          ))}
+                        </div>
+                      </div>
+                      <p style={{ fontStyle: 'italic', fontSize: '1rem', flexGrow: 1, color: 'var(--text-primary)', lineHeight: '1.6' }}>
+                        "{t.content}"
+                      </p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderTop: '1px solid var(--border-light)', paddingTop: '1.25rem' }}>
+                        <div style={{
+                          width: '44px',
+                          height: '44px',
+                          borderRadius: '50%',
+                          background: `linear-gradient(135deg, ${colorPair[0]} 0%, ${colorPair[1]} 100%)`,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'white',
+                          fontWeight: 700,
+                          fontSize: '0.95rem',
+                          boxShadow: `0 4px 12px ${colorPair[0]}33`
+                        }}>
+                          {initials}
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <span style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--text-primary)' }}>{t.name}</span>
+                          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>{t.role}</span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <Link to="/testimonials" className="btn btn-primary">
+            <Link to="/testimonials" className="btn btn-primary" style={{ padding: '0.8rem 2rem', borderRadius: '30px', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
               <span>View All Testimonials</span>
               <ArrowRightIcon />
             </Link>
           </div>
         </div>
+        <style>{`
+          .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 40s linear infinite;
+          }
+          .marquee-track:hover {
+            animation-play-state: paused;
+          }
+          .marquee-content {
+            display: flex;
+            gap: 2rem;
+            padding-right: 2rem;
+          }
+          @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
       </section>
 
       {/* 10. FAQ SECTION */}
