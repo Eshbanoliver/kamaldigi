@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Camera, Phone, MessageCircle, Sparkles, Award, ShieldCheck, 
-  Briefcase, Heart, Zap, CheckCircle2, ChevronDown, Quote, Star 
+  Briefcase, Heart, Zap, CheckCircle2, ChevronDown, Quote, Star,
+  Users
 } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter';
 
@@ -15,10 +16,42 @@ export const Home: React.FC = () => {
   };
 
   const metrics = [
-    { value: 1000, suffix: '+', label: 'Happy Clients' },
-    { value: 10, suffix: '+', label: 'Years Experience' },
-    { value: 500, suffix: '+', label: 'Events Covered' },
-    { value: 100, suffix: '%', label: 'Client Satisfaction' },
+    { 
+      value: 1000, 
+      suffix: '+', 
+      label: 'Happy Clients',
+      icon: 'users',
+      gradient: 'linear-gradient(135deg, #3A86FF 0%, #00F5FF 100%)',
+      glowColor: 'rgba(58, 134, 255, 0.15)',
+      iconColor: '#3A86FF'
+    },
+    { 
+      value: 10, 
+      suffix: '+', 
+      label: 'Years Experience',
+      icon: 'award',
+      gradient: 'linear-gradient(135deg, #8338EC 0%, #FF007F 100%)',
+      glowColor: 'rgba(131, 56, 236, 0.15)',
+      iconColor: '#8338EC'
+    },
+    { 
+      value: 500, 
+      suffix: '+', 
+      label: 'Events Covered',
+      icon: 'camera',
+      gradient: 'linear-gradient(135deg, #FF6B35 0%, #FFB703 100%)',
+      glowColor: 'rgba(255, 107, 53, 0.15)',
+      iconColor: '#FF6B35'
+    },
+    { 
+      value: 100, 
+      suffix: '%', 
+      label: 'Client Satisfaction',
+      icon: 'heart',
+      gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+      glowColor: 'rgba(16, 185, 129, 0.15)',
+      iconColor: '#10B981'
+    },
   ];
 
   const previewServices = [
@@ -442,30 +475,196 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 3. KEY METRICS */}
-      <section style={{ background: 'linear-gradient(to bottom, var(--bg-dark-1), var(--bg-dark-2))' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
-            {metrics.map((m, idx) => (
-              <div key={idx} className="glass-card" style={{ textAlign: 'center', padding: '2.5rem 1.5rem' }}>
-                <div 
-                  style={{ 
-                    fontFamily: 'var(--font-heading)', 
-                    fontSize: '3.5rem', 
-                    fontWeight: 800, 
-                    marginBottom: '0.5rem',
-                    background: 'linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
+      <section 
+        style={{ 
+          background: 'linear-gradient(180deg, #090D1A 0%, #0E1322 100%)', 
+          borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+          position: 'relative',
+          padding: '6rem 0'
+        }}
+      >
+        {/* Soft background glows to make it look alive */}
+        <div 
+          className="glow-shape" 
+          style={{ 
+            width: '400px', 
+            height: '400px', 
+            backgroundColor: 'rgba(58, 134, 255, 0.08)', 
+            top: '-100px', 
+            left: '-100px',
+            filter: 'blur(120px)'
+          }} 
+        />
+        <div 
+          className="glow-shape" 
+          style={{ 
+            width: '400px', 
+            height: '400px', 
+            backgroundColor: 'rgba(255, 107, 53, 0.08)', 
+            bottom: '-100px', 
+            right: '-100px',
+            filter: 'blur(120px)'
+          }} 
+        />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2.5rem' }}>
+            {metrics.map((m, idx) => {
+              // Get the icon component dynamically
+              const renderIcon = () => {
+                const iconProps = { size: 28, style: { color: m.iconColor } };
+                switch (m.icon) {
+                  case 'users': return <Users {...iconProps} />;
+                  case 'award': return <Award {...iconProps} />;
+                  case 'camera': return <Camera {...iconProps} />;
+                  case 'heart': return <Heart {...iconProps} />;
+                  default: return null;
+                }
+              };
+
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: idx * 0.15 }}
+                  whileHover={{ 
+                    y: -12,
+                    boxShadow: `0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 30px ${m.glowColor}`,
+                    borderColor: m.iconColor
+                  }}
+                  className="glass-card-hover-effect"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    borderRadius: '24px',
+                    padding: '3rem 2rem',
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '1.25rem',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    transition: 'border-color 0.4s ease, box-shadow 0.4s ease'
                   }}
                 >
-                  <AnimatedCounter end={m.value} suffix={m.suffix} />
-                </div>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-secondary)' }}>{m.label}</h4>
-              </div>
-            ))}
+                  {/* Subtle Grid Card Pattern overlay */}
+                  <div 
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 0)',
+                      backgroundSize: '16px 16px',
+                      opacity: 0.3,
+                      pointerEvents: 'none',
+                      zIndex: 1
+                    }}
+                  />
+
+                  {/* Icon Container with glowing base */}
+                  <motion.div
+                    whileHover={{ scale: 1.15, rotate: 10 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '18px',
+                      background: `linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)`,
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      boxShadow: `inset 0 0 12px ${m.glowColor}`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      zIndex: 2,
+                      position: 'relative'
+                    }}
+                  >
+                    {/* Inner soft colored background blur */}
+                    <div 
+                      style={{
+                        position: 'absolute',
+                        width: '32px',
+                        height: '32px',
+                        borderRadius: '50%',
+                        background: m.iconColor,
+                        filter: 'blur(10px)',
+                        opacity: 0.3,
+                        zIndex: -1
+                      }}
+                    />
+                    {renderIcon()}
+                  </motion.div>
+
+                  {/* Value / Number */}
+                  <div 
+                    style={{ 
+                      fontFamily: 'var(--font-heading)', 
+                      fontSize: '3.75rem', 
+                      fontWeight: 800, 
+                      lineHeight: 1.1,
+                      background: m.gradient,
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      zIndex: 2,
+                      letterSpacing: '-0.02em',
+                      filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.3))'
+                    }}
+                  >
+                    <AnimatedCounter end={m.value} suffix={m.suffix} />
+                  </div>
+
+                  {/* Label */}
+                  <h4 
+                    style={{ 
+                      fontSize: '1.05rem', 
+                      fontWeight: 600, 
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      letterSpacing: '0.02em',
+                      margin: 0,
+                      zIndex: 2
+                    }}
+                  >
+                    {m.label}
+                  </h4>
+
+                  {/* Bottom Accent Line */}
+                  <div 
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: '10%',
+                      width: '80%',
+                      height: '3px',
+                      background: m.gradient,
+                      borderRadius: '3px 3px 0 0',
+                      opacity: 0.3,
+                      transition: 'opacity 0.4s ease, height 0.4s ease'
+                    }}
+                    className="card-bottom-bar"
+                  />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
+        
+        {/* Style tag to handle custom card hover accent transitions */}
+        <style>{`
+          .glass-card-hover-effect:hover .card-bottom-bar {
+            opacity: 1 !important;
+            height: 4px !important;
+          }
+        `}</style>
       </section>
 
       {/* 4. SERVICES PREVIEW */}
