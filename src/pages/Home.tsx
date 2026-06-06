@@ -111,14 +111,6 @@ export const Home: React.FC = () => {
     { icon: <Zap size={28} />, title: 'Innovation', desc: 'Adapting modern drones, advanced editing rigs, and premium layouts.' },
     { icon: <Camera size={28} />, title: 'Precision', desc: 'Pixel-perfect attention to detail ensuring zero compromises in editing.' },
     { icon: <MessageCircle size={28} />, title: 'Communication', desc: 'Transparent discussions and collaborative vision mapping with clients.' },
-    { icon: <Users size={28} />, title: 'Teamwork', desc: 'A cohesive unit of photographers and directors moving in sync.' },
-    { icon: <Star size={28} />, title: 'Excellence', desc: 'Pushing boundaries to surpass standard aesthetic expectations.' },
-    { icon: <CheckCircle2 size={28} />, title: 'Reliability', desc: 'On-time delivery of albums and strict adherence to schedules.' },
-    { icon: <Phone size={28} />, title: 'Support', desc: 'Round the clock availability for any last-minute event changes.' },
-    { icon: <Quote size={28} />, title: 'Storytelling', desc: 'Building narratives out of seemingly ordinary candid moments.' },
-    { icon: <Zap size={28} />, title: 'Agility', desc: 'Quick on our feet to capture fleeting emotions before they fade.' },
-    { icon: <ShieldCheck size={28} />, title: 'Integrity', desc: 'Ethical business practices and straightforward pricing models.' },
-    { icon: <Heart size={28} />, title: 'Passion', desc: 'An underlying love for the art form that fuels our entire studio.' },
   ];
 
   const whyChooseUs = [
@@ -993,10 +985,26 @@ export const Home: React.FC = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
             {coreValues.map((val, idx) => {
               const colorPalette = [
-                { gradient: 'linear-gradient(135deg, #D2042D 0%, #FF4D6D 100%)', text: '#FF4D6D', bg: 'rgba(210, 4, 45, 0.08)', border: 'rgba(210, 4, 45, 0.2)' },
-                { gradient: 'linear-gradient(135deg, #118AB2 0%, #06D6A0 100%)', text: '#06D6A0', bg: 'rgba(17, 138, 178, 0.08)', border: 'rgba(17, 138, 178, 0.2)' },
-                { gradient: 'linear-gradient(135deg, #8338EC 0%, #FF007F 100%)', text: '#FF007F', bg: 'rgba(131, 56, 236, 0.08)', border: 'rgba(131, 56, 236, 0.2)' },
-                { gradient: 'linear-gradient(135deg, #FB8500 0%, #FFB703 100%)', text: '#FFB703', bg: 'rgba(251, 133, 0, 0.08)', border: 'rgba(251, 133, 0, 0.2)' },
+                // Row 1
+                { gradient: 'linear-gradient(135deg, #D2042D 0%, #FF4D6D 100%)', text: '#FF4D6D', bg: 'rgba(210, 4, 45, 0.08)', border: 'rgba(210, 4, 45, 0.2)' }, // Red
+                { gradient: 'linear-gradient(135deg, #118AB2 0%, #06D6A0 100%)', text: '#06D6A0', bg: 'rgba(17, 138, 178, 0.08)', border: 'rgba(17, 138, 178, 0.2)' }, // Ocean
+                { gradient: 'linear-gradient(135deg, #8338EC 0%, #FF007F 100%)', text: '#FF007F', bg: 'rgba(131, 56, 236, 0.08)', border: 'rgba(131, 56, 236, 0.2)' }, // Purple
+                { gradient: 'linear-gradient(135deg, #FB8500 0%, #FFB703 100%)', text: '#FFB703', bg: 'rgba(251, 133, 0, 0.08)', border: 'rgba(251, 133, 0, 0.2)' }, // Orange
+                // Row 2
+                { gradient: 'linear-gradient(135deg, #00F5FF 0%, #00B4D8 100%)', text: '#00F5FF', bg: 'rgba(0, 180, 216, 0.08)', border: 'rgba(0, 180, 216, 0.2)' }, // Cyan
+                { gradient: 'linear-gradient(135deg, #F15BB5 0%, #9B5DE5 100%)', text: '#F15BB5', bg: 'rgba(241, 91, 181, 0.08)', border: 'rgba(241, 91, 181, 0.2)' }, // Pink/Purple
+                { gradient: 'linear-gradient(135deg, #00C9A7 0%, #845EC2 100%)', text: '#00C9A7', bg: 'rgba(0, 201, 167, 0.08)', border: 'rgba(0, 201, 167, 0.2)' }, // Aqua/Violet
+                { gradient: 'linear-gradient(135deg, #FF9671 0%, #FFC75F 100%)', text: '#FF9671', bg: 'rgba(255, 150, 113, 0.08)', border: 'rgba(255, 150, 113, 0.2)' }, // Peach/Yellow
+                // Row 3
+                { gradient: 'linear-gradient(135deg, #3A0CA3 0%, #4361EE 100%)', text: '#4361EE', bg: 'rgba(58, 12, 163, 0.08)', border: 'rgba(58, 12, 163, 0.2)' }, // Indigo
+                { gradient: 'linear-gradient(135deg, #F72585 0%, #B5179E 100%)', text: '#F72585', bg: 'rgba(247, 37, 133, 0.08)', border: 'rgba(247, 37, 133, 0.2)' }, // Magenta
+                { gradient: 'linear-gradient(135deg, #4CC9F0 0%, #4895EF 100%)', text: '#4CC9F0', bg: 'rgba(76, 201, 240, 0.08)', border: 'rgba(76, 201, 240, 0.2)' }, // Sky Blue
+                { gradient: 'linear-gradient(135deg, #06D6A0 0%, #1B9AAA 100%)', text: '#06D6A0', bg: 'rgba(6, 214, 160, 0.08)', border: 'rgba(6, 214, 160, 0.2)' }, // Teal
+                // Row 4
+                { gradient: 'linear-gradient(135deg, #FF5400 0%, #FF0054 100%)', text: '#FF5400', bg: 'rgba(255, 84, 0, 0.08)', border: 'rgba(255, 84, 0, 0.2)' }, // Vermilion
+                { gradient: 'linear-gradient(135deg, #9D4EDD 0%, #C77DFF 100%)', text: '#9D4EDD', bg: 'rgba(157, 78, 221, 0.08)', border: 'rgba(157, 78, 221, 0.2)' }, // Light Purple
+                { gradient: 'linear-gradient(135deg, #2EC4B6 0%, #CBF3F0 100%)', text: '#2EC4B6', bg: 'rgba(46, 196, 182, 0.08)', border: 'rgba(46, 196, 182, 0.2)' }, // Aqua Mint
+                { gradient: 'linear-gradient(135deg, #E63946 0%, #F1FAEE 100%)', text: '#E63946', bg: 'rgba(230, 57, 70, 0.08)', border: 'rgba(230, 57, 70, 0.2)' }, // Ruby Red
               ];
               const theme = colorPalette[idx % colorPalette.length];
 
@@ -1055,34 +1063,75 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 7. WHY CHOOSE US */}
-      <section>
+      <section style={{ backgroundColor: 'var(--bg-dark-1)', position: 'relative', overflow: 'hidden', padding: '6rem 0' }}>
         <div className="container">
           <div className="section-header">
-            <span className="section-subtitle">The Studio Advantage</span>
-            <h2 className="section-title">Why Choose Kamal Digi Studio</h2>
-            <p>We combine modern photographic style, luxury standards, and localized expertise in Udaipur to deliver unmatched output.</p>
+            <span className="section-subtitle" style={{ color: 'var(--primary-red)', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 700, fontSize: '0.8rem', display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(210, 4, 45, 0.1)', border: '1px solid rgba(210, 4, 45, 0.2)', borderRadius: '30px', marginBottom: '1rem' }}>The Studio Advantage</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Why Choose <span className="gradient-text-red">Kamal Digi</span></h2>
+            <p style={{ color: 'var(--text-secondary)' }}>We combine modern photographic style, luxury standards, and localized expertise in Udaipur to deliver unmatched output.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
-            {whyChooseUs.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="glass-card" 
-                style={{ 
-                  display: 'flex', 
-                  gap: '1.25rem',
-                  alignItems: 'flex-start',
-                  padding: '2rem 1.5rem',
-                  borderTop: '2px solid rgba(210, 4, 45, 0.2)'
-                }}
-              >
-                <CheckCircle2 style={{ color: 'var(--primary-red)', flexShrink: 0, marginTop: '0.15rem' }} size={20} />
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <h4 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{item.title}</h4>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.desc}</p>
-                </div>
-              </div>
-            ))}
+            {whyChooseUs.map((item, idx) => {
+              const vibrantColors = [
+                '#D2042D', // Crimson
+                '#3A86FF', // Blue
+                '#8338EC', // Purple
+                '#FF006E', // Pink
+                '#06D6A0', // Mint
+                '#FFBE0B', // Yellow
+                '#FB5607', // Orange
+                '#00F5FF'  // Cyan
+              ];
+              const color = vibrantColors[idx % vibrantColors.length];
+
+              return (
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  whileHover={{ 
+                    y: -5, 
+                    boxShadow: `0 15px 30px -5px ${color}33`,
+                    borderColor: `${color}80`
+                  }}
+                  className="glass-card" 
+                  style={{ 
+                    display: 'flex', 
+                    gap: '1.25rem',
+                    alignItems: 'flex-start',
+                    padding: '2rem 1.5rem',
+                    borderTop: `4px solid ${color}`,
+                    borderRight: '1px solid rgba(255,255,255,0.05)',
+                    borderBottom: '1px solid rgba(255,255,255,0.05)',
+                    borderLeft: '1px solid rgba(255,255,255,0.05)',
+                    background: `linear-gradient(to bottom, ${color}0A, rgba(255,255,255,0.02))`,
+                    borderRadius: '16px',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <div style={{ 
+                    width: '40px', 
+                    height: '40px', 
+                    borderRadius: '50%', 
+                    background: `${color}1A`, 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    flexShrink: 0,
+                    boxShadow: `inset 0 0 10px ${color}33`
+                  }}>
+                    <CheckCircle2 color={color} size={22} />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>{item.title}</h4>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0 }}>{item.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
