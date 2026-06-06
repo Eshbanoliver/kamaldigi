@@ -162,7 +162,7 @@ export const Services: React.FC = () => {
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       
       {/* Background soft glow */}
-      <div className="glow-shape" style={{ width: '450px', height: '450px', backgroundColor: 'var(--glow-orange)', top: '15%', right: '-80px' }} />
+      <div className="glow-shape" style={{ width: '450px', height: '450px', backgroundColor: 'var(--glow-red)', top: '15%', right: '-80px' }} />
       <div className="glow-shape" style={{ width: '500px', height: '500px', backgroundColor: 'var(--glow-blue)', bottom: '20%', left: '-100px' }} />
 
       {/* 1. HERO BANNER */}
@@ -212,10 +212,10 @@ export const Services: React.FC = () => {
                   fontSize: '0.9rem',
                   cursor: 'pointer',
                   transition: 'var(--transition-normal)',
-                  backgroundColor: activeTab === cat ? 'var(--primary-orange)' : 'rgba(255,255,255,0.05)',
-                  border: activeTab === cat ? '1px solid var(--primary-orange)' : '1px solid var(--border-light)',
+                  backgroundColor: activeTab === cat ? 'var(--primary-red)' : 'rgba(255,255,255,0.05)',
+                  border: activeTab === cat ? '1px solid var(--primary-red)' : '1px solid var(--border-light)',
                   color: activeTab === cat ? '#white' : 'var(--text-primary)',
-                  boxShadow: activeTab === cat ? '0 4px 15px rgba(255, 107, 53, 0.25)' : 'none'
+                  boxShadow: activeTab === cat ? '0 4px 15px rgba(210, 4, 45, 0.25)' : 'none'
                 }}
                 onMouseEnter={(e) => {
                   if (activeTab !== cat) {
@@ -277,7 +277,7 @@ export const Services: React.FC = () => {
                       padding: '0.35rem 0.85rem', 
                       borderRadius: '15px', 
                       fontSize: '0.75rem',
-                      color: 'var(--primary-orange)',
+                      color: 'var(--primary-red)',
                       fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em'
@@ -298,7 +298,7 @@ export const Services: React.FC = () => {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', margin: '0.5rem 0 1rem 0' }}>
                     {service.features.map((feat, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
-                        <Check size={14} style={{ color: 'var(--primary-orange)', flexShrink: 0 }} />
+                        <Check size={14} style={{ color: 'var(--primary-red)', flexShrink: 0 }} />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -309,7 +309,7 @@ export const Services: React.FC = () => {
                     href={`https://wa.me/919828142098?text=Hello%20Kamal%20Digi%20Studio,%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="btn btn-outline-orange" 
+                    className="btn btn-outline-red" 
                     style={{ width: '100%' }}
                   >
                     <span>Inquire / Book Service</span>
@@ -340,11 +340,11 @@ export const Services: React.FC = () => {
               alignItems: 'center', 
               textAlign: 'center', 
               gap: '1.5rem',
-              background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(131, 56, 236, 0.08) 100%)',
-              borderColor: 'rgba(255, 107, 53, 0.2)'
+              background: 'linear-gradient(135deg, rgba(210, 4, 45, 0.08) 0%, rgba(131, 56, 236, 0.08) 100%)',
+              borderColor: 'rgba(210, 4, 45, 0.2)'
             }}
           >
-            <span style={{ color: 'var(--primary-orange)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Consultation Booking</span>
+            <span style={{ color: 'var(--primary-red)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Consultation Booking</span>
             <h2 style={{ fontSize: '2.2rem', fontWeight: 800 }}>Need A Customized Photography Package?</h2>
             <p style={{ maxWidth: '600px', fontSize: '1.05rem' }}>
               Every event has different schedules. Contact our Udaipur office directly, and we will formulate a personalized quote based on your specific days.

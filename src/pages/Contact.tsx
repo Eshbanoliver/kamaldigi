@@ -90,7 +90,7 @@ export const Contact: React.FC = () => {
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       
       {/* Glow Backdrops */}
-      <div className="glow-shape" style={{ width: '450px', height: '450px', backgroundColor: 'var(--glow-orange)', top: '10%', right: '-50px' }} />
+      <div className="glow-shape" style={{ width: '450px', height: '450px', backgroundColor: 'var(--glow-red)', top: '10%', right: '-50px' }} />
       <div className="glow-shape" style={{ width: '500px', height: '500px', backgroundColor: 'var(--glow-blue)', bottom: '25%', left: '-150px' }} />
 
       {/* 1. CONTACT BANNER */}
@@ -122,11 +122,11 @@ export const Contact: React.FC = () => {
               href="tel:+919828142098"
               className="glass-card contact-info-card" 
             >
-              <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'rgba(255, 107, 53, 0.1)', color: 'var(--primary-orange)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'rgba(210, 4, 45, 0.1)', color: 'var(--primary-red)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Phone size={22} />
               </div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Phone Call</h3>
-              <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-orange)' }}>+91 98281 42098</span>
+              <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-red)' }}>+91 98281 42098</span>
               <p style={{ fontSize: '0.85rem' }}>Call us directly for immediate inquiries.</p>
             </a>
 
@@ -171,7 +171,7 @@ export const Contact: React.FC = () => {
             {/* Form Column */}
             <div className="glass-card contact-form-card">
               <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Mail style={{ color: 'var(--primary-orange)' }} />
+                <Mail style={{ color: 'var(--primary-red)' }} />
                 <span>Send A Message</span>
               </h2>
 
@@ -343,7 +343,7 @@ export const Contact: React.FC = () => {
               {/* Hours Card */}
               <div className="glass-card business-hours-card">
                 <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Calendar style={{ color: 'var(--primary-orange)' }} />
+                  <Calendar style={{ color: 'var(--primary-red)' }} />
                   <span>Business Hours</span>
                 </h3>
                 
@@ -366,8 +366,8 @@ export const Contact: React.FC = () => {
               </div>
 
               {/* Booking tip card */}
-              <div className="glass-card" style={{ padding: 'clamp(1.25rem, 4vw, 2rem)', borderLeft: '4px solid var(--primary-orange)' }}>
-                <h4 style={{ color: 'var(--primary-orange)', marginBottom: '0.5rem' }}>Need Immediate Booking?</h4>
+              <div className="glass-card" style={{ padding: 'clamp(1.25rem, 4vw, 2rem)', borderLeft: '4px solid var(--primary-red)' }}>
+                <h4 style={{ color: 'var(--primary-red)', marginBottom: '0.5rem' }}>Need Immediate Booking?</h4>
                 <p style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                   Call our live helpline directly on <strong>+91 98281 42098</strong>. We can dispatch crew members for urgent corporate coverages and coordinate immediate passport portraits in Udaipur.
                 </p>

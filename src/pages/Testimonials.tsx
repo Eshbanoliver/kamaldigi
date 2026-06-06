@@ -73,7 +73,7 @@ export const Testimonials: React.FC = () => {
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Background soft glows */}
       <div className="glow-shape" style={{ width: '450px', height: '450px', backgroundColor: 'var(--glow-purple)', top: '10%', left: '-100px' }} />
-      <div className="glow-shape" style={{ width: '500px', height: '500px', backgroundColor: 'var(--glow-orange)', bottom: '15%', right: '-80px' }} />
+      <div className="glow-shape" style={{ width: '500px', height: '500px', backgroundColor: 'var(--glow-red)', bottom: '15%', right: '-80px' }} />
 
       {/* 1. HERO SECTION */}
       <section 
@@ -105,7 +105,7 @@ export const Testimonials: React.FC = () => {
                 style={{ 
                   textAlign: 'center', 
                   padding: '2rem 1rem',
-                  borderTop: '2px solid var(--primary-orange)'
+                  borderTop: '2px solid var(--primary-red)'
                 }}
               >
                 <div 
@@ -113,7 +113,7 @@ export const Testimonials: React.FC = () => {
                     fontFamily: 'var(--font-heading)', 
                     fontSize: '2.5rem', 
                     fontWeight: 800, 
-                    color: 'var(--primary-orange)', 
+                    color: 'var(--primary-red)', 
                     marginBottom: '0.5rem' 
                   }}
                 >
@@ -148,10 +148,10 @@ export const Testimonials: React.FC = () => {
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <Quote size={40} style={{ color: 'var(--primary-orange)', opacity: 0.15, position: 'absolute', top: '20px', left: '20px' }} />
+                  <Quote size={40} style={{ color: 'var(--primary-red)', opacity: 0.15, position: 'absolute', top: '20px', left: '20px' }} />
                   <div style={{ display: 'flex', gap: '2px', zIndex: 2, marginLeft: 'auto' }}>
                     {Array.from({ length: rev.rating }).map((_, i) => (
-                      <Star key={i} size={16} fill="var(--primary-yellow)" color="var(--primary-yellow)" />
+                      <Star key={i} size={16} fill="var(--primary-pink)" color="var(--primary-pink)" />
                     ))}
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export const Testimonials: React.FC = () => {
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', order: isEven ? 2 : 1 }} className="story-text-container">
-                    <span style={{ color: 'var(--primary-orange)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                    <span style={{ color: 'var(--primary-red)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                       Client: {story.client}
                     </span>
                     <h3 style={{ fontSize: '1.75rem', fontWeight: 700 }}>{story.title}</h3>
@@ -238,12 +238,12 @@ export const Testimonials: React.FC = () => {
                         display: 'inline-flex', 
                         alignItems: 'center', 
                         gap: '0.5rem', 
-                        color: 'var(--primary-orange)', 
+                        color: 'var(--primary-red)', 
                         fontWeight: 600,
                         marginTop: '0.5rem'
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-orange)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-red)')}
                     >
                       <span>Inquire About Similar Shoot</span>
                       <ChevronRight size={16} />
@@ -276,8 +276,8 @@ export const Testimonials: React.FC = () => {
               alignItems: 'center', 
               textAlign: 'center', 
               gap: '1.5rem',
-              background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(131, 56, 236, 0.08) 100%)',
-              borderColor: 'rgba(255, 107, 53, 0.2)'
+              background: 'linear-gradient(135deg, rgba(210, 4, 45, 0.08) 0%, rgba(131, 56, 236, 0.08) 100%)',
+              borderColor: 'rgba(210, 4, 45, 0.2)'
             }}
           >
             <h2 style={{ fontSize: '2.2rem', fontWeight: 800 }}>Be Our Next Success Story</h2>

@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
               fontWeight: 800,
               fontSize: 'clamp(1.1rem, 4.5vw, 1.5rem)',
               letterSpacing: '-0.02em',
-              background: 'linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%)',
+              background: 'linear-gradient(135deg, var(--primary-red) 0%, var(--primary-pink) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -97,10 +97,10 @@ export const Header: React.FC = () => {
                       fontSize: '0.95rem',
                       position: 'relative',
                       padding: '0.25rem 0',
-                      color: isActive ? 'var(--primary-orange)' : 'var(--text-primary)',
+                      color: isActive ? 'var(--primary-red)' : 'var(--text-primary)',
                     }}
                     onMouseEnter={(e) => {
-                      if (!isActive) e.currentTarget.style.color = 'var(--primary-orange)';
+                      if (!isActive) e.currentTarget.style.color = 'var(--primary-red)';
                     }}
                     onMouseLeave={(e) => {
                       if (!isActive) e.currentTarget.style.color = 'var(--text-primary)';
@@ -116,7 +116,7 @@ export const Header: React.FC = () => {
                           left: 0,
                           right: 0,
                           height: '2px',
-                          background: 'linear-gradient(90deg, var(--primary-orange) 0%, var(--primary-yellow) 100%)',
+                          background: 'linear-gradient(90deg, var(--primary-red) 0%, var(--primary-pink) 100%)',
                         }}
                       />
                     )}
@@ -214,7 +214,7 @@ export const Header: React.FC = () => {
                           fontFamily: 'var(--font-heading)',
                           fontWeight: 600,
                           fontSize: '1.25rem',
-                          color: isActive ? 'var(--primary-orange)' : 'var(--text-primary)',
+                          color: isActive ? 'var(--primary-red)' : 'var(--text-primary)',
                           display: 'block',
                           padding: '0.25rem 0',
                         }}

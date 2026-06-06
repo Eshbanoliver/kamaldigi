@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
         style={{
           width: '300px',
           height: '300px',
-          background: 'var(--glow-orange)',
+          background: 'var(--glow-red)',
           top: '10%',
           left: '5%',
           opacity: 0.15,
@@ -86,13 +86,13 @@ export const Footer: React.FC = () => {
           {/* Studio Brand Column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Camera style={{ color: 'var(--primary-orange)' }} size={24} />
+              <Camera style={{ color: 'var(--primary-red)' }} size={24} />
               <span
                 style={{
                   fontFamily: 'var(--font-heading)',
                   fontWeight: 800,
                   fontSize: '1.35rem',
-                  background: 'linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%)',
+                  background: 'linear-gradient(135deg, var(--primary-red) 0%, var(--primary-pink) 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -123,8 +123,8 @@ export const Footer: React.FC = () => {
                   transition: 'var(--transition-fast)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--primary-orange)';
-                  e.currentTarget.style.borderColor = 'var(--primary-orange)';
+                  e.currentTarget.style.backgroundColor = 'var(--primary-red)';
+                  e.currentTarget.style.borderColor = 'var(--primary-red)';
                   e.currentTarget.style.transform = 'translateY(-3px)';
                 }}
                 onMouseLeave={(e) => {
@@ -143,7 +143,7 @@ export const Footer: React.FC = () => {
             <h4
               style={{
                 fontSize: '1.15rem',
-                borderBottom: '2px solid var(--primary-orange)',
+                borderBottom: '2px solid var(--primary-red)',
                 width: 'fit-content',
                 paddingBottom: '0.5rem',
                 marginBottom: '0.5rem',
@@ -165,7 +165,7 @@ export const Footer: React.FC = () => {
                       gap: '0.5rem',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'var(--primary-orange)';
+                      e.currentTarget.style.color = 'var(--primary-red)';
                       e.currentTarget.style.transform = 'translateX(5px)';
                     }}
                     onMouseLeave={(e) => {
@@ -173,7 +173,7 @@ export const Footer: React.FC = () => {
                       e.currentTarget.style.transform = 'translateX(0)';
                     }}
                   >
-                    <ArrowRight size={14} style={{ color: 'var(--primary-orange)' }} />
+                    <ArrowRight size={14} style={{ color: 'var(--primary-red)' }} />
                     {link.name}
                   </Link>
                 </li>
@@ -186,7 +186,7 @@ export const Footer: React.FC = () => {
             <h4
               style={{
                 fontSize: '1.15rem',
-                borderBottom: '2px solid var(--primary-orange)',
+                borderBottom: '2px solid var(--primary-red)',
                 width: 'fit-content',
                 paddingBottom: '0.5rem',
                 marginBottom: '0.5rem',
@@ -208,7 +208,7 @@ export const Footer: React.FC = () => {
                       gap: '0.5rem',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'var(--primary-orange)';
+                      e.currentTarget.style.color = 'var(--primary-red)';
                       e.currentTarget.style.transform = 'translateX(5px)';
                     }}
                     onMouseLeave={(e) => {
@@ -216,7 +216,7 @@ export const Footer: React.FC = () => {
                       e.currentTarget.style.transform = 'translateX(0)';
                     }}
                   >
-                    <ArrowRight size={14} style={{ color: 'var(--primary-orange)' }} />
+                    <ArrowRight size={14} style={{ color: 'var(--primary-red)' }} />
                     {link.name}
                   </Link>
                 </li>
@@ -229,7 +229,7 @@ export const Footer: React.FC = () => {
             <h4
               style={{
                 fontSize: '1.15rem',
-                borderBottom: '2px solid var(--primary-orange)',
+                borderBottom: '2px solid var(--primary-red)',
                 width: 'fit-content',
                 paddingBottom: '0.5rem',
                 marginBottom: '0.5rem',
@@ -240,7 +240,7 @@ export const Footer: React.FC = () => {
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                <MapPin size={20} style={{ color: 'var(--primary-orange)', flexShrink: 0, marginTop: '0.15rem' }} />
+                <MapPin size={20} style={{ color: 'var(--primary-red)', flexShrink: 0, marginTop: '0.15rem' }} />
                 <span style={{ fontSize: '0.95rem', color: 'var(--text-footer-secondary)', lineHeight: '1.5' }}>
                   Prem Nagar, Rata Para, Titrdi, Sector 9, Udaipur, Rajasthan 313003
                 </span>
@@ -248,10 +248,10 @@ export const Footer: React.FC = () => {
               <a
                 href="tel:+919828142098"
                 style={{ display: 'inline-flex', gap: '0.75rem', alignItems: 'center', color: 'var(--text-footer-primary)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-orange)')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-red)')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-footer-primary)')}
               >
-                <Phone size={20} style={{ color: 'var(--primary-orange)' }} />
+                <Phone size={20} style={{ color: 'var(--primary-red)' }} />
                 <span style={{ fontSize: '0.95rem', fontWeight: 600 }}>+91 98281 42098</span>
               </a>
             </div>

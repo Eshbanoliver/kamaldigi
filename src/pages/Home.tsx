@@ -39,9 +39,9 @@ export const Home: React.FC = () => {
       suffix: '+', 
       label: 'Events Covered',
       icon: 'camera',
-      gradient: 'linear-gradient(135deg, #FF6B35 0%, #FFB703 100%)',
-      glowColor: 'rgba(255, 107, 53, 0.15)',
-      iconColor: '#FF6B35'
+      gradient: 'linear-gradient(135deg, #D2042D 0%, #FF4D6D 100%)',
+      glowColor: 'rgba(210, 4, 45, 0.15)',
+      iconColor: '#D2042D'
     },
     { 
       value: 100, 
@@ -133,7 +133,7 @@ export const Home: React.FC = () => {
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       
       {/* Glow shapes */}
-      <div className="glow-shape" style={{ width: '450px', height: '450px', backgroundColor: 'var(--glow-orange)', top: '-50px', right: '-100px' }} />
+      <div className="glow-shape" style={{ width: '450px', height: '450px', backgroundColor: 'var(--glow-red)', top: '-50px', right: '-100px' }} />
       <div className="glow-shape" style={{ width: '550px', height: '550px', backgroundColor: 'var(--glow-blue)', top: '30%', left: '-150px' }} />
       <div className="glow-shape" style={{ width: '500px', height: '500px', backgroundColor: 'var(--glow-purple)', bottom: '10%', right: '-100px' }} />
 
@@ -163,12 +163,12 @@ export const Home: React.FC = () => {
                   display: 'inline-flex', 
                   alignItems: 'center', 
                   gap: '0.5rem', 
-                  backgroundColor: 'rgba(255, 107, 53, 0.1)', 
-                  border: '1px solid rgba(255, 107, 53, 0.25)', 
+                  backgroundColor: 'rgba(210, 4, 45, 0.1)', 
+                  border: '1px solid rgba(210, 4, 45, 0.25)', 
                   padding: '0.5rem 1rem', 
                   borderRadius: '20px', 
                   width: 'fit-content',
-                  color: 'var(--primary-orange)',
+                  color: 'var(--primary-red)',
                   fontWeight: 600,
                   fontSize: '0.85rem',
                   textTransform: 'uppercase',
@@ -181,7 +181,7 @@ export const Home: React.FC = () => {
               
               <h1 style={{ fontWeight: 800 }}>
                 Capture Every Moment <br />
-                <span className="gradient-text-orange">Beautifully</span>
+                <span className="gradient-text-red">Beautifully</span>
               </h1>
               
               <p style={{ fontSize: '1.2rem', maxWidth: '600px', lineHeight: '1.7' }}>
@@ -246,7 +246,7 @@ export const Home: React.FC = () => {
                       <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Udaipur, Rajasthan</div>
                     </div>
                     <div style={{ display: 'flex', gap: '3px' }}>
-                      {[1,2,3,4,5].map(star => <Star key={star} size={14} fill="var(--primary-yellow)" color="var(--primary-yellow)" />)}
+                      {[1,2,3,4,5].map(star => <Star key={star} size={14} fill="var(--primary-pink)" color="var(--primary-pink)" />)}
                     </div>
                   </div>
                 </div>
@@ -270,7 +270,7 @@ export const Home: React.FC = () => {
           style={{ 
             width: '350px', 
             height: '350px', 
-            backgroundColor: 'rgba(255, 107, 53, 0.12)', 
+            backgroundColor: 'rgba(210, 4, 45, 0.12)', 
             top: '-50px', 
             left: '-100px',
             filter: 'blur(120px)',
@@ -325,7 +325,7 @@ export const Home: React.FC = () => {
                   width: '300px', 
                   height: '300px', 
                   borderRadius: '50%', 
-                  background: 'var(--glow-orange)', 
+                  background: 'var(--glow-red)', 
                   filter: 'blur(80px)',
                   top: '20%', 
                   left: '10%',
@@ -363,7 +363,7 @@ export const Home: React.FC = () => {
                 className="glass-card experience-badge-card" 
                 whileHover={{ scale: 1.08 }}
               >
-                <h4 style={{ color: 'var(--primary-orange)', fontSize: '1.8rem', fontWeight: 800, lineHeight: '1' }}>10+ Years</h4>
+                <h4 style={{ color: 'var(--primary-red)', fontSize: '1.8rem', fontWeight: 800, lineHeight: '1' }}>10+ Years</h4>
                 <p style={{ fontSize: '0.8rem', color: 'var(--text-primary)', fontWeight: 600, marginTop: '0.25rem' }}>Of capturing memories in royal styles</p>
               </motion.div>
             </motion.div>
@@ -399,11 +399,11 @@ export const Home: React.FC = () => {
                     gap: '0.75rem', 
                     padding: '0.85rem 1rem', 
                     borderRadius: '12px', 
-                    backgroundColor: 'rgba(255, 107, 53, 0.04)', 
-                    border: '1px solid rgba(255, 107, 53, 0.08)' 
+                    backgroundColor: 'rgba(210, 4, 45, 0.04)', 
+                    border: '1px solid rgba(210, 4, 45, 0.08)' 
                   }}
                 >
-                  <Camera size={20} style={{ color: 'var(--primary-orange)', flexShrink: 0 }} />
+                  <Camera size={20} style={{ color: 'var(--primary-red)', flexShrink: 0 }} />
                   <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>Sony G-Master Gear</span>
                 </div>
                 
@@ -444,11 +444,11 @@ export const Home: React.FC = () => {
                     gap: '0.75rem', 
                     padding: '0.85rem 1rem', 
                     borderRadius: '12px', 
-                    backgroundColor: 'rgba(255, 107, 53, 0.04)', 
-                    border: '1px solid rgba(255, 107, 53, 0.08)' 
+                    backgroundColor: 'rgba(210, 4, 45, 0.04)', 
+                    border: '1px solid rgba(210, 4, 45, 0.08)' 
                   }}
                 >
-                  <Heart size={20} style={{ color: 'var(--primary-orange)', flexShrink: 0 }} />
+                  <Heart size={20} style={{ color: 'var(--primary-red)', flexShrink: 0 }} />
                   <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>Client focused sessions</span>
                 </div>
               </div>
@@ -458,7 +458,7 @@ export const Home: React.FC = () => {
               </p>
 
               <div style={{ marginTop: '0.5rem' }}>
-                <Link to="/about" className="btn btn-outline-orange">
+                <Link to="/about" className="btn btn-outline-red">
                   <span>Read Our Full Story</span>
                   <ArrowRightIcon />
                 </Link>
@@ -501,7 +501,7 @@ export const Home: React.FC = () => {
           style={{ 
             width: '400px', 
             height: '400px', 
-            backgroundColor: 'rgba(255, 107, 53, 0.08)', 
+            backgroundColor: 'rgba(210, 4, 45, 0.08)', 
             bottom: '-100px', 
             right: '-100px',
             filter: 'blur(120px)'
@@ -675,7 +675,7 @@ export const Home: React.FC = () => {
           style={{ 
             width: '600px', 
             height: '600px', 
-            backgroundColor: 'rgba(255, 107, 53, 0.06)', 
+            backgroundColor: 'rgba(210, 4, 45, 0.06)', 
             top: '-100px', 
             right: '-150px',
             filter: 'blur(150px)',
@@ -697,9 +697,9 @@ export const Home: React.FC = () => {
         
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="section-header" style={{ marginBottom: '5rem' }}>
-            <span className="section-subtitle" style={{ display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(255, 107, 53, 0.1)', border: '1px solid rgba(255, 107, 53, 0.2)', borderRadius: '30px', color: 'var(--primary-orange)', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '0.8rem' }}>What We Do</span>
+            <span className="section-subtitle" style={{ display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(210, 4, 45, 0.1)', border: '1px solid rgba(210, 4, 45, 0.2)', borderRadius: '30px', color: 'var(--primary-red)', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '0.8rem' }}>What We Do</span>
             <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', marginBottom: '1.5rem' }}>
-              Our <span className="gradient-text-orange">Premium Services</span>
+              Our <span className="gradient-text-red">Premium Services</span>
             </h2>
             <p style={{ fontSize: '1.15rem', maxWidth: '650px', margin: '0 auto', color: 'var(--text-secondary)' }}>
               We provide a comprehensive range of professional photography and editing services tailored to make every shoot exceptional.
@@ -709,7 +709,7 @@ export const Home: React.FC = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', marginBottom: '4.5rem' }}>
             {previewServices.map((service, idx) => {
               const cardThemes = [
-                { gradient: 'linear-gradient(135deg, #FF6B35 0%, #FFB703 100%)', shadow: 'rgba(255, 107, 53, 0.25)', text: '#FF6B35' },
+                { gradient: 'linear-gradient(135deg, #D2042D 0%, #FF4D6D 100%)', shadow: 'rgba(210, 4, 45, 0.25)', text: '#D2042D' },
                 { gradient: 'linear-gradient(135deg, #3A86FF 0%, #00F5FF 100%)', shadow: 'rgba(58, 134, 255, 0.25)', text: '#3A86FF' },
                 { gradient: 'linear-gradient(135deg, #8338EC 0%, #FF007F 100%)', shadow: 'rgba(131, 56, 236, 0.25)', text: '#8338EC' },
                 { gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', shadow: 'rgba(16, 185, 129, 0.25)', text: '#10B981' },
@@ -796,7 +796,7 @@ export const Home: React.FC = () => {
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <Link to="/services" className="btn btn-primary" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: '30px', boxShadow: '0 10px 25px rgba(255, 107, 53, 0.3)' }}>
+            <Link to="/services" className="btn btn-primary" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: '30px', boxShadow: '0 10px 25px rgba(210, 4, 45, 0.3)' }}>
               <Sparkles size={18} />
               <span>View All 17 Services</span>
             </Link>
@@ -824,8 +824,8 @@ export const Home: React.FC = () => {
       <section style={{ background: 'linear-gradient(to bottom, var(--bg-dark-1), var(--bg-dark-2))' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="mission-grid">
-            <div className="glass-card mission-vision-card" style={{ borderLeft: '4px solid var(--primary-orange)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <span style={{ color: 'var(--primary-orange)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Preserving Memories</span>
+            <div className="glass-card mission-vision-card" style={{ borderLeft: '4px solid var(--primary-red)', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <span style={{ color: 'var(--primary-red)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Preserving Memories</span>
               <h3>Our Mission</h3>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: 'var(--text-primary)' }}>
                 "To preserve precious memories through exceptional photography and creative storytelling, delivering absolute artistic layouts and professional reliability."
@@ -874,8 +874,8 @@ export const Home: React.FC = () => {
                     width: '56px', 
                     height: '56px', 
                     borderRadius: '12px', 
-                    backgroundColor: 'rgba(255, 107, 53, 0.1)', 
-                    color: 'var(--primary-orange)', 
+                    backgroundColor: 'rgba(210, 4, 45, 0.1)', 
+                    color: 'var(--primary-red)', 
                     display: 'flex', 
                     alignItems: 'center', 
                     justifyContent: 'center' 
@@ -910,10 +910,10 @@ export const Home: React.FC = () => {
                   gap: '1.25rem',
                   alignItems: 'flex-start',
                   padding: '2rem 1.5rem',
-                  borderTop: '2px solid rgba(255, 107, 53, 0.2)'
+                  borderTop: '2px solid rgba(210, 4, 45, 0.2)'
                 }}
               >
-                <CheckCircle2 style={{ color: 'var(--primary-orange)', flexShrink: 0, marginTop: '0.15rem' }} size={20} />
+                <CheckCircle2 style={{ color: 'var(--primary-red)', flexShrink: 0, marginTop: '0.15rem' }} size={20} />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <h4 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{item.title}</h4>
                   <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.desc}</p>
@@ -930,13 +930,13 @@ export const Home: React.FC = () => {
           <div 
             className="glass-card cta-banner-card" 
             style={{ 
-              background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(131, 56, 236, 0.1) 100%)',
-              borderColor: 'rgba(255, 107, 53, 0.3)',
+              background: 'linear-gradient(135deg, rgba(210, 4, 45, 0.1) 0%, rgba(131, 56, 236, 0.1) 100%)',
+              borderColor: 'rgba(210, 4, 45, 0.3)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               gap: '1.5rem',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(255, 107, 53, 0.1)'
+              boxShadow: '0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(210, 4, 45, 0.1)'
             }}
           >
             <h2 style={{ maxWidth: '700px', margin: '0 auto', fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}>
@@ -980,10 +980,10 @@ export const Home: React.FC = () => {
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <Quote size={32} style={{ color: 'var(--primary-orange)', opacity: 0.3 }} />
+                  <Quote size={32} style={{ color: 'var(--primary-red)', opacity: 0.3 }} />
                   <div style={{ display: 'flex', gap: '2px' }}>
                     {Array.from({ length: t.rating }).map((_, i) => (
-                      <Star key={i} size={16} fill="var(--primary-yellow)" color="var(--primary-yellow)" />
+                      <Star key={i} size={16} fill="var(--primary-pink)" color="var(--primary-pink)" />
                     ))}
                   </div>
                 </div>
@@ -1026,19 +1026,19 @@ export const Home: React.FC = () => {
                   style={{ 
                     borderRadius: '12px',
                     cursor: 'pointer',
-                    borderColor: isOpen ? 'var(--primary-orange)' : 'var(--border-light)',
+                    borderColor: isOpen ? 'var(--primary-red)' : 'var(--border-light)',
                     boxShadow: isOpen ? '0 10px 20px rgba(0,0,0,0.3)' : 'var(--shadow-premium)'
                   }}
                   onClick={() => toggleFaq(idx)}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: isOpen ? 'var(--primary-orange)' : 'var(--text-primary)' }}>
+                    <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: isOpen ? 'var(--primary-red)' : 'var(--text-primary)' }}>
                       {faq.q}
                     </h4>
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
-                      style={{ color: isOpen ? 'var(--primary-orange)' : 'var(--text-secondary)', display: 'flex' }}
+                      style={{ color: isOpen ? 'var(--primary-red)' : 'var(--text-secondary)', display: 'flex' }}
                     >
                       <ChevronDown size={20} />
                     </motion.div>

@@ -13,7 +13,7 @@ export const About: React.FC = () => {
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Background Glows */}
       <div className="glow-shape" style={{ width: '400px', height: '400px', backgroundColor: 'var(--glow-purple)', top: '10%', right: '-50px' }} />
-      <div className="glow-shape" style={{ width: '500px', height: '500px', backgroundColor: 'var(--glow-orange)', bottom: '20%', left: '-150px' }} />
+      <div className="glow-shape" style={{ width: '500px', height: '500px', backgroundColor: 'var(--glow-red)', bottom: '20%', left: '-150px' }} />
 
       {/* 1. HERO BANNER */}
       <section 
@@ -95,7 +95,7 @@ export const About: React.FC = () => {
                 top: 0, 
                 bottom: 0, 
                 width: '2px', 
-                background: 'linear-gradient(to bottom, var(--primary-orange), var(--secondary-blue))',
+                background: 'linear-gradient(to bottom, var(--primary-red), var(--secondary-blue))',
                 opacity: 0.3
               }}
               className="timeline-line"
@@ -109,17 +109,17 @@ export const About: React.FC = () => {
                   height: '42px', 
                   borderRadius: '50%', 
                   backgroundColor: 'var(--bg-dark-2)', 
-                  border: '3px solid var(--primary-orange)', 
+                  border: '3px solid var(--primary-red)', 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
                   flexShrink: 0
                 }}
               >
-                <Calendar size={16} style={{ color: 'var(--primary-orange)' }} />
+                <Calendar size={16} style={{ color: 'var(--primary-red)' }} />
               </div>
               <div className="glass-card timeline-card">
-                <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--primary-orange)', display: 'block', marginBottom: '0.5rem' }}>2016 - Studio Foundations</span>
+                <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--primary-red)', display: 'block', marginBottom: '0.5rem' }}>2016 - Studio Foundations</span>
                 <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>The Birth of Kamal Digi Studio</h4>
                 <p style={{ fontSize: '0.95rem' }}>Opened our doors in Udaipur with basic DSLR portrait configurations and a small room, focusing purely on local events and passport portraits.</p>
               </div>
@@ -133,17 +133,17 @@ export const About: React.FC = () => {
                   height: '42px', 
                   borderRadius: '50%', 
                   backgroundColor: 'var(--bg-dark-2)', 
-                  border: '3px solid var(--primary-yellow)', 
+                  border: '3px solid var(--primary-pink)', 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
                   flexShrink: 0
                 }}
               >
-                <Camera size={16} style={{ color: 'var(--primary-yellow)' }} />
+                <Camera size={16} style={{ color: 'var(--primary-pink)' }} />
               </div>
               <div className="glass-card timeline-card">
-                <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--primary-yellow)', display: 'block', marginBottom: '0.5rem' }}>2019 - Technology Upgrade</span>
+                <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--primary-pink)', display: 'block', marginBottom: '0.5rem' }}>2019 - Technology Upgrade</span>
                 <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Transition to Full Frame & Mirrorless Systems</h4>
                 <p style={{ fontSize: '0.95rem' }}>Upgraded to professional Sony full-frame mirrorless architectures. Began covering large-scale destination weddings and outdoor pre-wedding projects across Rajasthan.</p>
               </div>
@@ -213,7 +213,7 @@ export const About: React.FC = () => {
       <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }} className="mission-grid">
-            <div className="glass-card mission-vision-card" style={{ borderTop: '4px solid var(--primary-orange)' }}>
+            <div className="glass-card mission-vision-card" style={{ borderTop: '4px solid var(--primary-red)' }}>
               <h3 style={{ marginBottom: '1rem' }}>Our Mission</h3>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-primary)' }}>
                 To preserve precious memories through exceptional photography and creative storytelling. We commit to bringing aesthetic consistency, state-of-the-art camera dynamics, and timely delivery.
@@ -261,8 +261,8 @@ export const About: React.FC = () => {
                     width: '60px', 
                     height: '60px', 
                     borderRadius: '50%', 
-                    backgroundColor: 'rgba(255, 107, 53, 0.1)', 
-                    color: 'var(--primary-orange)',
+                    backgroundColor: 'rgba(210, 4, 45, 0.1)', 
+                    color: 'var(--primary-red)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -289,8 +289,8 @@ export const About: React.FC = () => {
               alignItems: 'center', 
               textAlign: 'center', 
               gap: '1.5rem',
-              background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(58, 134, 255, 0.08) 100%)',
-              borderColor: 'rgba(255, 107, 53, 0.2)'
+              background: 'linear-gradient(135deg, rgba(210, 4, 45, 0.08) 0%, rgba(58, 134, 255, 0.08) 100%)',
+              borderColor: 'rgba(210, 4, 45, 0.2)'
             }}
           >
             <h2 style={{ fontSize: '2.2rem', fontWeight: 800 }}>Ready To Co-Create Your Visual Album?</h2>

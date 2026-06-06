@@ -77,8 +77,8 @@ export const FloatingButtons: React.FC = () => {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="floating-action-btn"
           style={{
-            backgroundColor: 'var(--primary-orange)',
-            boxShadow: '0 4px 15px rgba(255, 107, 53, 0.4)',
+            backgroundColor: 'var(--primary-red)',
+            boxShadow: '0 4px 15px rgba(210, 4, 45, 0.4)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -114,8 +114,8 @@ export const FloatingButtons: React.FC = () => {
                 color: 'var(--text-primary)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--primary-orange)';
-                e.currentTarget.style.color = 'var(--primary-orange)';
+                e.currentTarget.style.borderColor = 'var(--primary-red)';
+                e.currentTarget.style.color = 'var(--primary-red)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = 'var(--border-light)';
