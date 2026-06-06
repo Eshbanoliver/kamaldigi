@@ -814,7 +814,7 @@ export const Home: React.FC = () => {
                   </div>
                   
                   {/* Glowing hover border effect */}
-                  <div className="card-glow-border" style={{ position: 'absolute', inset: 0, borderRadius: '24px', border: '2px solid transparent', background: `${theme.gradient} border-box`, WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude', opacity: 0, transition: 'opacity 0.4s ease', pointerEvents: 'none', zIndex: 10 }} />
+                  <div className="card-glow-border" style={{ position: 'absolute', inset: 0, borderRadius: '24px', border: '2px solid transparent', background: `${theme.gradient} border-box`, WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude', opacity: 1, transition: 'opacity 0.4s ease', pointerEvents: 'none', zIndex: 10 }} />
                 </motion.div>
               );
             })}
