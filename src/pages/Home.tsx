@@ -75,6 +75,31 @@ export const Home: React.FC = () => {
       img: '/images/maternity.png',
       desc: 'Gentle, gorgeous shoots capturing the start of life\'s most precious chapters.',
     },
+    {
+      title: 'Commercial & Product',
+      img: '/images/camera-gear.png',
+      desc: 'High-end lighting and macro details to elevate your brand identity and catalogs.',
+    },
+    {
+      title: 'Fashion & Editorial',
+      img: '/images/wedding-couple.png',
+      desc: 'Striking poses, conceptual lighting, and vogue-style editing for modeling portfolios.',
+    },
+    {
+      title: 'Cinematic Videography',
+      img: '/images/photographer-bts.png',
+      desc: '4K drones and stabilizing gimbals delivering blockbuster-quality event films.',
+    },
+    {
+      title: 'Events & Concerts',
+      img: '/images/wedding-engagement.png',
+      desc: 'Dynamic low-light action shots capturing the energy and vibe of live performances.',
+    },
+    {
+      title: 'Architecture & Interior',
+      img: '/images/prewedding.png',
+      desc: 'Wide-angle, distortion-free captures perfect for real estate and luxury hotels.',
+    },
   ];
 
   const coreValues = [
