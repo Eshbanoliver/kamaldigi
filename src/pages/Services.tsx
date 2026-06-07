@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 interface Service {
   id: number;
@@ -11,6 +12,10 @@ interface Service {
 }
 
 export const Services: React.FC = () => {
+  useSEO({
+    title: 'Our Photography Services | Kamal Digi Studio Udaipur',
+    description: 'Explore 17 specialized services at Kamal Digi Studio, Udaipur. From pre-wedding shoots, wedding portraiture, and family portraits to product, property, and event photography.'
+  });
   const [activeTab, setActiveTab] = useState<string>('All');
 
   const categories = ['All', 'Weddings & Portraits', 'Events & Corporate', 'Studio & Creative', 'Specialty'];

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, MapPin, Calendar, Mail, Send, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import useSEO from '../hooks/useSEO';
 
 const InstagramIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
   <svg
@@ -19,6 +20,10 @@ const InstagramIcon: React.FC<{ size?: number }> = ({ size = 22 }) => (
   </svg>
 );
 export const Contact: React.FC = () => {
+  useSEO({
+    title: 'Contact Us | Kamal Digi Studio Udaipur',
+    description: 'Get in touch with Kamal Digi Studio in Udaipur, Rajasthan. Book our wedding, portrait, or commercial photography services, find our address in Titrdi, or call us at +91 98281 42098.'
+  });
   const [formData, setFormData] = useState({
     name: '',
     phone: '',

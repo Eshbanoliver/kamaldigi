@@ -7,8 +7,13 @@ import {
   Users, Clock, MapPin
 } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter';
+import useSEO from '../hooks/useSEO';
 
 export const Home: React.FC = () => {
+  useSEO({
+    title: 'Kamal Digi Studio | Best Photography Studio in Udaipur',
+    description: "Kamal Digi Studio is Udaipur's premium photography studio, capturing wedding, pre-wedding, event, portrait, family, commercial, and maternity shoots with artistic excellence."
+  });
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [activeFeature, setActiveFeature] = useState<number>(0);
 

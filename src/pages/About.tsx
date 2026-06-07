@@ -1,7 +1,12 @@
 import React from 'react';
 import { Camera, Calendar, Award, Heart, ShieldCheck, HeartHandshake, Smile } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 export const About: React.FC = () => {
+  useSEO({
+    title: 'About Us | Kamal Digi Studio Udaipur',
+    description: 'Learn about Kamal Digi Studio, Udaipur’s trusted photography studio since 2016. Meet our team, view our timeline, and discover our passion for capturing royal weddings and premium events.'
+  });
   const trustFactors = [
     { icon: <Award size={24} />, title: 'Award-Winning Quality', desc: 'Renowned for our state-of-the-art photography, high-resolution cameras, and cinematic edits.' },
     { icon: <ShieldCheck size={24} />, title: 'Certified Crew', desc: 'Experienced crew members who understand wedding etiquette, corporate timings, and outdoor lighting.' },

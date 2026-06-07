@@ -1,7 +1,12 @@
 import React from 'react';
 import { Star, Quote, ChevronRight } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 export const Testimonials: React.FC = () => {
+  useSEO({
+    title: 'Client Testimonials & Stories | Kamal Digi Studio Udaipur',
+    description: 'Read reviews and success stories from clients who chose Kamal Digi Studio, Udaipur. Discover our 4.9/5 star ratings on Google for wedding shoots, corporate events, and maternity sessions.'
+  });
   const stats = [
     { label: 'Aggregate Rating', value: '4.9 / 5.0' },
     { label: 'Google Business Reviews', value: '350+' },
