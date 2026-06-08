@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Calendar, Award, Heart, ShieldCheck, HeartHandshake, Smile } from 'lucide-react';
+import { Camera, Award, ShieldCheck, HeartHandshake, Smile, Sun, Sliders } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
 export const About: React.FC = () => {
@@ -405,134 +405,214 @@ export const About: React.FC = () => {
         `}</style>
       </section>
 
-      {/* 3. JOURNEY & EXPERIENCE */}
-      <section>
+      {/* 3. WHY CHOOSE US */}
+      <section style={{ backgroundColor: 'var(--bg-dark-2)', borderBottom: '1px solid var(--border-light)' }}>
         <div className="container">
-          <div className="section-header">
-            <span className="section-subtitle">Our Timeline</span>
-            <h2 className="section-title">The Journey & Milestones</h2>
-            <p>A look back at how we expanded our tools, team, and reach to deliver cinematic perfection.</p>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', position: 'relative' }} className="timeline">
-            {/* Timeline center line */}
-            <div 
-              style={{ 
-                position: 'absolute', 
-                left: '20px', 
-                top: 0, 
-                bottom: 0, 
-                width: '2px', 
-                background: 'linear-gradient(to bottom, var(--primary-red), var(--secondary-blue))',
-                opacity: 0.3
-              }}
-              className="timeline-line"
-            />
-
-            {/* Milestone 1 */}
-            <div className="timeline-item">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '5rem', alignItems: 'center' }} className="why-choose-grid">
+            
+            {/* Left Column: Visual Stats Panel */}
+            <div style={{ position: 'relative', width: '100%' }}>
               <div 
                 style={{ 
-                  width: '42px', 
-                  height: '42px', 
-                  borderRadius: '50%', 
-                  backgroundColor: 'var(--bg-dark-2)', 
-                  border: '3px solid var(--primary-red)', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  flexShrink: 0
+                  borderRadius: '24px', 
+                  overflow: 'hidden', 
+                  boxShadow: 'var(--shadow-premium)', 
+                  border: '1px solid var(--border-light)',
+                  position: 'relative',
+                  height: '480px'
+                }}
+                className="stats-image-wrapper"
+              >
+                <img 
+                  src="/images/photographer-bts.png" 
+                  alt="Kamal Digi Studio team behind the scenes" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+                <div 
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    background: 'linear-gradient(to bottom, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.7) 100%)',
+                    zIndex: 1
+                  }}
+                />
+              </div>
+
+              {/* Overlapping Glassmorphic Stats Board */}
+              <div 
+                className="glass-card stats-board-card"
+                style={{
+                  position: 'absolute',
+                  bottom: '-30px',
+                  right: '20px',
+                  width: 'calc(100% - 40px)',
+                  maxWidth: '380px',
+                  padding: '2rem',
+                  zIndex: 2,
+                  background: 'rgba(255, 255, 255, 0.85)',
+                  backdropFilter: 'blur(16px)',
+                  boxShadow: '0 20px 50px rgba(15, 23, 42, 0.15)',
+                  borderRadius: '20px'
                 }}
               >
-                <Calendar size={16} style={{ color: 'var(--primary-red)' }} />
-              </div>
-              <div className="glass-card timeline-card">
-                <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--primary-red)', display: 'block', marginBottom: '0.5rem' }}>2016 - Studio Foundations</span>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>The Birth of Kamal Digi Studio</h4>
-                <p style={{ fontSize: '0.95rem' }}>Opened our doors in Udaipur with basic DSLR portrait configurations and a small room, focusing purely on local events and passport portraits.</p>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '1.5rem', color: 'var(--primary-red)' }}>
+                  Our Achievements
+                </h4>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                  <div>
+                    <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: '1.2' }}>9+</span>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 500 }}>Years of Craft</span>
+                  </div>
+                  <div>
+                    <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: '1.2' }}>1000+</span>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 500 }}>Events Captured</span>
+                  </div>
+                  <div>
+                    <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: '1.2' }}>150K+</span>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 500 }}>Edited Photos</span>
+                  </div>
+                  <div>
+                    <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: '1.2' }}>100%</span>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 500 }}>Transparency</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Milestone 2 */}
-            <div className="timeline-item">
-              <div 
-                style={{ 
-                  width: '42px', 
-                  height: '42px', 
-                  borderRadius: '50%', 
-                  backgroundColor: 'var(--bg-dark-2)', 
-                  border: '3px solid var(--primary-pink)', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}
-              >
-                <Camera size={16} style={{ color: 'var(--primary-pink)' }} />
+            {/* Right Column: Why Choose Us Content & Pillars */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div>
+                <span className="section-subtitle" style={{ margin: 0 }}>Our Distinction</span>
+                <h2 style={{ marginBottom: '1rem', lineHeight: '1.2' }}>Why Choose Kamal Digi Studio</h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.6' }}>
+                  We don't just capture portraits—we build visual heirlooms. Through years of covering grand Rajasthani weddings and high-end events, we have perfected the blend of art, technology, and professionalism.
+                </p>
               </div>
-              <div className="glass-card timeline-card">
-                <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--primary-pink)', display: 'block', marginBottom: '0.5rem' }}>2019 - Technology Upgrade</span>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Transition to Full Frame & Mirrorless Systems</h4>
-                <p style={{ fontSize: '0.95rem' }}>Upgraded to professional Sony full-frame mirrorless architectures. Began covering large-scale destination weddings and outdoor pre-wedding projects across Rajasthan.</p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }} className="why-choose-list">
+                
+                {/* Point 1 */}
+                <div className="choose-feature-card">
+                  <div className="choose-icon-box" style={{ color: 'var(--primary-red)', backgroundColor: 'rgba(210, 4, 45, 0.08)' }}>
+                    <Camera size={22} />
+                  </div>
+                  <div>
+                    <h4 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.35rem' }}>Cinema-Grade Systems</h4>
+                    <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+                      Equipped with high-resolution full-frame mirrorless gear, multi-axis stabilizers, and high-fidelity aerial drone rigs.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Point 2 */}
+                <div className="choose-feature-card">
+                  <div className="choose-icon-box" style={{ color: 'var(--primary-pink)', backgroundColor: 'rgba(255, 77, 109, 0.08)' }}>
+                    <Sun size={22} />
+                  </div>
+                  <div>
+                    <h4 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.35rem' }}>Heritage Lighting Experts</h4>
+                    <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+                      Mastering palace environments, candlelit halls, fireworks, and sunset hours to deliver glowing, perfectly balanced frames.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Point 3 */}
+                <div className="choose-feature-card">
+                  <div className="choose-icon-box" style={{ color: 'var(--secondary-blue)', backgroundColor: 'rgba(17, 138, 178, 0.08)' }}>
+                    <Sliders size={22} />
+                  </div>
+                  <div>
+                    <h4 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.35rem' }}>In-House Editing Labs</h4>
+                    <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+                      Every image is individually graded and retouched by color experts to retain warm tones, vivid details, and aesthetic richness.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Point 4 */}
+                <div className="choose-feature-card">
+                  <div className="choose-icon-box" style={{ color: 'var(--secondary-purple)', backgroundColor: 'rgba(7, 59, 76, 0.08)' }}>
+                    <HeartHandshake size={22} />
+                  </div>
+                  <div>
+                    <h4 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.35rem' }}>Absolute Transparency</h4>
+                    <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+                      Clear package pricing, timely photo delivery, and certified crew members who coordinate directly with event planners.
+                    </p>
+                  </div>
+                </div>
+
               </div>
             </div>
 
-            {/* Milestone 3 */}
-            <div className="timeline-item">
-              <div 
-                style={{ 
-                  width: '42px', 
-                  height: '42px', 
-                  borderRadius: '50%', 
-                  backgroundColor: 'var(--bg-dark-2)', 
-                  border: '3px solid var(--secondary-blue)', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}
-              >
-                <Award size={16} style={{ color: 'var(--secondary-blue)' }} />
-              </div>
-              <div className="glass-card timeline-card">
-                <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--secondary-blue)', display: 'block', marginBottom: '0.5rem' }}>2022 - Expansion & Digital Editing Labs</span>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Setting up Retouching and Album Printing</h4>
-                <p style={{ fontSize: '0.95rem' }}>Launched our in-house premium digital color grading lab and physical album layout design systems, achieving the milestone of 500+ happy clients.</p>
-              </div>
-            </div>
-
-            {/* Milestone 4 */}
-            <div className="timeline-item">
-              <div 
-                style={{ 
-                  width: '42px', 
-                  height: '42px', 
-                  borderRadius: '50%', 
-                  backgroundColor: 'var(--bg-dark-2)', 
-                  border: '3px solid var(--secondary-purple)', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}
-              >
-                <Heart size={16} style={{ color: 'var(--secondary-purple)' }} />
-              </div>
-              <div className="glass-card timeline-card">
-                <span style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--secondary-purple)', display: 'block', marginBottom: '0.5rem' }}>2026 - Present & Beyond</span>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Udaipur's Trusted Visionary House</h4>
-                <p style={{ fontSize: '0.95rem' }}>Over 10+ years of collective team experience, offering aerial drone shoots, cinematic wedding trailers, and high-conversion commercial catalogs.</p>
-              </div>
-            </div>
           </div>
         </div>
 
         <style>{`
-          @media (min-width: 768px) {
-            .timeline-line { left: 50% !important; transform: translateX(-50%); }
-            .timeline-item { flex-direction: row; align-items: center; }
-            .timeline-item:nth-child(even) { flex-direction: row-reverse; }
-            .timeline-item:nth-child(even) .glass-card { text-align: right; }
+          .choose-feature-card {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            padding: 1rem;
+            border-radius: 16px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+          }
+          .choose-feature-card:hover {
+            background-color: var(--bg-dark-1);
+            border-color: var(--border-light);
+            transform: translateX(6px);
+          }
+          .choose-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.35s ease;
+          }
+          .choose-feature-card:hover .choose-icon-box {
+            transform: scale(1.1) rotate(5deg);
+          }
+          
+          @media (min-width: 992px) {
+            .why-choose-grid {
+              grid-template-columns: 0.9fr 1.1fr !important;
+            }
+          }
+          @media (max-width: 991px) {
+            .why-choose-grid {
+              gap: 5rem !important;
+            }
+            .stats-image-wrapper {
+              height: 380px !important;
+            }
+            .stats-board-card {
+              position: relative !important;
+              width: 100% !important;
+              max-width: 100% !important;
+              bottom: 0 !important;
+              right: 0 !important;
+              margin-top: 1.5rem;
+              box-shadow: var(--shadow-premium) !important;
+            }
+          }
+          @media (max-width: 480px) {
+            .stats-image-wrapper {
+              height: 280px !important;
+            }
+            .choose-feature-card {
+              padding: 0.5rem;
+            }
+            .choose-feature-card:hover {
+              transform: none;
+            }
           }
         `}</style>
       </section>
