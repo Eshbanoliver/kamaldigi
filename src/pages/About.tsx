@@ -779,64 +779,89 @@ export const About: React.FC = () => {
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                style={{ 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  gap: '1.5rem', 
-                  padding: '2.5rem 2rem',
-                  borderRadius: '24px',
-                  background: factor.gradient,
-                  boxShadow: `0 20px 40px ${factor.shadow}`,
-                  color: 'white',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  cursor: 'pointer'
-                }}
-                className="trust-card"
+                style={{ position: 'relative', cursor: 'pointer' }}
+                className="trust-card-wrapper"
               >
-                {/* Decorative Overlay */}
-                <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)', pointerEvents: 'none' }} />
-                
-                {/* Background Icon Watermark */}
-                <div style={{ position: 'absolute', right: '-15%', bottom: '-15%', opacity: 0.1, transform: 'scale(4)', pointerEvents: 'none' }}>
-                  {factor.icon}
-                </div>
-
+                {/* Glowing Background Shadow */}
                 <div 
+                  className="trust-card-glow"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: factor.gradient,
+                    filter: 'blur(25px)',
+                    opacity: 0.6,
+                    borderRadius: '24px',
+                    zIndex: 0,
+                    transition: 'all 0.4s ease'
+                  }} 
+                />
+
+                <div
+                  className="trust-card-inner"
                   style={{ 
-                    width: '64px', 
-                    height: '64px', 
-                    borderRadius: '16px', 
-                    backgroundColor: 'rgba(255, 255, 255, 0.2)', 
-                    backdropFilter: 'blur(10px)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    gap: '1.5rem', 
+                    padding: '2.5rem 2rem',
+                    borderRadius: '24px',
+                    background: factor.gradient,
+                    boxShadow: `0 20px 40px ${factor.shadow}`,
+                    color: 'white',
                     position: 'relative',
-                    zIndex: 2
+                    overflow: 'hidden',
+                    zIndex: 1,
+                    height: '100%'
                   }}
                 >
-                  {factor.icon}
-                </div>
-                
-                <div style={{ position: 'relative', zIndex: 2 }}>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.75rem', color: 'white', textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                    {factor.title}
-                  </h3>
-                  <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.6', margin: 0 }}>
-                    {factor.desc}
-                  </p>
+                  {/* Decorative Overlay */}
+                  <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)', pointerEvents: 'none' }} />
+                  
+                  {/* Background Icon Watermark */}
+                  <div style={{ position: 'absolute', right: '-15%', bottom: '-15%', opacity: 0.1, transform: 'scale(4)', pointerEvents: 'none' }}>
+                    {factor.icon}
+                  </div>
+
+                  <div 
+                    style={{ 
+                      width: '64px', 
+                      height: '64px', 
+                      borderRadius: '16px', 
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+                      backdropFilter: 'blur(10px)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+                      position: 'relative',
+                      zIndex: 2
+                    }}
+                  >
+                    {factor.icon}
+                  </div>
+                  
+                  <div style={{ position: 'relative', zIndex: 2 }}>
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.75rem', color: 'white', textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+                      {factor.title}
+                    </h3>
+                    <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.6', margin: 0 }}>
+                      {factor.desc}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
         <style>{`
-          .trust-card {
+          .trust-card-wrapper:hover .trust-card-glow {
+            opacity: 1 !important;
+            filter: blur(35px) !important;
+          }
+          .trust-card-inner {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           }
-          .trust-card::after {
+          .trust-card-inner::after {
             content: '';
             position: absolute;
             inset: 0;
