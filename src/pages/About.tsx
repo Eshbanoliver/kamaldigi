@@ -59,10 +59,34 @@ export const About: React.FC = () => {
   }, [isHovered]);
 
   const trustFactors = [
-    { icon: <Award size={24} />, title: 'Award-Winning Quality', desc: 'Renowned for our state-of-the-art photography, high-resolution cameras, and cinematic edits.' },
-    { icon: <ShieldCheck size={24} />, title: 'Certified Crew', desc: 'Experienced crew members who understand wedding etiquette, corporate timings, and outdoor lighting.' },
-    { icon: <HeartHandshake size={24} />, title: '100% Transparency', desc: 'No hidden charges or delays. Clear pricing structures and direct delivery timelines.' },
-    { icon: <Smile size={24} />, title: 'Happy Clients', desc: 'Over 1000+ satisfied clients across Udaipur and neighboring cities, endorsing our name.' },
+    { 
+      icon: <Award size={28} color="white" />, 
+      title: 'Award-Winning Quality', 
+      desc: 'Renowned for our state-of-the-art photography, high-resolution cameras, and cinematic edits.',
+      gradient: 'linear-gradient(135deg, #FF0076 0%, #590FB7 100%)',
+      shadow: 'rgba(255, 0, 118, 0.3)'
+    },
+    { 
+      icon: <ShieldCheck size={28} color="white" />, 
+      title: 'Certified Crew', 
+      desc: 'Experienced crew members who understand wedding etiquette, corporate timings, and outdoor lighting.',
+      gradient: 'linear-gradient(135deg, #00C9FF 0%, #92FE9D 100%)',
+      shadow: 'rgba(0, 201, 255, 0.3)'
+    },
+    { 
+      icon: <HeartHandshake size={28} color="white" />, 
+      title: '100% Transparency', 
+      desc: 'No hidden charges or delays. Clear pricing structures and direct delivery timelines.',
+      gradient: 'linear-gradient(135deg, #F5AF19 0%, #F12711 100%)',
+      shadow: 'rgba(245, 175, 25, 0.3)'
+    },
+    { 
+      icon: <Smile size={28} color="white" />, 
+      title: 'Happy Clients', 
+      desc: 'Over 1000+ satisfied clients across Udaipur and neighboring cities, endorsing our name.',
+      gradient: 'linear-gradient(135deg, #667EEA 0%, #764BA2 100%)',
+      shadow: 'rgba(102, 126, 234, 0.3)'
+    },
   ];
 
   return (
@@ -728,47 +752,99 @@ export const About: React.FC = () => {
       </section>
 
       {/* 5. WHY CLIENTS TRUST US */}
-      <section>
-        <div className="container">
-          <div className="section-header">
-            <span className="section-subtitle">Our Promise</span>
-            <h2 className="section-title">Why Clients Trust Us</h2>
-            <p>From prompt communications to premium custom edits, here is why Udaipur trusts Kamal Digi Studio.</p>
+      <section style={{ backgroundColor: 'var(--bg-dark-2)', position: 'relative', overflow: 'hidden', padding: '6rem 0', borderBottom: '1px solid var(--border-light)' }}>
+        {/* Glow Effects */}
+        <div className="glow-shape" style={{ width: '400px', height: '400px', backgroundColor: 'rgba(102, 126, 234, 0.05)', top: '-10%', left: '-10%', zIndex: 0 }} />
+        <div className="glow-shape" style={{ width: '400px', height: '400px', backgroundColor: 'rgba(245, 175, 25, 0.05)', bottom: '-10%', right: '-10%', zIndex: 0 }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="section-header" style={{ marginBottom: '4rem' }}>
+            <span className="section-subtitle" style={{ display: 'inline-block', padding: '0.5rem 1.25rem', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '30px', color: 'var(--text-primary)', fontWeight: 700, marginBottom: '1rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '0.8rem' }}>
+              Our Promise
+            </span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', marginBottom: '1rem' }}>
+              Why Clients <span className="gradient-text-red">Trust Us</span>
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
+              From prompt communications to premium custom edits, here is why Udaipur trusts Kamal Digi Studio.
+            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {trustFactors.map((factor, idx) => (
-              <div 
-                key={idx} 
-                className="glass-card" 
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
                 style={{ 
                   display: 'flex', 
                   flexDirection: 'column', 
-                  gap: '1rem', 
-                  textAlign: 'center', 
-                  alignItems: 'center' 
+                  gap: '1.5rem', 
+                  padding: '2.5rem 2rem',
+                  borderRadius: '24px',
+                  background: factor.gradient,
+                  boxShadow: `0 20px 40px ${factor.shadow}`,
+                  color: 'white',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  cursor: 'pointer'
                 }}
+                className="trust-card"
               >
+                {/* Decorative Overlay */}
+                <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)', pointerEvents: 'none' }} />
+                
+                {/* Background Icon Watermark */}
+                <div style={{ position: 'absolute', right: '-15%', bottom: '-15%', opacity: 0.1, transform: 'scale(4)', pointerEvents: 'none' }}>
+                  {factor.icon}
+                </div>
+
                 <div 
                   style={{ 
-                    width: '60px', 
-                    height: '60px', 
-                    borderRadius: '50%', 
-                    backgroundColor: 'rgba(210, 4, 45, 0.1)', 
-                    color: 'var(--primary-red)',
+                    width: '64px', 
+                    height: '64px', 
+                    borderRadius: '16px', 
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+                    backdropFilter: 'blur(10px)',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+                    position: 'relative',
+                    zIndex: 2
                   }}
                 >
                   {factor.icon}
                 </div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 600 }}>{factor.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{factor.desc}</p>
-              </div>
+                
+                <div style={{ position: 'relative', zIndex: 2 }}>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.75rem', color: 'white', textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+                    {factor.title}
+                  </h3>
+                  <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.6', margin: 0 }}>
+                    {factor.desc}
+                  </p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
+        <style>{`
+          .trust-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .trust-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.3);
+            pointer-events: none;
+          }
+        `}</style>
       </section>
 
       {/* 6. CTA SECTION */}
