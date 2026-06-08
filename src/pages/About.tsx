@@ -7,6 +7,56 @@ export const About: React.FC = () => {
     title: 'About Us | Kamal Digi Studio Udaipur',
     description: 'Learn about Kamal Digi Studio, Udaipur’s trusted photography studio since 2016. Meet our team, view our timeline, and discover our passion for capturing royal weddings and premium events.'
   });
+  const [activePillar, setActivePillar] = React.useState<number>(0);
+  const [isHovered, setIsHovered] = React.useState<boolean>(false);
+  const autoRotateTimer = React.useRef<any>(null);
+
+  const storyPillars = [
+    {
+      id: 0,
+      title: 'Artistic Vision',
+      subtitle: 'Fine Art & Journalism',
+      desc: 'Blending fine art and candid photojournalism to capture smiles, emotional tears, and royal aesthetics as a cohesive, framing-worthy masterpiece.',
+      image: '/images/wedding-couple.png',
+      caption: 'Royal Rajasthani Weddings',
+      color: 'var(--primary-red)',
+      glow: 'rgba(210, 4, 45, 0.15)',
+    },
+    {
+      id: 1,
+      title: 'Heritage Passion',
+      subtitle: 'Candid Celebrations',
+      desc: 'Capturing Udaipur’s grand destination weddings, pre-wedding romance, and the rich legacy of Rajasthani cultural heritage.',
+      image: '/images/wedding-engagement.png',
+      caption: 'Pre-Wedding Grandeur',
+      color: 'var(--primary-pink)',
+      glow: 'rgba(255, 77, 109, 0.15)',
+    },
+    {
+      id: 2,
+      title: 'Technical Mastery',
+      subtitle: 'State-Of-The-Art Equipment',
+      desc: 'Powered by Sony mirrorless setups, cinema glass, high-speed stabilizers, and advanced digital retouching and color-grading labs.',
+      image: '/images/camera-gear.png',
+      caption: 'Advanced Camera Gear & BTS',
+      color: 'var(--secondary-blue)',
+      glow: 'rgba(17, 138, 178, 0.15)',
+    }
+  ];
+
+  React.useEffect(() => {
+    if (!isHovered) {
+      autoRotateTimer.current = setInterval(() => {
+        setActivePillar((prev) => (prev + 1) % storyPillars.length);
+      }, 5000);
+    }
+    return () => {
+      if (autoRotateTimer.current) {
+        clearInterval(autoRotateTimer.current);
+      }
+    };
+  }, [isHovered]);
+
   const trustFactors = [
     { icon: <Award size={24} />, title: 'Award-Winning Quality', desc: 'Renowned for our state-of-the-art photography, high-resolution cameras, and cinematic edits.' },
     { icon: <ShieldCheck size={24} />, title: 'Certified Crew', desc: 'Experienced crew members who understand wedding etiquette, corporate timings, and outdoor lighting.' },
@@ -40,44 +90,317 @@ export const About: React.FC = () => {
       </section>
 
       {/* 2. COMPANY STORY */}
-      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}>
+      <section 
+        style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)' }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'center' }} className="story-grid">
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <span className="section-subtitle" style={{ margin: 0 }}>The Beginning</span>
-              <h2>Crafting Artistic Visuals Since 2016</h2>
-              <p>
-                Founded in Udaipur, Rajasthan, <strong>Kamal Digi Studio</strong> was created with a singular focus: to blend fine art and photojournalism to encapsulate life's most precious celebrations.
-              </p>
-              <p>
-                What started as a small team of passionate film enthusiasts has grown into one of Udaipur's most trusted full-service digital photography agencies. Today, we stand proud at Prem Nagar, Titrdi, offering high-end wedding coverages, maternity sessions, product catalogs, and corporate event streaming.
-              </p>
-              <p>
-                Our crew has spent over a decade perfecting the art of catching subtle smiles, teardrops of joy, and the energetic steps of royal Rajasthani dances. We treat every click not just as a job, but as a masterpiece to be framed.
-              </p>
+            {/* Left Column: Title and Pillars */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div>
+                <span className="section-subtitle" style={{ margin: 0 }}>The Beginning</span>
+                <h2 style={{ marginBottom: '1rem', lineHeight: '1.2' }}>
+                  Crafting <span className="gradient-text-red">Artistic Visuals</span> Since 2016
+                </h2>
+                <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.5' }}>
+                  Founded in Udaipur, Rajasthan, <strong>Kamal Digi Studio</strong> was created to blend fine art and photojournalism to encapsulate life's most precious celebrations. Hover or tap each card below to explore our core creative focus.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                {storyPillars.map((pillar) => {
+                  const isActive = activePillar === pillar.id;
+                  return (
+                    <div
+                      key={pillar.id}
+                      onClick={() => setActivePillar(pillar.id)}
+                      onMouseEnter={() => setActivePillar(pillar.id)}
+                      className={`philosophy-card ${isActive ? 'active' : ''}`}
+                      style={{
+                        padding: '1.25rem 1.5rem',
+                        borderRadius: '16px',
+                        border: '1px solid var(--border-light)',
+                        backgroundColor: isActive ? 'var(--bg-dark-2)' : 'rgba(255, 255, 255, 0.4)',
+                        boxShadow: isActive ? 'var(--shadow-premium)' : 'none',
+                        cursor: 'pointer',
+                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                        display: 'flex',
+                        gap: '1.25rem',
+                        alignItems: 'flex-start',
+                        position: 'relative',
+                        overflow: 'hidden',
+                      }}
+                    >
+                      {/* Left border accent line */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: 0,
+                          bottom: 0,
+                          width: '4px',
+                          backgroundColor: pillar.color,
+                          transform: isActive ? 'scaleY(1)' : 'scaleY(0)',
+                          transformOrigin: 'top',
+                          transition: 'transform 0.4s ease',
+                        }}
+                      />
+                      
+                      <div
+                        style={{
+                          fontFamily: 'var(--font-heading)',
+                          fontSize: '1.5rem',
+                          fontWeight: 800,
+                          color: isActive ? pillar.color : 'var(--text-muted)',
+                          opacity: isActive ? 1 : 0.4,
+                          lineHeight: 1,
+                          marginTop: '2px',
+                          transition: 'all 0.3s ease',
+                        }}
+                      >
+                        0{pillar.id + 1}
+                      </div>
+
+                      <div style={{ flexGrow: 1 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: pillar.color, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                            {pillar.subtitle}
+                          </span>
+                        </div>
+                        <h4 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.35rem', color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
+                          {pillar.title}
+                        </h4>
+                        <p 
+                          style={{ 
+                            fontSize: '0.92rem', 
+                            lineHeight: '1.5',
+                            color: isActive ? 'var(--text-secondary)' : 'var(--text-muted)',
+                            margin: 0,
+                            maxHeight: isActive ? '100px' : '0px',
+                            opacity: isActive ? 1 : 0,
+                            overflow: 'hidden',
+                            transition: 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease',
+                          }}
+                        >
+                          {pillar.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             
-            <div>
+            {/* Right Column: Dynamic Polaroid Stack */}
+            <div 
+              className={`polaroid-stack-container stack-active-${activePillar}`}
+              style={{
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '460px',
+                width: '100%',
+              }}
+            >
+              {/* Decorative floating glow behind polaroids */}
               <div 
-                style={{ 
-                  borderRadius: '24px', 
-                  overflow: 'hidden', 
-                  boxShadow: 'var(--shadow-premium)', 
-                  border: '1px solid var(--border-light)' 
+                className="stack-glow"
+                style={{
+                  position: 'absolute',
+                  width: '300px',
+                  height: '300px',
+                  borderRadius: '50%',
+                  backgroundColor: storyPillars[activePillar].color,
+                  filter: 'blur(90px)',
+                  opacity: 0.12,
+                  zIndex: 0,
+                  transition: 'background-color 0.6s ease',
                 }}
-              >
-                <img 
-                  src="/images/wedding-engagement.png" 
-                  alt="Photography team at work" 
-                  style={{ width: '100%', height: '400px', objectFit: 'cover', display: 'block' }}
-                />
-              </div>
+              />
+
+              {storyPillars.map((pillar) => {
+                const isActive = activePillar === pillar.id;
+                return (
+                  <div
+                    key={pillar.id}
+                    onClick={() => setActivePillar(pillar.id)}
+                    onMouseEnter={() => setActivePillar(pillar.id)}
+                    className={`polaroid-card card-${pillar.id} ${isActive ? 'active' : ''}`}
+                  >
+                    <div className="polaroid-inner">
+                      <img 
+                        src={pillar.image} 
+                        alt={pillar.title} 
+                      />
+                      <div className="polaroid-caption">
+                        <Camera size={14} style={{ marginRight: '6px', opacity: 0.7 }} />
+                        <span>{pillar.caption}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
+
         <style>{`
+          .polaroid-card {
+            position: absolute;
+            width: 290px;
+            background: #ffffff;
+            padding: 12px 12px 20px 12px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.04);
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+          }
+          
+          .polaroid-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 2px;
+            display: block;
+          }
+          
+          .polaroid-caption {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 14px;
+            color: var(--text-secondary);
+          }
+          
+          /* Stacking animations using translate & rotate */
+          .stack-active-0 .card-0 {
+            transform: translate(0px, 0px) rotate(-3deg) scale(1.05);
+            z-index: 10;
+            box-shadow: 0 20px 45px rgba(210, 4, 45, 0.15);
+            border-color: rgba(210, 4, 45, 0.2);
+            opacity: 1;
+          }
+          .stack-active-0 .card-1 {
+            transform: translate(90px, 20px) rotate(6deg) scale(0.95);
+            z-index: 5;
+            opacity: 0.75;
+          }
+          .stack-active-0 .card-2 {
+            transform: translate(-90px, -20px) rotate(-10deg) scale(0.9);
+            z-index: 3;
+            opacity: 0.5;
+          }
+          
+          .stack-active-1 .card-0 {
+            transform: translate(-90px, 15px) rotate(-8deg) scale(0.95);
+            z-index: 5;
+            opacity: 0.75;
+          }
+          .stack-active-1 .card-1 {
+            transform: translate(0px, 0px) rotate(3deg) scale(1.05);
+            z-index: 10;
+            box-shadow: 0 20px 45px rgba(255, 77, 109, 0.15);
+            border-color: rgba(255, 77, 109, 0.2);
+            opacity: 1;
+          }
+          .stack-active-1 .card-2 {
+            transform: translate(90px, -25px) rotate(8deg) scale(0.9);
+            z-index: 3;
+            opacity: 0.5;
+          }
+          
+          .stack-active-2 .card-0 {
+            transform: translate(95px, -20px) rotate(8deg) scale(0.9);
+            z-index: 3;
+            opacity: 0.5;
+          }
+          .stack-active-2 .card-1 {
+            transform: translate(-95px, 25px) rotate(-7deg) scale(0.95);
+            z-index: 5;
+            opacity: 0.75;
+          }
+          .stack-active-2 .card-2 {
+            transform: translate(0px, 0px) rotate(-2deg) scale(1.05);
+            z-index: 10;
+            box-shadow: 0 20px 45px rgba(17, 138, 178, 0.15);
+            border-color: rgba(17, 138, 178, 0.2);
+            opacity: 1;
+          }
+          
+          .polaroid-card:hover {
+            z-index: 20 !important;
+            transform: scale(1.08) translate(0px, -8px) !important;
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.18) !important;
+            opacity: 1 !important;
+          }
+
+          .philosophy-card:hover {
+            border-color: rgba(15, 23, 42, 0.15) !important;
+          }
+          
+          .philosophy-card.active::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(130deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+          }
+
           @media (min-width: 992px) {
-            .story-grid { grid-template-columns: 1.1fr 0.9fr !important; }
+            .story-grid { grid-template-columns: 1.15fr 0.85fr !important; }
+          }
+          
+          @media (max-width: 991px) {
+            .polaroid-stack-container {
+              height: 380px !important;
+              margin-top: 2rem;
+            }
+            .polaroid-card {
+              width: 230px !important;
+              padding: 8px 8px 16px 8px !important;
+            }
+            .polaroid-card img {
+              height: 190px !important;
+            }
+            .stack-active-0 .card-1 { transform: translate(60px, 15px) rotate(6deg) scale(0.95); }
+            .stack-active-0 .card-2 { transform: translate(-60px, -15px) rotate(-10deg) scale(0.9); }
+            .stack-active-1 .card-0 { transform: translate(-60px, 10px) rotate(-8deg) scale(0.95); }
+            .stack-active-1 .card-2 { transform: translate(60px, -20px) rotate(8deg) scale(0.9); }
+            .stack-active-2 .card-0 { transform: translate(65px, -15px) rotate(8deg) scale(0.9); }
+            .stack-active-2 .card-1 { transform: translate(-65px, 20px) rotate(-7deg) scale(0.95); }
+          }
+          
+          @media (max-width: 480px) {
+            .polaroid-stack-container {
+              height: 290px !important;
+            }
+            .polaroid-card {
+              width: 170px !important;
+              padding: 6px 6px 12px 6px !important;
+            }
+            .polaroid-card img {
+              height: 130px !important;
+            }
+            .stack-active-0 .card-1 { transform: translate(45px, 10px) rotate(6deg) scale(0.95); }
+            .stack-active-0 .card-2 { transform: translate(-45px, -10px) rotate(-10deg) scale(0.9); }
+            .stack-active-1 .card-0 { transform: translate(-45px, 8px) rotate(-8deg) scale(0.95); }
+            .stack-active-1 .card-2 { transform: translate(45px, -15px) rotate(8deg) scale(0.9); }
+            .stack-active-2 .card-0 { transform: translate(50px, -10px) rotate(8deg) scale(0.9); }
+            .stack-active-2 .card-1 { transform: translate(-50px, 15px) rotate(-7deg) scale(0.95); }
+            .polaroid-caption {
+              font-size: 0.7rem !important;
+              margin-top: 8px !important;
+            }
           }
         `}</style>
       </section>
