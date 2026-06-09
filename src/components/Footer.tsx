@@ -279,7 +279,20 @@ export const Footer: React.FC = () => {
           }}
         >
           <p style={{ fontSize: '0.875rem', color: 'var(--text-footer-muted)' }}>
-            ©️ Copyright {currentYear} | Kamal Digi Studio | All Rights Reserved | Powered by{' '}
+            ©️ Copyright {currentYear} |{' '}
+            <Link
+              to="/"
+              style={{ 
+                color: 'var(--text-footer-primary)', 
+                fontWeight: 600, 
+                transition: 'color var(--transition-fast)' 
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-red)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-footer-primary)')}
+            >
+              Kamal Digi Studio
+            </Link>{' '}
+            | All Rights Reserved | Powered by{' '}
             <a
               href="https://www.futurexdigitalmarketing.com/"
               target="_blank"
