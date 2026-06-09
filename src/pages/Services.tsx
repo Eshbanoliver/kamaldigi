@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
@@ -245,79 +246,131 @@ export const Services: React.FC = () => {
             key={activeTab} // Forces remount to re-trigger staggered entrance animation on tab switch
             style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
               gap: '2.5rem',
               position: 'relative',
               zIndex: 10
             }}
           >
             {filteredServices.map((service, index) => {
-              const indexStr = String(index + 1).padStart(2, '0');
-              
-              let badgeClass = 'badge-specialty';
-              if (service.category === 'Weddings & Portraits') badgeClass = 'badge-wedding';
-              else if (service.category === 'Events & Corporate') badgeClass = 'badge-event';
-              else if (service.category === 'Studio & Creative') badgeClass = 'badge-studio';
+              const cardThemes = [
+                { gradient: 'linear-gradient(135deg, #D2042D 0%, #FF4D6D 100%)', shadow: 'rgba(210, 4, 45, 0.25)', text: '#D2042D' },
+                { gradient: 'linear-gradient(135deg, #3A86FF 0%, #00F5FF 100%)', shadow: 'rgba(58, 134, 255, 0.25)', text: '#3A86FF' },
+                { gradient: 'linear-gradient(135deg, #8338EC 0%, #FF007F 100%)', shadow: 'rgba(131, 56, 236, 0.25)', text: '#8338EC' },
+                { gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', shadow: 'rgba(16, 185, 129, 0.25)', text: '#10B981' },
+              ];
+              const theme = cardThemes[index % cardThemes.length];
 
               return (
-                <div 
+                <motion.div 
                   key={service.id} 
-                  className="service-card services-grid-animate" 
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.6, delay: (index % 6) * 0.08 }}
+                  whileHover={{ y: -10, boxShadow: `0 20px 40px ${theme.shadow}` }}
+                  className="glass-card service-vibrant-card" 
                   style={{ 
-                    animationDelay: `${(index % 6) * 0.08}s`
+                    padding: 0, 
+                    borderRadius: '24px', 
+                    overflow: 'hidden', 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    background: 'rgba(255, 255, 255, 0.9)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(15, 23, 42, 0.15)',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
+                    position: 'relative',
+                    height: '100%'
                   }}
                 >
                   {/* Card Image */}
-                  <div className="service-card-img-container">
+                  <div style={{ height: '260px', overflow: 'hidden', position: 'relative' }} className="image-zoom-container">
                     <img 
                       src={service.img} 
                       alt={service.title} 
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)' }}
-                      className="service-card-img"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+                      className="service-preview-img"
                     />
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%)' }} />
-                    <span className={`category-badge ${badgeClass}`}>
+                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255,255,255,0.2) 60%, transparent 100%)' }} />
+                    
+                    {/* Vibrant Category Tag */}
+                    <div style={{ position: 'absolute', top: '24px', right: '24px', background: theme.gradient, color: 'white', padding: '0.5rem 1.25rem', borderRadius: '30px', fontSize: '0.8rem', fontWeight: 700, boxShadow: `0 4px 15px ${theme.shadow}`, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                       {service.category}
-                    </span>
+                    </div>
                   </div>
 
                   {/* Card Content */}
-                  <div style={{ padding: 'clamp(1.5rem, 4vw, 2rem)', display: 'flex', flexDirection: 'column', gap: '1.25rem', flexGrow: 1, position: 'relative' }}>
-                    <div className="service-card-index">{indexStr}</div>
-                    
-                    <h3 style={{ fontSize: '1.4rem', fontWeight: 700, position: 'relative', zIndex: 2 }}>{service.title}</h3>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', flexGrow: 1, lineHeight: '1.6', position: 'relative', zIndex: 2 }}>
-                      {service.desc}
-                    </p>
+                  <div style={{ padding: '0 2rem 2.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1rem', flexGrow: 1, position: 'relative', zIndex: 2, marginTop: '-30px' }}>
+                    <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: '1.3' }}>{service.title}</h3>
+                    <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', flexGrow: 1, lineHeight: '1.6' }}>{service.desc}</p>
                     
                     {/* Service Features */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', margin: '0.5rem 0 1rem 0', position: 'relative', zIndex: 2 }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', margin: '0.25rem 0' }}>
                       {service.features.map((feat, i) => (
-                        <div key={i} className="service-feature-item">
-                          <Check size={14} className="service-feature-icon" style={{ flexShrink: 0 }} />
+                        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
+                          <Check size={14} style={{ color: theme.text, flexShrink: 0 }} />
                           <span>{feat}</span>
                         </div>
                       ))}
                     </div>
 
-                    {/* WhatsApp Call-to-action */}
                     <a 
                       href={`https://wa.me/919828142098?text=Hello%20Kamal%20Digi%20Studio,%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="btn btn-outline-red service-card-btn" 
-                      style={{ width: '100%', position: 'relative', zIndex: 2 }}
+                      className="service-book-btn"
+                      style={{ 
+                        '--theme-grad': theme.gradient,
+                        '--theme-shadow': theme.shadow,
+                        '--theme-text': theme.text,
+                        width: '100%', 
+                        padding: '0.85rem', 
+                        borderRadius: '16px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.5rem',
+                        fontWeight: 700,
+                        background: 'transparent',
+                        border: `2px solid ${theme.text}`,
+                        color: theme.text,
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        cursor: 'pointer',
+                        textDecoration: 'none',
+                        marginTop: '1rem',
+                        fontSize: '1rem'
+                      } as React.CSSProperties}
                     >
                       <span>Inquire / Book Service</span>
-                      <ArrowRight size={16} className="btn-arrow" />
+                      <ArrowRight size={16} />
                     </a>
                   </div>
-                </div>
+
+                  {/* Glowing hover border effect */}
+                  <div className="card-glow-border" style={{ position: 'absolute', inset: 0, borderRadius: '24px', border: '2px solid transparent', background: `${theme.gradient} border-box`, WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude', opacity: 0.35, transition: 'opacity 0.4s ease', pointerEvents: 'none', zIndex: 10 }} />
+                </motion.div>
               );
             })}
           </div>
 
         </div>
+
+        <style>{`
+          .image-zoom-container:hover .service-preview-img {
+            transform: scale(1.1) rotate(1.5deg);
+          }
+          .service-vibrant-card:hover .card-glow-border {
+            opacity: 1 !important;
+          }
+          .service-vibrant-card:hover .service-book-btn {
+            background: var(--theme-grad) !important;
+            color: white !important;
+            border-color: transparent !important;
+            box-shadow: 0 10px 25px var(--theme-shadow) !important;
+            transform: translateY(-2px);
+          }
+        `}</style>
       </section>
 
       {/* 3. CALL TO ACTION */}
