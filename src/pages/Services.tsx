@@ -26,7 +26,7 @@ export const Services: React.FC = () => {
       id: 1,
       title: 'Photographer',
       category: 'Studio & Creative',
-      img: '/images/photographer-studio.png',
+      img: '/images/photographer-studio.webp',
       desc: 'Expert general photography for custom projects, editorial layouts, and bespoke outdoor portrait compositions.',
       features: ['Full-Frame Sony systems', 'Multiple focal prime lenses', 'Natural & flash setups', 'Digital retouching included']
     },
@@ -34,7 +34,7 @@ export const Services: React.FC = () => {
       id: 2,
       title: 'Photography Shop',
       category: 'Specialty',
-      img: '/images/photo-shop.png',
+      img: '/images/photo-shop.webp',
       desc: 'Get high-end physical prints, glass framings, digital canvas designs, and customizable album layouts.',
       features: ['Anti-glare museum glass', 'Matte and premium glossy paper', 'Canvas wall mounts', 'Collage layout design']
     },
@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
       id: 3,
       title: 'Wedding Portrait Studio',
       category: 'Weddings & Portraits',
-      img: '/images/wedding-couple.png',
+      img: '/images/wedding-couple.webp',
       desc: 'Dedicated indoor studio shoots focused on couples, capturing traditional outfits and regal poses under controlled lighting.',
       features: ['Luxury backdrops', 'Professional hair/makeup sync', 'Controlled flash modeling', 'Multiple wardrobe changes']
     },
@@ -50,7 +50,7 @@ export const Services: React.FC = () => {
       id: 4,
       title: 'Event Photographer',
       category: 'Events & Corporate',
-      img: '/images/event.png',
+      img: '/images/event.webp',
       desc: 'Punctual coverage of exhibitions, local inaugurations, festivals, and community programs with candid focuses.',
       features: ['Low-light camera configurations', 'Fast turnaround delivery', 'Candid event documentation', 'High dynamic range edits']
     },
@@ -58,7 +58,7 @@ export const Services: React.FC = () => {
       id: 5,
       title: 'Pre Wedding Photoshoot',
       category: 'Weddings & Portraits',
-      img: '/images/prewedding.png',
+      img: '/images/prewedding.webp',
       desc: 'Stunning outdoor pre-wedding photography showcasing your love story in Udaipur\'s royal lakes and palaces.',
       features: ['Scenic location planning', 'Posing direction guide', 'Cinematic trailer synchronization', 'Wardrobe color consultation']
     },
@@ -66,7 +66,7 @@ export const Services: React.FC = () => {
       id: 6,
       title: 'Wedding & Engagement Photography',
       category: 'Weddings & Portraits',
-      img: '/images/wedding-engagement.png',
+      img: '/images/wedding-engagement.webp',
       desc: 'End-to-end luxury coverage of wedding ceremonies, rituals, ring exchanges, and post-wedding celebrations.',
       features: ['Dual camera operations', 'Traditional & candid mix', 'Teaser cinematic video reels', 'Premium leather-bound album']
     },
@@ -74,7 +74,7 @@ export const Services: React.FC = () => {
       id: 7,
       title: 'Corporate Photography',
       category: 'Events & Corporate',
-      img: '/images/corporate.png',
+      img: '/images/corporate.webp',
       desc: 'High-end branding photography, board of directors portfolios, factory locations, and company culture documentation.',
       features: ['Corporate branding style', 'High-res LinkedIn portraits', 'Press-release ready images', 'Group staff compositions']
     },
@@ -82,7 +82,7 @@ export const Services: React.FC = () => {
       id: 8,
       title: 'Events & Parties Photography',
       category: 'Events & Corporate',
-      img: '/images/event.png',
+      img: '/images/event.webp',
       desc: 'Lively, energetic captures of birthday bashes, anniversaries, dance nights, and private family get-togethers.',
       features: ['Action action-freeze lighting', 'Guest portrait zones', 'Group pictures management', 'Rapid next-day sneak peeks']
     },
@@ -90,7 +90,7 @@ export const Services: React.FC = () => {
       id: 9,
       title: 'Family & Group Photography',
       category: 'Weddings & Portraits',
-      img: '/images/family.png',
+      img: '/images/family.webp',
       desc: 'Warm and memorable group portraits featuring multi-generation families at home or in scenic outdoor layouts.',
       features: ['Comfortable posing guidance', 'Perfect coordinate styling', 'Large group arrangements', 'High-res canvas outputs']
     },
@@ -98,7 +98,7 @@ export const Services: React.FC = () => {
       id: 10,
       title: 'Headshots & Portraits',
       category: 'Studio & Creative',
-      img: '/images/portrait.png',
+      img: '/images/portrait.webp',
       desc: 'Premium headshots for actors, models, corporate executives, and personal bio graphics.',
       features: ['Studio backdrop variations', 'Precision face retouching', 'High/low-key lighting options', 'Expression coach assistance']
     },
@@ -106,7 +106,7 @@ export const Services: React.FC = () => {
       id: 11,
       title: 'Honeymoon Photography',
       category: 'Specialty',
-      img: '/images/honeymoon.png',
+      img: '/images/honeymoon.webp',
       desc: 'Discreet and stunning travel couple photography capturing your romantic getaway around Udaipur\'s lakes.',
       features: ['Lake scenery scheduling', 'Candid vacation storytelling', 'Light gear mobility', 'Quick mobile-share edits']
     },
@@ -114,7 +114,7 @@ export const Services: React.FC = () => {
       id: 12,
       title: 'Individual Photography',
       category: 'Studio & Creative',
-      img: '/images/portrait.png',
+      img: '/images/portrait.webp',
       desc: 'Bespoke creative portraiture focusing on highlighting individual character, lifestyle, and aesthetic tastes.',
       features: ['Concept mood boards', 'Creative style settings', 'Flexible session durations', 'Personalized retouched files']
     },
@@ -122,7 +122,7 @@ export const Services: React.FC = () => {
       id: 13,
       title: 'Maternity & Newborn Photography',
       category: 'Weddings & Portraits',
-      img: '/images/maternity.png',
+      img: '/images/maternity.webp',
       desc: 'Capturing the beautiful glow of pregnancy and the gentle initial days of your newborn with extreme care.',
       features: ['Warm and safe indoor studio', 'Special baby props available', 'Flexible baby-feed breaks', 'Soft artistic glow lighting']
     },
@@ -130,7 +130,7 @@ export const Services: React.FC = () => {
       id: 14,
       title: 'Photo Editing',
       category: 'Specialty',
-      img: '/images/photo-editing.png',
+      img: '/images/photo-editing.webp',
       desc: 'Professional grade color correction, raw development, background manipulations, and historical restoration.',
       features: ['Color grading palettes', 'Dust and blemish cleaning', 'Photoshop compositing work', 'Speedy digital dispatch']
     },
@@ -138,7 +138,7 @@ export const Services: React.FC = () => {
       id: 15,
       title: 'Product Photography',
       category: 'Events & Corporate',
-      img: '/images/product.png',
+      img: '/images/product.webp',
       desc: 'E-commerce white background photography, lifestyle setups, catalog imagery for jewelry, clothing, and crafts.',
       features: ['Studio tabletop lighting', 'Macro detail captures', 'Accurate product colors', 'E-commerce platform sizing']
     },
@@ -146,7 +146,7 @@ export const Services: React.FC = () => {
       id: 16,
       title: 'Property Photography',
       category: 'Events & Corporate',
-      img: '/images/property.png',
+      img: '/images/property.webp',
       desc: 'High dynamic range shots of hotels, heritage resorts, real estate listings, and luxury architectural properties.',
       features: ['Wide-angle architectural lenses', 'Twilight lighting sessions', 'Interior/Exterior layouts', 'High dynamic HDR bracketings']
     },
@@ -154,7 +154,7 @@ export const Services: React.FC = () => {
       id: 17,
       title: 'School Portraits',
       category: 'Specialty',
-      img: '/images/school-portraits.png',
+      img: '/images/school-portraits.webp',
       desc: 'Organized and high-efficiency student portraits, group classroom pictures, and graduation day coverages.',
       features: ['Fast queue management', 'Uniform backdrop layouts', 'Name tagging metadata', 'Discounted bulk prints Packages']
     }
@@ -174,7 +174,7 @@ export const Services: React.FC = () => {
       {/* 1. HERO BANNER */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/camera-gear.png")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/camera-gear.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',
@@ -286,7 +286,7 @@ export const Services: React.FC = () => {
                 >
                   {/* Card Image */}
                   <div style={{ height: '260px', overflow: 'hidden', position: 'relative' }} className="image-zoom-container">
-                    <img 
+                    <img loading="lazy" 
                       src={service.img} 
                       alt={service.title} 
                       style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)' }}

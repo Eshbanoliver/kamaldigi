@@ -63,47 +63,47 @@ export const Home: React.FC = () => {
   const previewServices = [
     {
       title: 'Wedding & Engagement',
-      img: '/images/wedding-engagement.png',
+      img: '/images/wedding-engagement.webp',
       desc: 'Eternalizing your vows and expressions in highly premium cinematic albums.',
     },
     {
       title: 'Pre Wedding Photoshoot',
-      img: '/images/prewedding.png',
+      img: '/images/prewedding.webp',
       desc: 'Creative locations and stunning styles that speak your beautiful love story.',
     },
     {
       title: 'Headshots & Portraits',
-      img: '/images/portrait.png',
+      img: '/images/portrait.webp',
       desc: 'Professional studio lightning profiles and character portfolios.',
     },
     {
       title: 'Maternity & Newborn',
-      img: '/images/maternity.png',
+      img: '/images/maternity.webp',
       desc: 'Gentle, gorgeous shoots capturing the start of life\'s most precious chapters.',
     },
     {
       title: 'Commercial & Product',
-      img: '/images/camera-gear.png',
+      img: '/images/camera-gear.webp',
       desc: 'High-end lighting and macro details to elevate your brand identity and catalogs.',
     },
     {
       title: 'Fashion & Editorial',
-      img: '/images/wedding-couple.png',
+      img: '/images/wedding-couple.webp',
       desc: 'Striking poses, conceptual lighting, and vogue-style editing for modeling portfolios.',
     },
     {
       title: 'Cinematic Videography',
-      img: '/images/photographer-bts.png',
+      img: '/images/photographer-bts.webp',
       desc: '4K drones and stabilizing gimbals delivering blockbuster-quality event films.',
     },
     {
       title: 'Events & Concerts',
-      img: '/images/wedding-engagement.png',
+      img: '/images/wedding-engagement.webp',
       desc: 'Dynamic low-light action shots capturing the energy and vibe of live performances.',
     },
     {
       title: 'Architecture & Interior',
-      img: '/images/prewedding.png',
+      img: '/images/prewedding.webp',
       desc: 'Wide-angle, distortion-free captures perfect for real estate and luxury hotels.',
     },
   ];
@@ -214,7 +214,7 @@ export const Home: React.FC = () => {
           minHeight: '100vh', 
           display: 'flex', 
           alignItems: 'center', 
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url("/images/hero-bg.png")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url("/images/hero-bg.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           paddingTop: 'clamp(6rem, 10vw, 8rem)',
@@ -292,7 +292,7 @@ export const Home: React.FC = () => {
               >
                 <div style={{ overflow: 'hidden', borderRadius: '18px', position: 'relative' }}>
                   <img 
-                    src="/images/camera-gear.png" 
+                    src="/images/camera-gear.webp" 
                     alt="Kamal Digi Studio Gear" 
                     style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.5s' }} 
                   />
@@ -409,8 +409,8 @@ export const Home: React.FC = () => {
                 whileHover={{ scale: 1.02, rotate: -1 }}
                 className="staggered-main-frame"
               >
-                <img 
-                  src="/images/wedding-couple.png" 
+                <img loading="lazy" 
+                  src="/images/wedding-couple.webp" 
                   alt="Wedding Couple Shoot" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
@@ -422,8 +422,8 @@ export const Home: React.FC = () => {
                 whileHover={{ scale: 1.05, y: -5, rotate: 1 }}
                 className="staggered-overlap-frame"
               >
-                <img 
-                  src="/images/photographer-bts.png" 
+                <img loading="lazy" 
+                  src="/images/photographer-bts.webp" 
                   alt="Photographer Shooting Behind The Scenes" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
@@ -810,7 +810,7 @@ export const Home: React.FC = () => {
                   }}
                 >
                   <div style={{ height: '260px', overflow: 'hidden', position: 'relative' }} className="image-zoom-container">
-                    <img 
+                    <img loading="lazy" 
                       src={service.img} 
                       alt={service.title} 
                       style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)' }}

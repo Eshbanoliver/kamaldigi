@@ -105,7 +105,7 @@ export const Contact: React.FC = () => {
       {/* 1. CONTACT BANNER */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/photographer-studio.png")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/photographer-studio.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',

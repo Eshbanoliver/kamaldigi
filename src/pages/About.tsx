@@ -18,7 +18,7 @@ export const About: React.FC = () => {
       title: 'Artistic Vision',
       subtitle: 'Fine Art & Journalism',
       desc: 'Blending fine art and candid photojournalism to capture smiles, emotional tears, and royal aesthetics as a cohesive, framing-worthy masterpiece.',
-      image: '/images/wedding-couple.png',
+      image: '/images/wedding-couple.webp',
       caption: 'Royal Rajasthani Weddings',
       color: 'var(--primary-red)',
       glow: 'rgba(210, 4, 45, 0.15)',
@@ -28,7 +28,7 @@ export const About: React.FC = () => {
       title: 'Heritage Passion',
       subtitle: 'Candid Celebrations',
       desc: 'Capturing Udaipur’s grand destination weddings, pre-wedding romance, and the rich legacy of Rajasthani cultural heritage.',
-      image: '/images/wedding-engagement.png',
+      image: '/images/wedding-engagement.webp',
       caption: 'Pre-Wedding Grandeur',
       color: 'var(--primary-pink)',
       glow: 'rgba(255, 77, 109, 0.15)',
@@ -38,7 +38,7 @@ export const About: React.FC = () => {
       title: 'Technical Mastery',
       subtitle: 'State-Of-The-Art Equipment',
       desc: 'Powered by Sony mirrorless setups, cinema glass, high-speed stabilizers, and advanced digital retouching and color-grading labs.',
-      image: '/images/camera-gear.png',
+      image: '/images/camera-gear.webp',
       caption: 'Advanced Camera Gear & BTS',
       color: 'var(--secondary-blue)',
       glow: 'rgba(17, 138, 178, 0.15)',
@@ -98,7 +98,7 @@ export const About: React.FC = () => {
       {/* 1. HERO BANNER */}
       <section 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/photographer-studio.png")',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("/images/photographer-studio.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '10rem 0 6rem 0',
@@ -256,7 +256,7 @@ export const About: React.FC = () => {
                     className={`polaroid-card card-${pillar.id} ${isActive ? 'active' : ''}`}
                   >
                     <div className="polaroid-inner">
-                      <img 
+                      <img loading="lazy" 
                         src={pillar.image} 
                         alt={pillar.title} 
                       />
@@ -448,8 +448,8 @@ export const About: React.FC = () => {
                 }}
                 className="stats-image-wrapper"
               >
-                <img 
-                  src="/images/photographer-bts.png" 
+                <img loading="lazy" 
+                  src="/images/photographer-bts.webp" 
                   alt="Kamal Digi Studio team behind the scenes" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
