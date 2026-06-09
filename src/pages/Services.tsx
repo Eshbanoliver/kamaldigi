@@ -242,6 +242,7 @@ export const Services: React.FC = () => {
 
           {/* Service Cards Grid */}
           <div 
+            key={activeTab} // Forces remount to re-trigger staggered entrance animation on tab switch
             style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
@@ -250,88 +251,73 @@ export const Services: React.FC = () => {
               zIndex: 10
             }}
           >
-            {filteredServices.map((service) => (
-              <div 
-                key={service.id} 
-                className="glass-card" 
-                style={{ 
-                  padding: 0, 
-                  borderRadius: '20px', 
-                  overflow: 'hidden', 
-                  display: 'flex', 
-                  flexDirection: 'column',
-                  height: '100%'
-                }}
-              >
-                {/* Card Image */}
-                <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }} className="zoom-container">
-                  <img 
-                    src={service.img} 
-                    alt={service.title} 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
-                    className="service-card-img"
-                  />
-                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent)' }} />
-                  <span 
-                    style={{ 
-                      position: 'absolute', 
-                      top: '15px', 
-                      right: '15px', 
-                      backgroundColor: 'rgba(255, 255, 255, 0.85)', 
-                      border: '1px solid var(--border-light)', 
-                      padding: '0.35rem 0.85rem', 
-                      borderRadius: '15px', 
-                      fontSize: '0.75rem',
-                      color: 'var(--primary-red)',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em'
-                    }}
-                  >
-                    {service.category}
-                  </span>
-                </div>
+            {filteredServices.map((service, index) => {
+              const indexStr = String(index + 1).padStart(2, '0');
+              
+              let badgeClass = 'badge-specialty';
+              if (service.category === 'Weddings & Portraits') badgeClass = 'badge-wedding';
+              else if (service.category === 'Events & Corporate') badgeClass = 'badge-event';
+              else if (service.category === 'Studio & Creative') badgeClass = 'badge-studio';
 
-                {/* Card Content */}
-                <div style={{ padding: 'clamp(1.25rem, 4vw, 2rem)', display: 'flex', flexDirection: 'column', gap: '1.25rem', flexGrow: 1 }}>
-                  <h3 style={{ fontSize: '1.4rem', fontWeight: 700 }}>{service.title}</h3>
-                  <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', flexGrow: 1, lineHeight: '1.6' }}>
-                    {service.desc}
-                  </p>
-                  
-                  {/* Service Features */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', margin: '0.5rem 0 1rem 0' }}>
-                    {service.features.map((feat, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
-                        <Check size={14} style={{ color: 'var(--primary-red)', flexShrink: 0 }} />
-                        <span>{feat}</span>
-                      </div>
-                    ))}
+              return (
+                <div 
+                  key={service.id} 
+                  className="service-card services-grid-animate" 
+                  style={{ 
+                    animationDelay: `${(index % 6) * 0.08}s`
+                  }}
+                >
+                  {/* Card Image */}
+                  <div className="service-card-img-container">
+                    <img 
+                      src={service.img} 
+                      alt={service.title} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                      className="service-card-img"
+                    />
+                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%)' }} />
+                    <span className={`category-badge ${badgeClass}`}>
+                      {service.category}
+                    </span>
                   </div>
 
-                  {/* WhatsApp Call-to-action */}
-                  <a 
-                    href={`https://wa.me/919828142098?text=Hello%20Kamal%20Digi%20Studio,%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn btn-outline-red" 
-                    style={{ width: '100%' }}
-                  >
-                    <span>Inquire / Book Service</span>
-                    <ArrowRight size={16} />
-                  </a>
+                  {/* Card Content */}
+                  <div style={{ padding: 'clamp(1.5rem, 4vw, 2rem)', display: 'flex', flexDirection: 'column', gap: '1.25rem', flexGrow: 1, position: 'relative' }}>
+                    <div className="service-card-index">{indexStr}</div>
+                    
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 700, position: 'relative', zIndex: 2 }}>{service.title}</h3>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', flexGrow: 1, lineHeight: '1.6', position: 'relative', zIndex: 2 }}>
+                      {service.desc}
+                    </p>
+                    
+                    {/* Service Features */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', margin: '0.5rem 0 1rem 0', position: 'relative', zIndex: 2 }}>
+                      {service.features.map((feat, i) => (
+                        <div key={i} className="service-feature-item">
+                          <Check size={14} className="service-feature-icon" style={{ flexShrink: 0 }} />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* WhatsApp Call-to-action */}
+                    <a 
+                      href={`https://wa.me/919828142098?text=Hello%20Kamal%20Digi%20Studio,%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="btn btn-outline-red service-card-btn" 
+                      style={{ width: '100%', position: 'relative', zIndex: 2 }}
+                    >
+                      <span>Inquire / Book Service</span>
+                      <ArrowRight size={16} className="btn-arrow" />
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>
-
-        <style>{`
-          .zoom-container:hover .service-card-img {
-            transform: scale(1.08);
-          }
-        `}</style>
       </section>
 
       {/* 3. CALL TO ACTION */}
