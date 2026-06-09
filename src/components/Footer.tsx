@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Camera, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, ArrowRight } from 'lucide-react';
 
 const InstagramIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
   <svg
@@ -85,8 +85,17 @@ export const Footer: React.FC = () => {
         >
           {/* Studio Brand Column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Camera style={{ color: 'var(--primary-red)' }} size={24} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+              <img 
+                src="/logo_icon.png" 
+                alt="Kamal Digi Studio Logo" 
+                style={{ 
+                  height: '32px', 
+                  width: 'auto', 
+                  display: 'block',
+                  filter: 'brightness(1.15) drop-shadow(0 2px 8px rgba(210, 4, 45, 0.35))'
+                }} 
+              />
               <span
                 style={{
                   fontFamily: 'var(--font-heading)',
