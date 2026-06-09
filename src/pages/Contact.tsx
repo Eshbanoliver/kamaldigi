@@ -91,6 +91,10 @@ export const Contact: React.FC = () => {
     }, 1500);
   };
 
+  const currentDayIndex = new Date().getDay(); // 0 is Sunday, 1 is Monday, etc.
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const todayName = daysOfWeek[currentDayIndex];
+
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       
@@ -118,51 +122,119 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* 2. QUICK CONTACT CARDS */}
-      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)', paddingTop: '4rem', paddingBottom: '4rem' }}>
+      <section style={{ backgroundColor: 'var(--bg-dark-1)', borderBottom: '1px solid var(--border-light)', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             
             {/* Phone Card */}
-            <a 
+            <motion.a 
               href="tel:+919828142098"
-              className="glass-card contact-info-card" 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(210, 4, 45, 0.15)' }}
+              className="glass-card contact-info-card contact-vibrant-card" 
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1rem',
+                padding: '2.5rem 2rem',
+                textAlign: 'center',
+                background: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(15, 23, 42, 0.15)',
+                borderRadius: '24px',
+                position: 'relative',
+                overflow: 'hidden',
+                cursor: 'pointer'
+              }}
             >
-              <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'rgba(210, 4, 45, 0.1)', color: 'var(--primary-red)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Phone size={22} />
+              <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'rgba(210, 4, 45, 0.1)', color: 'var(--primary-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
+                <Phone size={24} />
               </div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Phone Call</h3>
-              <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-red)' }}>+91 98281 42098</span>
-              <p style={{ fontSize: '0.85rem' }}>Call us directly for immediate inquiries.</p>
-            </a>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, margin: 0, zIndex: 2 }}>Phone Call</h3>
+              <span style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--primary-red)', zIndex: 2 }}>+91 98281 42098</span>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', zIndex: 2, margin: 0 }}>Call us directly for immediate inquiries.</p>
+              
+              {/* Glow border overlay */}
+              <div className="card-glow-border" style={{ position: 'absolute', inset: 0, borderRadius: '24px', border: '2px solid transparent', background: 'linear-gradient(135deg, #D2042D 0%, #FF4D6D 100%) border-box', WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude', opacity: 0.35, transition: 'opacity 0.4s ease', pointerEvents: 'none', zIndex: 10 }} />
+            </motion.a>
 
             {/* Location Card */}
-            <div 
-              className="glass-card contact-info-card" 
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(58, 134, 255, 0.15)' }}
+              className="glass-card contact-info-card contact-vibrant-card"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1rem',
+                padding: '2.5rem 2rem',
+                textAlign: 'center',
+                background: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(15, 23, 42, 0.15)',
+                borderRadius: '24px',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
             >
-              <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'rgba(58, 134, 255, 0.1)', color: 'var(--secondary-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <MapPin size={22} />
+              <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'rgba(58, 134, 255, 0.1)', color: 'var(--secondary-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
+                <MapPin size={24} />
               </div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Our Studio</h3>
-              <span style={{ fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: '1.5' }}>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, margin: 0, zIndex: 2 }}>Our Studio</h3>
+              <span style={{ fontSize: '0.95rem', color: 'var(--text-primary)', lineHeight: '1.5', fontWeight: 700, zIndex: 2 }}>
                 Prem Nagar, Rata Para, Titrdi, Sector 9, Udaipur, Rajasthan 313003
               </span>
-              <p style={{ fontSize: '0.85rem' }}>Visit us for a face-to-face consultation.</p>
-            </div>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', zIndex: 2, margin: 0 }}>Visit us for a face-to-face consultation.</p>
+              
+              {/* Glow border overlay */}
+              <div className="card-glow-border" style={{ position: 'absolute', inset: 0, borderRadius: '24px', border: '2px solid transparent', background: 'linear-gradient(135deg, #3A86FF 0%, #00F5FF 100%) border-box', WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude', opacity: 0.35, transition: 'opacity 0.4s ease', pointerEvents: 'none', zIndex: 10 }} />
+            </motion.div>
 
             {/* Instagram Card */}
-            <a 
+            <motion.a 
               href="https://www.instagram.com/kamaldigi_studio/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="glass-card contact-info-card" 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(131, 56, 236, 0.15)' }}
+              className="glass-card contact-info-card contact-vibrant-card" 
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1rem',
+                padding: '2.5rem 2rem',
+                textAlign: 'center',
+                background: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(15, 23, 42, 0.15)',
+                borderRadius: '24px',
+                position: 'relative',
+                overflow: 'hidden',
+                cursor: 'pointer'
+              }}
             >
-              <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'rgba(131, 56, 236, 0.1)', color: 'var(--secondary-purple)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <InstagramIcon size={22} />
+              <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'rgba(131, 56, 236, 0.1)', color: 'var(--secondary-purple)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
+                <InstagramIcon size={24} />
               </div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Instagram</h3>
-              <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--secondary-purple)' }}>@kamaldigi_studio</span>
-              <p style={{ fontSize: '0.85rem' }}>Send a direct message on Instagram.</p>
-            </a>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, margin: 0, zIndex: 2 }}>Instagram</h3>
+              <span style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--secondary-purple)', zIndex: 2 }}>@kamaldigi_studio</span>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', zIndex: 2, margin: 0 }}>Send a direct message on Instagram.</p>
+              
+              {/* Glow border overlay */}
+              <div className="card-glow-border" style={{ position: 'absolute', inset: 0, borderRadius: '24px', border: '2px solid transparent', background: 'linear-gradient(135deg, #8338EC 0%, #FF007F 100%) border-box', WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude', opacity: 0.35, transition: 'opacity 0.4s ease', pointerEvents: 'none', zIndex: 10 }} />
+            </motion.a>
 
           </div>
         </div>
@@ -216,6 +288,7 @@ export const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Enter your full name" 
+                      className="custom-input"
                       style={{ 
                         padding: '0.85rem 1rem', 
                         borderRadius: '8px', 
@@ -240,6 +313,7 @@ export const Contact: React.FC = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="Enter phone number" 
+                        className="custom-input"
                         style={{ 
                           padding: '0.85rem 1rem', 
                           borderRadius: '8px', 
@@ -261,6 +335,7 @@ export const Contact: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="Enter email address" 
+                        className="custom-input"
                         style={{ 
                           padding: '0.85rem 1rem', 
                           borderRadius: '8px', 
@@ -282,6 +357,7 @@ export const Contact: React.FC = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
+                      className="custom-input"
                       style={{ 
                         padding: '0.85rem 1rem', 
                         borderRadius: '8px', 
@@ -309,6 +385,7 @@ export const Contact: React.FC = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Share details about your shooting plans, event locations, dates, etc." 
+                      className="custom-input"
                       style={{ 
                         padding: '0.85rem 1rem', 
                         borderRadius: '8px', 
@@ -325,7 +402,7 @@ export const Contact: React.FC = () => {
                   {/* Submit Button */}
                   <button 
                     type="submit" 
-                    className="btn btn-primary" 
+                    className="btn btn-primary form-submit-btn" 
                     disabled={isSubmitting}
                     style={{ 
                       width: '100%', 
@@ -353,20 +430,32 @@ export const Contact: React.FC = () => {
                 </h3>
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {businessHours.map((h, index) => (
-                    <div 
-                      key={index} 
-                      style={{ 
-                        display: 'flex', 
-                        justifyContent: 'space-between', 
-                        borderBottom: '1px solid rgba(255,255,255,0.05)', 
-                        paddingBottom: '0.5rem' 
-                      }}
-                    >
-                      <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{h.day}</span>
-                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{h.hours}</span>
-                    </div>
-                  ))}
+                  {businessHours.map((h, index) => {
+                    const isToday = h.day === todayName;
+                    return (
+                      <div 
+                        key={index} 
+                        style={{ 
+                          display: 'flex', 
+                          justifyContent: 'space-between', 
+                          borderBottom: '1px solid rgba(15, 23, 42, 0.05)', 
+                          paddingBottom: '0.65rem',
+                          color: isToday ? 'var(--primary-red)' : 'var(--text-primary)',
+                          fontWeight: isToday ? 700 : 500,
+                          transform: isToday ? 'scale(1.02)' : 'none',
+                          transformOrigin: 'left',
+                          transition: 'all 0.3s ease'
+                        }}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          {isToday && <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--primary-red)', display: 'inline-block', boxShadow: '0 0 8px var(--primary-red)' }} />}
+                          <span>{h.day}</span>
+                          {isToday && <span style={{ fontSize: '0.75rem', padding: '0.15rem 0.5rem', borderRadius: '10px', backgroundColor: 'rgba(210, 4, 45, 0.1)', color: 'var(--primary-red)', marginLeft: '0.25rem' }}>Today</span>}
+                        </div>
+                        <span style={{ color: isToday ? 'var(--primary-red)' : 'var(--text-secondary)', fontSize: '0.95rem' }}>{h.hours}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -390,22 +479,59 @@ export const Contact: React.FC = () => {
           @media (min-width: 992px) {
             .contact-grid { grid-template-columns: 1.25fr 0.75fr !important; }
           }
+          .contact-vibrant-card:hover .card-glow-border {
+            opacity: 1 !important;
+          }
+          .custom-input {
+            transition: all 0.3s ease;
+          }
+          .custom-input:focus {
+            outline: none;
+            border-color: var(--primary-red) !important;
+            box-shadow: 0 0 0 3px rgba(210, 4, 45, 0.15) !important;
+            background-color: white !important;
+          }
+          .form-submit-btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(210, 4, 45, 0.25);
+          }
+          .form-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(210, 4, 45, 0.4);
+          }
         `}</style>
       </section>
 
       {/* 4. GOOGLE MAP */}
-      <section style={{ padding: 0 }}>
-        <div style={{ width: '100%', height: '450px', display: 'block', overflow: 'hidden', borderBottom: '1px solid var(--border-light)' }}>
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.4412461423435!2d73.72795577536061!3d24.539409578140262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e50b0e7f8aaf%3A0xec3938c003d92812!2sKamal%20Digi%20Studio!5e0!3m2!1sen!2sin!4v1780651968722!5m2!1sen!2sin" 
-            width="100%" 
-            height="450" 
-            style={{ border: 0 }} 
-            allowFullScreen={true}
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Kamal Digi Studio Location in Udaipur"
-          />
+      <section style={{ padding: '0 0 5rem 0' }}>
+        <div className="container">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            style={{ 
+              width: '100%', 
+              height: '450px', 
+              display: 'block', 
+              overflow: 'hidden', 
+              borderRadius: '24px', 
+              border: '1px solid rgba(15, 23, 42, 0.15)',
+              boxShadow: '0 20px 50px rgba(9, 13, 26, 0.1)',
+              position: 'relative'
+            }}
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.4412461423435!2d73.72795577536061!3d24.539409578140262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e50b0e7f8aaf%3A0xec3938c003d92812!2sKamal%20Digi%20Studio!5e0!3m2!1sen!2sin!4v1780651968722!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true}
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Kamal Digi Studio Location in Udaipur"
+            />
+          </motion.div>
         </div>
       </section>
 
