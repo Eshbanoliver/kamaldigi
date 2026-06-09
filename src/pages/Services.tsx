@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, Phone, MessageCircle, Sparkles } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
 interface Service {
@@ -373,35 +373,259 @@ export const Services: React.FC = () => {
         `}</style>
       </section>
 
-      {/* 3. CALL TO ACTION */}
-      <section style={{ padding: '6rem 0' }}>
-        <div className="container">
-          <div 
+      {/* 3. CALL TO ACTION (Imported Premium Style from Home) */}
+      <section style={{ padding: '6rem 0', overflow: 'hidden', position: 'relative' }}>
+        {/* Ambient background glows outside the card */}
+        <div style={{
+          position: 'absolute',
+          width: '400px',
+          height: '400px',
+          background: 'radial-gradient(circle, rgba(210, 4, 45, 0.08) 0%, transparent 70%)',
+          filter: 'blur(100px)',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 1,
+          pointerEvents: 'none'
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <motion.div 
+            whileHover={{ y: -8, scale: 1.01 }}
+            transition={{ type: 'spring', stiffness: 150, damping: 20 }}
             className="glass-card cta-banner-card" 
             style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              textAlign: 'center', 
-              gap: '1.5rem',
-              background: 'linear-gradient(135deg, rgba(210, 4, 45, 0.08) 0%, rgba(131, 56, 236, 0.08) 100%)',
-              borderColor: 'rgba(210, 4, 45, 0.2)'
+              background: 'linear-gradient(135deg, #090D1A 0%, #15081C 50%, #051821 100%)',
+              borderColor: 'rgba(210, 4, 45, 0.25)',
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '2rem',
+              padding: '5rem 2.5rem',
+              borderRadius: '32px',
+              boxShadow: '0 30px 70px -15px rgba(9, 13, 26, 0.5), 0 0 40px rgba(210, 4, 45, 0.15)',
+              position: 'relative',
+              overflow: 'hidden',
+              textAlign: 'center'
             }}
           >
-            <span style={{ color: 'var(--primary-red)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Consultation Booking</span>
-            <h2 style={{ fontSize: '2.2rem', fontWeight: 800 }}>Need A Customized Photography Package?</h2>
-            <p style={{ maxWidth: '600px', fontSize: '1.05rem' }}>
-              Every event has different schedules. Contact our Udaipur office directly, and we will formulate a personalized quote based on your specific days.
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
-              <a href="tel:+919828142098" className="btn btn-primary">
-                <span>Call +91 98281 42098</span>
-              </a>
-              <a href="https://wa.me/919828142098" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                <span>WhatsApp Live Chat</span>
-              </a>
+            {/* Viewfinder Rule of Thirds Lines Overlay */}
+            <div style={{ position: 'absolute', inset: 0, border: '1px solid rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', top: 0, bottom: 0, left: '33.33%', width: '1px', backgroundColor: 'rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', top: 0, bottom: 0, left: '66.66%', width: '1px', backgroundColor: 'rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', left: 0, right: 0, top: '33.33%', height: '1px', backgroundColor: 'rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', left: 0, right: 0, top: '66.66%', height: '1px', backgroundColor: 'rgba(255, 255, 255, 0.03)', pointerEvents: 'none', zIndex: 1 }} />
+
+            {/* Viewfinder Frame Corner Brackets */}
+            <div style={{ position: 'absolute', top: '20px', left: '20px', width: '16px', height: '16px', borderTop: '2.5px solid rgba(255, 255, 255, 0.2)', borderLeft: '2.5px solid rgba(255, 255, 255, 0.2)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', top: '20px', right: '20px', width: '16px', height: '16px', borderTop: '2.5px solid rgba(255, 255, 255, 0.2)', borderRight: '2.5px solid rgba(255, 255, 255, 0.2)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', bottom: '20px', left: '20px', width: '16px', height: '16px', borderBottom: '2.5px solid rgba(255, 255, 255, 0.2)', borderLeft: '2.5px solid rgba(255, 255, 255, 0.2)', pointerEvents: 'none', zIndex: 1 }} />
+            <div style={{ position: 'absolute', bottom: '20px', right: '20px', width: '16px', height: '16px', borderBottom: '2.5px solid rgba(255, 255, 255, 0.2)', borderRight: '2.5px solid rgba(255, 255, 255, 0.2)', pointerEvents: 'none', zIndex: 1 }} />
+
+            {/* Glowing Lens Flare / Bokeh Blobs inside Card */}
+            <motion.div 
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.15, 0.25, 0.15],
+                x: [0, 20, 0],
+                y: [0, -20, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 10, ease: 'easeInOut' }}
+              style={{
+                position: 'absolute',
+                width: '300px',
+                height: '300px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, #D2042D 0%, transparent 70%)',
+                filter: 'blur(70px)',
+                top: '-100px',
+                left: '-100px',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }}
+            />
+            <motion.div 
+              animate={{
+                scale: [1.1, 0.9, 1.1],
+                opacity: [0.12, 0.2, 0.12],
+                x: [0, -30, 0],
+                y: [0, 30, 0]
+              }}
+              transition={{ repeat: Infinity, duration: 12, ease: 'easeInOut' }}
+              style={{
+                position: 'absolute',
+                width: '320px',
+                height: '320px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, #3A86FF 0%, transparent 70%)',
+                filter: 'blur(80px)',
+                bottom: '-120px',
+                right: '-120px',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }}
+            />
+
+            {/* Decorative Shutter / Aperture Concentric Ring overlay */}
+            <div style={{
+              position: 'absolute',
+              width: '600px',
+              height: '600px',
+              borderRadius: '50%',
+              border: '1px solid rgba(255, 255, 255, 0.02)',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              pointerEvents: 'none',
+              zIndex: 0
+            }}>
+              <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1px dashed rgba(255, 255, 255, 0.015)', transform: 'scale(0.8)' }} />
+              <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1.5px solid rgba(255, 255, 255, 0.01)', transform: 'scale(0.65)', position: 'absolute', top: 0, left: 0 }} />
             </div>
-          </div>
+
+            {/* Viewfinder REC Indicator inside card */}
+            <div style={{ 
+              position: 'absolute', 
+              top: '35px', 
+              left: '35px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '6px', 
+              fontFamily: 'monospace', 
+              fontSize: '0.7rem', 
+              color: 'rgba(255, 255, 255, 0.5)',
+              zIndex: 1
+            }}>
+              <motion.span 
+                animate={{ opacity: [1, 0, 1] }} 
+                transition={{ repeat: Infinity, duration: 1.5 }} 
+                style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#D2042D', boxShadow: '0 0 8px #D2042D' }} 
+              />
+              <span style={{ letterSpacing: '0.1em' }}>REC ACTIVE</span>
+            </div>
+
+            {/* Viewfinder battery / storage specs inside card */}
+            <div style={{ 
+              position: 'absolute', 
+              top: '35px', 
+              right: '35px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '8px', 
+              fontFamily: 'monospace', 
+              fontSize: '0.7rem', 
+              color: 'rgba(255, 255, 255, 0.5)',
+              zIndex: 1
+            }}>
+              <span>STANDBY</span>
+              <div style={{ width: '16px', height: '9px', border: '1px solid rgba(255, 255, 255, 0.4)', padding: '1px', display: 'flex', borderRadius: '2px', position: 'relative' }}>
+                <div style={{ width: '100%', height: '100%', backgroundColor: '#10B981' }} />
+              </div>
+            </div>
+
+            {/* Content Core */}
+            <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: 'var(--primary-pink)',
+                  background: 'rgba(255, 77, 109, 0.1)',
+                  padding: '0.4rem 1rem',
+                  borderRadius: '30px',
+                  border: '1px solid rgba(255, 77, 109, 0.2)',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em'
+                }}
+              >
+                <Sparkles size={14} />
+                <span>Ready to Begin?</span>
+              </motion.div>
+
+              <h2 style={{ 
+                maxWidth: '750px', 
+                margin: '0 auto', 
+                fontSize: 'clamp(2rem, 4.5vw, 3.25rem)', 
+                lineHeight: '1.25',
+                color: 'white',
+                fontWeight: 800
+              }}>
+                Let's Capture Your <span className="gradient-text-red" style={{ background: 'linear-gradient(135deg, #FF4D6D 0%, #D2042D 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Special Moments</span> Together
+              </h2>
+              
+              <p style={{ 
+                maxWidth: '650px', 
+                margin: '0 auto', 
+                fontSize: '1.15rem', 
+                lineHeight: '1.6', 
+                color: 'rgba(255, 255, 255, 0.7)' 
+              }}>
+                Book a personalized photography consultation with Udaipur's premier studio. Let us craft luxurious visual memories you will treasure forever.
+              </p>
+              
+              {/* Dynamic Buttons */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', justifyContent: 'center', marginTop: '1.5rem' }}>
+                <motion.a 
+                  whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(210, 4, 45, 0.5)' }}
+                  whileTap={{ scale: 0.98 }}
+                  href="tel:+919828142098" 
+                  className="btn btn-primary"
+                  style={{
+                    backgroundColor: 'var(--primary-red)',
+                    borderColor: 'var(--primary-red)',
+                    padding: '1rem 2rem',
+                    borderRadius: '50px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    boxShadow: '0 8px 20px rgba(210, 4, 45, 0.3)',
+                    transition: 'all 0.2s ease',
+                    color: 'white'
+                  }}
+                >
+                  <Phone size={18} />
+                  <span>Call Now</span>
+                </motion.a>
+                
+                <motion.a 
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)', borderColor: 'white' }}
+                  whileTap={{ scale: 0.98 }}
+                  href="https://wa.me/919828142098" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn btn-secondary"
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    color: 'white',
+                    padding: '1rem 2rem',
+                    borderRadius: '50px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    backdropFilter: 'blur(10px)',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  <MessageCircle size={18} />
+                  <span>Book Consultation</span>
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
