@@ -52,7 +52,9 @@ export const Header: React.FC = () => {
             src="/logo_icon.png" 
             alt="Kamal Digi Studio Logo" 
             style={{ 
-              height: '38px', 
+              height: '52px', 
+              marginTop: '-7px',
+              marginBottom: '-7px',
               width: 'auto', 
               display: 'block',
               filter: 'drop-shadow(0 2px 8px rgba(210, 4, 45, 0.15))' 

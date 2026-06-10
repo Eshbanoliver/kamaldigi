@@ -90,7 +90,9 @@ export const Footer: React.FC = () => {
                 src="/logo_icon.png" 
                 alt="Kamal Digi Studio Logo" 
                 style={{ 
-                  height: '32px', 
+                  height: '44px', 
+                  marginTop: '-6px',
+                  marginBottom: '-6px',
                   width: 'auto', 
                   display: 'block',
                   filter: 'brightness(1.15) drop-shadow(0 2px 8px rgba(210, 4, 45, 0.35))'
