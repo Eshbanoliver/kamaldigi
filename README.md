@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# Kamal Digi Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, modern, and highly interactive web application for **Kamal Digi Studio**, Udaipur's premium photography and videography studio. Designed with rich aesthetics, smooth animations, and glassmorphic UI panels to showcase high-end visual storytelling.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Key Features
 
-## React Compiler
+- **Liquid Glass Theme**: Modern UI featuring beautiful glassmorphic cards, harmonized dark layouts, and vibrant gradient backdrops.
+- **Dynamic Micro-Animations**: Smooth scroll reveal effects, hover states, floating elements, and page transitions powered by **Framer Motion**.
+- **Interactive Portfolio Preview**: Highlighted galleries for Weddings, Pre-Weddings, Events, Portraits, Maternity, and Commercial shoots.
+- **SEO Optimized**: Fully structured semantic HTML with unique metadata configuration per page for maximum discoverability.
+- **Responsive Layout**: Designed for seamless accessibility across all device types—smartphones, tablets, and desktops.
+- **Floating Contact Panel**: Quick links for booking inquiries via WhatsApp and direct calls.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Core**: React 19, TypeScript, HTML5
+- **Build Tool**: Vite 8
+- **Styling**: Vanilla CSS (Tailored HSL design system, CSS Variables)
+- **Animations**: Framer Motion 12
+- **Icons**: Lucide React
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📁 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+kamaldigi/
+├── public/                 # Static assets (Favicons, Logos, Generated Images)
+│   └── images/             # Visual portfolio previews and hero assets
+├── src/
+│   ├── components/         # Reusable UI components (Footer, AnimatedCounter, etc.)
+│   ├── hooks/              # Custom React hooks (e.g., useSEO)
+│   ├── pages/              # Page views (Home, About, Services, Testimonials, Contact)
+│   ├── index.css           # Global stylesheets & HSL styling system
+│   ├── main.tsx            # Application entry point
+│   └── App.tsx             # Routing configuration
+├── index.html              # HTML template
+├── package.json            # Dependencies & build scripts
+└── tsconfig.json           # TypeScript configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Eshbanoliver/kamaldigi.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd kamaldigi
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development Server
+
+Start the local development server with Hot Module Replacement (HMR):
+```bash
+npm run dev
 ```
+Open your browser and navigate to the local address displayed in the terminal (usually `http://localhost:5173`).
+
+---
+
+## 📦 Production & Deployment
+
+### Build the Project
+
+To compile the application and bundle optimized assets for production, run:
+```bash
+npm run build
+```
+This will compile TypeScript and generate a static bundle in the `dist/` directory.
+
+### Preview Production Build
+
+To test the built files locally before hosting:
+```bash
+npm run preview
+```
+
+### Static Hosting
+
+The output files inside the `dist/` directory can be uploaded directly to any static web hosting provider (e.g., Hostinger, Netlify, Vercel, Nginx, or Apache).

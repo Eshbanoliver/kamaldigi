@@ -292,8 +292,8 @@ export const Home: React.FC = () => {
               >
                 <div style={{ overflow: 'hidden', borderRadius: '18px', position: 'relative' }}>
                   <img 
-                    src="/images/camera-gear.webp" 
-                    alt="Kamal Digi Studio Gear" 
+                    src="/images/wedding-setup-no-human.png" 
+                    alt="Kamal Digi Studio Wedding Setup" 
                     style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.5s' }} 
                   />
                   <div 
